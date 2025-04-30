@@ -133,6 +133,11 @@
 	icon_state = "nagarattle"
 	taur_mode = STYLE_TAUR_SNAKE
 
+/datum/sprite_accessory/taur/naga/coiled
+	name = "Naga, Coiled"
+	icon_state = "nagacoiled"
+	taur_mode = STYLE_TAUR_SNAKE
+
 /datum/sprite_accessory/taur/otie
 	name = "Otie"
 	icon_state = "otie"
