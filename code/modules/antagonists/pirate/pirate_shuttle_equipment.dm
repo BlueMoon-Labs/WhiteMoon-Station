@@ -225,7 +225,7 @@
 	///Typecache of things that shouldn't be sold and shouldn't have their contents sold.
 	var/static/list/nosell_typecache
 	///Market this terminal sells to, defaults to pirate
-	var/export_market = EXPORT_MARKET_PIRACY // BUBBER EDIT ADDITION
+	var/export_market = EXPORT_MARKET_PIRACY || EXPORT_MARKET_STATION // BUBBER EDIT ADDITION
 
 /obj/machinery/computer/piratepad_control/Initialize(mapload)
 	..()
