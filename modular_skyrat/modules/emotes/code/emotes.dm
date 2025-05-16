@@ -34,6 +34,10 @@
 /datum/emote/living/cough/get_sound(mob/living/user)
 	if(isvox(user))
 		return 'modular_skyrat/modules/emotes/sound/emotes/voxcough.ogg'
+	// WHITEMOON EDIT START: VOX PRIMALIS
+	if(isvoxprimalis(user))
+		return 'modular_skyrat/modules/emotes/sound/emotes/voxcough.ogg'
+	// WHITEMOON EDIT END
 	if(iscarbon(user))
 		if(user.gender == MALE)
 			return pick('modular_skyrat/modules/emotes/sound/emotes/male/male_cough_1.ogg',
@@ -50,6 +54,10 @@
 /datum/emote/living/sneeze/get_sound(mob/living/user)
 	if(isvox(user))
 		return 'modular_skyrat/modules/emotes/sound/emotes/voxsneeze.ogg'
+	// WHITEMOON EDIT START: VOX PRIMALIS
+	if(isvoxprimalis(user))
+		return 'modular_skyrat/modules/emotes/sound/emotes/voxsneeze.ogg'
+	// WHITEMOON EDIT END
 	if(iscarbon(user))
 		if(user.gender == MALE)
 			return 'modular_skyrat/modules/emotes/sound/emotes/male/male_sneeze.ogg'
@@ -177,7 +185,8 @@
 	key = "meow"
 	key_third_person = "meows"
 	message = "meows!"
-	emote_type = EMOTE_AUDIBLE
+	message_mime = "meows silently."
+	emote_type = EMOTE_VISIBLE | EMOTE_AUDIBLE
 	vary = TRUE
 	sound = 'modular_skyrat/modules/emotes/sound/emotes/meow.ogg'
 
