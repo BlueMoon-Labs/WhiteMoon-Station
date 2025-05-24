@@ -5,9 +5,9 @@
 
 /obj/machinery/computer/cargo/express/interdyne
 	name = "interdyne express supply console"
-	desc = "A standard NT express console, hacked by Gorlex Industries to use \
-	their own experimental \"1100mm Rail Cannon\", made to be extra robust to prevent \
-	being emagged by the Syndicate cadets of the SSV Dauntless."
+	desc = "A standard Cybersun express console, modified by Gorlex Industries to use \
+	their own experimental \"1100mm Rail Cannon with experimental safe impact tech.\", made to be extra robust to prevent \
+	being emagged by the Syndicate cadets."
 	circuit = /obj/item/circuitboard/computer/cargo/express/interdyne
 	req_access = list(ACCESS_SYNDICATE)
 	cargo_account = ACCOUNT_INT
@@ -24,7 +24,7 @@
 	COMPANY_NAME_BLACKSTEEL_FOUNDATION,
 	COMPANY_NAME_NAKAMURA_ENGINEERING_MODSUITS
 	)
-	pod_type = /obj/structure/closet/supplypod/bluespacepod
+	pod_type = /obj/structure/closet/supplypod/syndcargo
 
 /obj/machinery/computer/cargo/express/interdyne/emag_act(mob/user, obj/item/card/emag/emag_card)
 	if(user)
