@@ -57,11 +57,11 @@
 
 /datum/bodypart_overlay/augment/generate_icon_cache()
 	. = ..()
-	. += implant.get_overlay_state()
+	. += implant?.get_overlay_state()
 
 /datum/bodypart_overlay/augment/get_overlay(layer, obj/item/bodypart/limb)
 	layer = bitflag_to_layer(layer)
-	var/list/imageset = implant.get_overlay(layer, limb)
+	var/list/imageset = implant?.get_overlay(layer, limb)
 	if(blocks_emissive == EMISSIVE_BLOCK_NONE || !limb)
 		return imageset
 

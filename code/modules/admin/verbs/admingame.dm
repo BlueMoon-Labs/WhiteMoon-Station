@@ -106,6 +106,7 @@ ADMIN_VERB_ONLY_CONTEXT_MENU(show_player_panel, R_ADMIN, "Show Player Panel", mo
 	if(player.client)
 		body += "| <A href='byond://?_src_=holder;[HrefToken()];sendtoprison=[REF(player)]'>Prison</A> | "
 		body += "\ <A href='byond://?_src_=holder;[HrefToken()];sendbacktolobby=[REF(player)]'>Send back to Lobby</A> | "
+		body += "\ <A href='byond://?_src_=holder;[HrefToken()];sendtovoid=[REF(player)]'>SEND TO VOID</A> | "
 		var/muted = player.client.prefs.muted
 		body += "<br><b>Mute: </b> "
 		body += "\[<A href='byond://?_src_=holder;[HrefToken()];mute=[player.ckey];mute_type=[MUTE_IC]'><font color='[(muted & MUTE_IC)?"red":"blue"]'>IC</font></a> | "

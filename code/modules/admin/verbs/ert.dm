@@ -269,6 +269,8 @@
 		// shitcode begin!
 		if(istype(ertemplate, /datum/ert/deathsquad))
 			SSsecurity_level.set_level(SEC_LEVEL_EPSILON)
+		if(istype(ertemplate, /datum/ert/inteq)) // MOON ADD
+			SSsecurity_level.set_level(SEC_LEVEL_GAMMA) // MOON ADD
 	// BUBBER EDIT ADDITION END
 
 	return TRUE

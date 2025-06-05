@@ -705,6 +705,8 @@
 		/obj/machinery/vending/imported/yangyu = "Fudobenda", //SKYRAT EDIT ADDITION
 		/obj/machinery/vending/security = "Armadyne Peacekeeper Equipment Vendor", //SKYRAT EDIT CHANGE - SEC_HUAL - ORIGINAL: /obj/machinery/vending/security = "SecTech",
 		/obj/machinery/vending/deforest_medvend = "DeForest Med-Vend", //SKYRAT PORT ADDITION
+		/obj/machinery/vending/wardrobe/syndie_wardrobe = "SynDrobe", // WhiteMoon ADDITION
+		/obj/machinery/vending/wardrobe/cent_wardrobe = "CentDrobe", // WhiteMoon ADDITION
 	)
 
 /obj/item/circuitboard/machine/vendor/screwdriver_act(mob/living/user, obj/item/tool)
