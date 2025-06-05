@@ -66,6 +66,12 @@
 	bluespace = TRUE
 	explosionSize = list(0,0,1,2)
 
+/obj/structure/closet/supplypod/syndcargo
+	style = /datum/pod_style/syndicate
+	bluespace = TRUE
+	explosionSize = list(0,0,0,0)
+
+
 //type used for one drop spawning items. doesn't have a style as style is set by the helper that creates this
 /obj/structure/closet/supplypod/podspawn
 	bluespace = TRUE
