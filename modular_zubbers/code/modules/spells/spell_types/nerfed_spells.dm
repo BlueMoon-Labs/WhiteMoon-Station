@@ -90,7 +90,7 @@
 
 // High Frequency Spellblade. Holy fuck just looking at the code is nonsense holy fuck. Can slash through walls, and also gib people who are dead. Absolutely silly.
 // Replaces it with a banhammer that can send you to the perma brig because that's funnier.
-/datum/spellbook_entry/item/highfrequencyblade
+/datum/spellbook_entry/item/real_banhammer
 	name = "REAL Banhammer"
 	desc = "A completely REAL Banhammer that sends anyone it hits to the void for a short period of time. Stonger hits send people to the station's permabrig, if one exists."
 	item_path = /obj/item/banhammer/real

@@ -6,8 +6,9 @@
 	antag_datum = /datum/antagonist/nukeop
 	antag_leader_datum = /datum/antagonist/nukeop/leader
 
-	weight = 3
-	tags = list(TAG_CREW_ANTAG, TAG_CHAOTIC)
+	weight = 2
+	min_players = 32
+	tags = list(TAG_CREW_ANTAG, TAG_BIG_THREE, TAG_COMBAT, TAG_CHAOTIC)
 
 	base_antags = 2
 	maximum_antags = 5
@@ -19,13 +20,12 @@
 
 /datum/round_event/antagonist/team/nukie
 	var/datum/job/job_type = /datum/job/nuclear_operative
-	var/required_role = ROLE_NUCLEAR_OPERATIVE
+	var/required_role = ROLE_OPERATIVE
 
 	var/datum/team/nuclear/nuke_team
 
 /datum/round_event/antagonist/team/nukie/candidate_roles_setup(mob/candidate)
 	candidate.mind.set_assigned_role(SSjob.get_job_type(job_type))
-	candidate.mind.special_role = required_role
 
 /datum/round_event/antagonist/team/nukie/start()
 	// Get our nukie leader

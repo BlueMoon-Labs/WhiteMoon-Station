@@ -1,5 +1,5 @@
 /obj/item/clothing/mask/gas/syndicate
-	icon = 'modular_zzz/icons/obj/clothing/masks.dmi'
+	icon = 'modular_zzz/icons/obj/clothing/masks/mask.dmi'
 	worn_icon = 'modular_zzz/icons/mob/clothing/mask.dmi'
 	// worn_icon_muzzled = 'modular_zzz/icons/mob/clothing/mask_muzzled.dmi'
 
@@ -59,3 +59,41 @@
 	name = "Andromeda Mask"
 	desc = "A close-fitting tactical mask used by shark-like species. It has moderate protection against ballistic damage and a flap for closed breathing."
 	icon_state = "akula_mask"
+
+/obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_one
+	name = "Tactical combat Catcrin gasmask"
+	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
+	icon_state = "catcrin_one"
+
+/obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_two
+	name = "Tactical combat Catcrin gasmask"
+	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
+	icon_state = "catcrin_two"
+
+/obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_three
+	name = "Tactical combat Catcrin gasmask"
+	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
+	icon_state = "catcrin_three"
+
+/obj/item/clothing/mask/gas/syndicate/mtb
+	name = "Monocular Tactical Balaclava"
+	desc = "A sinister, one-eyed balaclava designed for Nanotrasen's black-ops operatives and elite riot control specialists. This unnerving mask obscures all facial features except for a single, red blinking eye — enhanced with an unknown-type monocle. Whether you're lurking in maintenance, conducting midnight deitys, or just trying to psychologically unnerve the clown, this mask ensures you see everything... while remaining a faceless enigma of papa Nanotrasen."
+	icon_state = "mtb"
+
+/obj/item/cigarette/pipe/long_pipe
+	name = "Long smoking pipe"
+	desc = "A long smoking pipe made in a sophisticated style, with a small bulge at the end for dry herbs."
+	icon = 'modular_zzz/icons/obj/clothing/masks/mask.dmi'
+	worn_icon = 'modular_zzz/icons/mob/clothing/mask.dmi'
+	icon_state = "donator_pipeoff"
+	icon_on = "donator_pipeoff"
+	icon_off = "donator_pipeoff"
+
+/obj/item/clothing/mask/balaclava/breath
+	name = "Breathaclava"
+	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | MASKINTERNALS | GAS_FILTERING
+
+/obj/item/clothing/mask/gas/syndicate/eo95_mask
+	name = "EO-95 mask"
+	desc = "A mask with ariral design, emits  a strange purple particles around it, allow the user to breath more cleaner air, that would be safer for it's owner because of anatomy of arirals."
+	icon_state = "eo95_mask"

@@ -57,11 +57,11 @@
 
 /datum/bodypart_overlay/augment/generate_icon_cache()
 	. = ..()
-	. += implant.get_overlay_state()
+	. += implant?.get_overlay_state()
 
 /datum/bodypart_overlay/augment/get_overlay(layer, obj/item/bodypart/limb)
 	layer = bitflag_to_layer(layer)
-	var/list/imageset = implant.get_overlay(layer, limb)
+	var/list/imageset = implant?.get_overlay(layer, limb)
 	if(blocks_emissive == EMISSIVE_BLOCK_NONE || !limb)
 		return imageset
 
@@ -333,7 +333,10 @@
 		owner.visible_message(span_userdanger("[owner]'s brain falls off the back of [owner.p_their()] head!!!"), span_boldwarning("You feel like you're missing something."))
 		return chippy_brain
 
-	new /obj/effect/decal/cleanable/blood/gibs/up(get_turf(owner))
+	var/gib_type = /obj/effect/decal/cleanable/blood/gibs/up
+	if (IS_ROBOTIC_ORGAN(chippy_brain))
+		gib_type = /obj/effect/decal/cleanable/blood/gibs/robot_debris/up
+	new gib_type(get_turf(owner), owner.get_static_viruses(), owner.get_blood_dna_list())
 	return FALSE
 
 /obj/item/organ/cyberimp/brain/connector/proc/reboot()

@@ -15,7 +15,7 @@
 	. = ..()
 
 	M.add_client_colour(/datum/client_colour/zvezdochka, DRUGS_SOURCE)
-	var/sound/sound = sound(pick('modular_zzz/sounds/LYENEN.ogg', 'modular_zzz/sounds/LYENEN2.ogg'), TRUE)
+	var/sound/sound = sound(pick('modular_zzz/sounds/ambience/LYENEN.ogg', 'modular_zzz/sounds/ambience/LYENEN2.ogg'), TRUE)
 	sound.environment = 35
 	sound.volume = 30
 	SEND_SOUND(M.client, sound)
@@ -118,7 +118,7 @@
 	. = ..()
 
 	M.add_client_colour(/datum/client_colour/pendosovka, DRUGS_SOURCE)
-	var/sound/sound = sound(pick('modular_zzz/sounds/CAPITAL1.ogg', 'modular_zzz/sounds/CAPITAL2.ogg'), TRUE)
+	var/sound/sound = sound(pick('modular_zzz/sounds/ambience/CAPITAL1.ogg', 'modular_zzz/sounds/ambience/CAPITAL2.ogg'), TRUE)
 	sound.environment = 45
 	sound.volume = 40
 	SEND_SOUND(M.client, sound)

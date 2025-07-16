@@ -24,6 +24,7 @@ GLOBAL_LIST_INIT(wire_node_generating_types, typecacheof(list(
 	layer = WIRE_LAYER //Above hidden pipes, GAS_PIPE_HIDDEN_LAYER
 	anchored = TRUE
 	obj_flags = CAN_BE_HIT
+	max_integrity = 50
 	var/linked_dirs = 0 //bitflag
 	var/node = FALSE //used for sprites display
 	var/cable_layer = CABLE_LAYER_2 //bitflag
@@ -147,6 +148,18 @@ GLOBAL_LIST_INIT(wire_node_generating_types, typecacheof(list(
 /obj/structure/cable/atom_deconstruct(disassembled = TRUE)
 	var/obj/item/stack/cable_coil/cable = new(drop_location(), 1)
 	cable.set_cable_color(cable_color)
+
+/obj/structure/cable/atom_destruction(damage_flag)
+	if(!powernet || damage_flag != BOMB)
+		return ..()
+
+	powernet.propagate_light_flicker(src)
+	return ..()
+
+/obj/structure/cable/run_atom_armor(damage_amount, damage_type, damage_flag, attack_dir, armour_penetration)
+	if(damage_flag == BOMB && HAS_TRAIT(src, TRAIT_UNDERFLOOR))
+		damage_amount *= 0.25
+	return ..()
 
 ///////////////////////////////////
 // General procedures
@@ -522,7 +535,8 @@ GLOBAL_LIST_INIT(wire_node_generating_types, typecacheof(list(
 	"Layer 3" = image(icon = 'icons/hud/radial.dmi', icon_state = "coil-blue"),
 	"Multilayer cable hub" = image(icon = 'icons/obj/pipes_n_cables/structures.dmi', icon_state = "cable_bridge"),
 	"Multi Z layer cable hub" = image(icon = 'icons/obj/pipes_n_cables/structures.dmi', icon_state = "cablerelay-broken-cable"),
-	"Cable restraints" = restraints_icon
+	"Cable restraints" = restraints_icon,
+	"Noose" = image(icon = 'modular_zzz/icons/noose/objects.dmi', icon_state = "noose") // MOON STATION ADDITION
 	)
 
 	var/layer_result = show_radial_menu(user, src, radial_menu, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
@@ -570,6 +584,18 @@ GLOBAL_LIST_INIT(wire_node_generating_types, typecacheof(list(
 				if(use(CABLE_RESTRAINTS_COST))
 					var/obj/item/restraints/handcuffs/cable/restraints = new(null, cable_color)
 					user.put_in_hands(restraints)
+		if("Noose") // MOON STATION ADDITION START
+			if(amount < 30)
+				to_chat(user, "<span class='notice'>You don't have enough cable coil to make noose out of them</span>")
+				return
+			to_chat(user, "<span class='notice'>You start making some cable noose...</span>")
+			if(!(locate(/obj/structure/chair) in user.loc) && !(locate(/obj/structure/bed) in user.loc) && !(locate(/obj/structure/table) in user.loc) && !(locate(/obj/structure/toilet) in user.loc))
+				to_chat(user, span_warning("You need to be on top, table, chair!!"))
+				return
+			if(!do_after(user, 3 SECONDS, user) || !use(30))
+				to_chat(user, "<span class='notice'>You fail to make cable noose, you need to be standing still to do it</span>")
+				return
+			new /obj/structure/chair/noose(get_turf(user)) // MOON STATION ADDITION END
 	update_appearance()
 
 

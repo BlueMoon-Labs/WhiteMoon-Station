@@ -547,7 +547,7 @@
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
 
 /datum/emote/living/taunt
-	key = "tt"
+	key = "taunt"
 	key_third_person = "taunts"
 	message = "strikes a pose!"
 	message_param = "taunts %t!"
@@ -556,7 +556,7 @@
 	//is_muzzled = FALSE
 
 /datum/emote/living/taunt/alt
-	key = "tt2"
+	key = "taunt2"
 	key_third_person = "taunts2"
 	sound_volume = 100
 	sound = 'modular_zzplurt/sound/voice/orchestrahit.ogg'
@@ -1180,17 +1180,17 @@
 	cooldowns = 0.8 SECONDS
 	vary = FALSE
 
-/datum/emote/living/mrrp
-	key = "mrrp"
-	key_third_person = "mrrps"
+/datum/emote/living/cattrill
+	key = "cattrill"
+	key_third_person = "cattrills"
 	message = "trills like a cat!"
 	sound = 'modular_zzplurt/sound/voice/catpeople/cat_mrrp1.ogg'
 	cooldowns = 0.8 SECONDS
 	vary = FALSE
 
-/datum/emote/living/mrrp2
-	key = "mrrp2"
-	key_third_person = "mrrps"
+/datum/emote/living/cattrill2
+	key = "cattrill2"
+	key_third_person = "cattrills"
 	message = "trills like a cat!"
 	sound = 'modular_zzplurt/sound/voice/catpeople/cat_mrrp2.ogg'
 	cooldowns = 0.8 SECONDS

@@ -372,7 +372,7 @@
 
 	if(flag && doafter_self_shoot && user.zone_selected == BODY_ZONE_PRECISE_MOUTH)
 		handle_suicide(user, target, params)
-		return
+		return ITEM_INTERACT_SUCCESS // no attacking in melee after completion
 
 	if(!can_shoot()) //Just because you can pull the trigger doesn't mean it can shoot.
 		shoot_with_empty_chamber(user)
@@ -597,7 +597,7 @@
 /obj/item/gun/animate_atom_living(mob/living/owner)
 	new /mob/living/basic/mimic/copy/ranged(drop_location(), src, owner)
 
-/obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
+/obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer, time_to_kill = 12 SECONDS)
 	if(!ishuman(user) || !ishuman(target))
 		return
 
@@ -613,7 +613,7 @@
 
 	fire_cd = TRUE
 
-	if(!bypass_timer && (!do_after(user, 12 SECONDS, target) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
+	if(!bypass_timer && (!do_after(user, time_to_kill, target) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
 		if(user)
 			if(user == target)
 				user.visible_message(span_notice("[user] decided not to shoot."))
@@ -626,7 +626,12 @@
 
 	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[(user == target) ? "You pull" : "[user] pulls"] the trigger!"))
 
+	if(!chambered)
+		shoot_with_empty_chamber(user)
+		return
+
 	if(chambered?.loaded_projectile)
+		. = TRUE
 		chambered.loaded_projectile.damage *= 5
 		if(chambered.loaded_projectile.wound_bonus != CANT_WOUND)
 			chambered.loaded_projectile.wound_bonus += 5 // much more dramatic on multiple pellet'd projectiles really

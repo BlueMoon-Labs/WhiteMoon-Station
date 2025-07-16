@@ -70,13 +70,13 @@
 
 	next_boss_spawn = start_when + CEILING(2 * number_of_hostiles / number_of_bosses, 1)
 
-/datum/round_event/portal_storm/announce(fake)
-	set waitfor = 0
-	sound_to_playing_players('sound/effects/magic/lightning_chargeup.ogg')
-	sleep(8 SECONDS)
-	priority_announce("Massive bluespace anomaly detected en route to [station_name()]. Brace for impact.")
-	sleep(2 SECONDS)
-	sound_to_playing_players('sound/effects/magic/lightningbolt.ogg')
+// /datum/round_event/portal_storm/announce(fake)
+// 	set waitfor = 0
+// 	sound_to_playing_players('sound/effects/magic/lightning_chargeup.ogg')
+// 	sleep(8 SECONDS)
+// 	priority_announce("Massive bluespace anomaly detected en route to [station_name()]. Brace for impact.")
+// 	sleep(2 SECONDS)
+// 	sound_to_playing_players('sound/effects/magic/lightningbolt.ogg')
 
 /datum/round_event/portal_storm/tick()
 	spawn_effects(get_random_station_turf())

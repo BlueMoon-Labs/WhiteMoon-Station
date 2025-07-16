@@ -47,7 +47,7 @@
 	access_view = ACCESS_WEAPONS
 	contains = list(/obj/item/ammo_box/magazine/m38/match)
 
-/datum/supply_pack/goody/rubber
+/datum/supply_pack/goody/rubberbr
 	name = ".38 Rubber Magazine Single-Pack"
 	desc = "Contains one magazine of bouncy rubber .38 ammunition, for when you want to bounce your shots off anything and everything."
 	cost = PAYCHECK_CREW * 1.5

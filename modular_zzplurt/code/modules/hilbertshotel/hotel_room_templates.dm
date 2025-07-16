@@ -7,6 +7,15 @@
 
 /datum/map_template/ghost_cafe_rooms
 	var/category = GHC_MISC //Room categorizing
+	var/list/landing_coords
+
+	var/donator_tier = DONATOR_TIER_NONE //For donator rooms
+	var/list/ckeywhitelist = list() //For ckey locked donator rooms
+
+/datum/map_template/ghost_cafe_rooms/New(path, rename, cache)
+	. = ..()
+	if(LAZYLEN(ckeywhitelist) && !donator_tier)
+		donator_tier = DONATOR_TIER_1
 
 /datum/map_template/ghost_cafe_rooms/apartment
 	category = GHC_APARTMENT
@@ -61,6 +70,17 @@
 
 // SPLURT's custom room templates
 
+/datum/map_template/ghost_cafe_rooms/apartment_skyscraper
+	name = "Skyscraper Apartment"
+	mappath = "_maps/splurt/templates/apartment_skyscraper.dmm"
+	category = GHC_APARTMENT
+
+/datum/map_template/ghost_cafe_rooms/apartment_mountainside
+	name = "Mountainside Apartment"
+	mappath = "_maps/splurt/templates/apartment_mountainside.dmm"
+	category = GHC_SPECIAL
+	landing_coords = list(14, 4)
+
 /datum/map_template/ghost_cafe_rooms/apartment_city
 	name = "City Apartment"
 	mappath = "_maps/splurt/templates/apartment_city.dmm"
@@ -114,6 +134,22 @@
 /datum/map_template/ghost_cafe_rooms/apartment_sauna
 	name = "Sauna"
 	mappath = "_maps/splurt/templates/apartment_sauna.dmm"
+	category = GHC_MISC
+
+/datum/map_template/ghost_cafe_rooms/dnd_house
+	name = "Zak's D&D House"
+	mappath = "_maps/splurt/templates/apartment_donator_zak_dnd_house.dmm"
+	ckeywhitelist = list("drarielpro")
+	category = GHC_SPECIAL
+
+/datum/map_template/ghost_cafe_rooms/apartment_dragonslair
+	name = "Dragon Cave Lair"
+	mappath = "_maps/splurt/templates/apartment_dragonslair.dmm"
+	category = GHC_MISC
+
+/datum/map_template/ghost_cafe_rooms/apartment_fortuneteller
+	name = "Arcane Library"
+	mappath = "_maps/splurt/templates/apartment_fortuneteller.dmm"
 	category = GHC_MISC
 
 #undef GHC_MISC

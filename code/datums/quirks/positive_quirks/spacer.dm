@@ -10,14 +10,14 @@
 	lose_text = span_danger("You feel homesick.")
 	icon = FA_ICON_USER_ASTRONAUT
 	value = 5
-	quirk_flags = QUIRK_CHANGES_APPEARANCE //SKYRAT EDIT CHANGE - ORIGINAL: quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_CHANGES_APPEARANCE
+//	quirk_flags = QUIRK_CHANGES_APPEARANCE //SKYRAT EDIT CHANGE - ORIGINAL: quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_CHANGES_APPEARANCE | WhiteMoon EDIT - Disable quirk_flags
 	medical_record_text = "Patient is well-adapted to non-terrestrial environments."
 	mail_goodies = list(
 		/obj/item/storage/pill_bottle/ondansetron,
 		/obj/item/reagent_containers/applicator/pill/gravitum,
 	)
 	/// How high spacers get bumped up to
-	var/modded_height = HUMAN_HEIGHT_TALLER
+//	var/modded_height = HUMAN_HEIGHT_TALLER // WhiteMoon EDIT - Disable height modificator
 	/// How long on a planet before we get averse effects
 	var/planet_period = 3 MINUTES
 	/// TimerID for time spend on a planet
@@ -46,7 +46,7 @@
 	quirk_holder.inertia_move_multiplier *= 0.8
 
 	var/mob/living/carbon/human/human_quirker = quirk_holder
-	human_quirker.set_mob_height(modded_height)
+//	human_quirker.set_mob_height(modded_height) // WhiteMoon EDIT - Disable height modificator
 	human_quirker.physiology.pressure_mod *= 0.8
 	human_quirker.physiology.cold_mod *= 0.8
 
@@ -79,7 +79,7 @@
 	quirk_holder.remove_status_effect(/datum/status_effect/spacer)
 
 	var/mob/living/carbon/human/human_quirker = quirk_holder
-	human_quirker.set_mob_height(HUMAN_HEIGHT_MEDIUM)
+//	human_quirker.set_mob_height(HUMAN_HEIGHT_MEDIUM) // WhiteMoon EDIT - Disable height modificator
 	human_quirker.physiology.pressure_mod /= 0.8
 	human_quirker.physiology.cold_mod /= 0.8
 

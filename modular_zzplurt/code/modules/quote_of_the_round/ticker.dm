@@ -107,7 +107,7 @@
 	embed.footer = new("Раунд #[GLOB.round_id] ([SSgamemode.storyteller.name])")
 	embed.timestamp = time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")
 
-	var/datum/tgs_message_content/message = new("# Раунд под номером #[GLOB.round_id] ([SSgamemode.storyteller.name]) только что закончился. [CONFIG_GET(string/roundend_ping_role) ? "<@&[CONFIG_GET(string/roundend_ping_role)]>" : ""]")
+	var/datum/tgs_message_content/message = new("# Раунд под номером #[GLOB.round_id] ([SSgamemode.storyteller.name]) только что закончился, заходи в новый - https://white.ss13-bluemoon.ru/. [CONFIG_GET(string/roundend_ping_role) ? "<@&[CONFIG_GET(string/roundend_ping_role)]>" : ""]")
 	message.embed = embed
 
 	var/list/random_links = init_discord_videos()

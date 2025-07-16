@@ -412,7 +412,7 @@ export const BubberChangelog = (props) => {
       </p>
       <p>
         {'Вы можете присоединиться к нашему Дискорд-Серверу '}
-        <a href="https://discord.gg/NAp3NykhCM">вот здесь</a>!
+        <a href="https://discord.gg/ss13-bluemoon">вот здесь</a>!
       </p>
       <DateDropdown
         dates={dates}

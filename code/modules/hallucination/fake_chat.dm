@@ -77,15 +77,15 @@
 	// If we didn't have a preset one, let's make one up.
 	if(!chosen)
 		if(is_radio)
-			chosen = pick(list("Help!",
-				"Help [pick_list_replacements(HALLUCINATION_FILE, "location")][prob(50)?"!":"!!"]",
-				"[pick_list_replacements(HALLUCINATION_FILE, "people")] is [pick_list_replacements(HALLUCINATION_FILE, "accusations")]!",
-				"[pick_list_replacements(HALLUCINATION_FILE, "people")] has [pick_list_replacements(HALLUCINATION_FILE, "contraband")]!",
-				"[pick_list_replacements(HALLUCINATION_FILE, "threat")] in [pick_list_replacements(HALLUCINATION_FILE, "location")][prob(50)?"!":"!!"]",
-				"[pick("Where's [first_name(hallucinator.name)]?", "Set [first_name(hallucinator.name)] to arrest!")]",
-				"[pick("C","Ai, c","Someone c","Rec")]all the shuttle!",
-				"AI [pick("rogue", "is dead")]!!",
-				"Borgs rogue!",
+			chosen = pick(list("Помогите!",
+				"Помогите у [pick_list_replacements(HALLUCINATION_FILE, "location")][prob(50)?"!":"!!"]",
+				"[pick_list_replacements(HALLUCINATION_FILE, "people")] [pick_list_replacements(HALLUCINATION_FILE, "accusations")]!",
+				"У [pick_list_replacements(HALLUCINATION_FILE, "people")] [pick_list_replacements(HALLUCINATION_FILE, "contraband")]!",
+				"[pick_list_replacements(HALLUCINATION_FILE, "threat")] у [pick_list_replacements(HALLUCINATION_FILE, "location")][prob(50)?"!":"!!"]",
+				"[pick("Где [first_name(hallucinator.name)]?", "Поставьте арест на [first_name(hallucinator.name)]!")]",
+				"[pick("ИИ, вызывай шаттл","Вызывайте шаттл","Кто-нибудь, вызовите шаттл","Отзовите шаттл")]!",
+				"ИИ [pick("малф", "мёртв")]!!",
+				"Киборги взломаны!",
 			))
 		else
 			chosen = pick(list("[pick_list_replacements(HALLUCINATION_FILE, "suspicion")]",
@@ -98,7 +98,7 @@
 				"[pick_list_replacements(HALLUCINATION_FILE, "aggressive")]",
 				"[pick_list_replacements(HALLUCINATION_FILE, "help")]!!",
 				"[pick_list_replacements(HALLUCINATION_FILE, "escape")]",
-				"I'm infected, [pick_list_replacements(HALLUCINATION_FILE, "infection_advice")]!",
+				"[pick_list_replacements(HALLUCINATION_FILE, "infection_advice")]!",
 			))
 
 		chosen = capitalize(chosen)
@@ -119,7 +119,7 @@
 		hallucinator.create_chat_message(speaker, understood_language, chosen, spans)
 
 	// And actually show them the message, for real.
-	var/message = hallucinator.compose_message(speaker, understood_language, chosen, is_radio ? "[FREQ_COMMON]" : null, spans, visible_name = TRUE)
+	var/message = hallucinator.compose_message(speaker, understood_language, chosen, is_radio ? "[FREQ_COMMON]" : null, is_radio ? RADIO_CHANNEL_COMMON : null, is_radio ? RADIO_COLOR_COMMON : null, spans, visible_name = TRUE)
 	to_chat(hallucinator, message)
 
 	// Then clean up.

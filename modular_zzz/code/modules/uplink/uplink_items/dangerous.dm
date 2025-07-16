@@ -4,5 +4,6 @@
 		In close combat, it allows you to block all melee attacks and throws, punishing the offender."
 	item = /obj/item/melee/baton/nunchaku
 	cost = 7
+	surplus = 25
 	purchasable_from = ~UPLINK_SPY //spy get their own tg version
 	uplink_item_flags = SYNDIE_TRIPS_CONTRABAND

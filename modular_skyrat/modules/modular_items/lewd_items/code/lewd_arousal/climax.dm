@@ -9,6 +9,7 @@
 #define CLIMAX_ON_FLOOR "On the floor"
 #define CLIMAX_IN_OR_ON "Climax in or on someone"
 #define CLIMAX_OPEN_CONTAINER "Fill reagent container"
+#define CLIMAX_PORTAL "Through the portal"
 
 /mob/living/proc/climax(manual = TRUE, mob/living/partner = null, datum/interaction/climax_interaction = null, interaction_position = null) // SPLURT EDIT - INTERACTIONS - All mobs should be interactable
 	if (CONFIG_GET(flag/disable_erp_preferences))
@@ -98,7 +99,13 @@
 			if(interactable_inrange_open_containers.len)
 				buttons += CLIMAX_OPEN_CONTAINER
 
+			// If your using a LustWish portal lets you cum through it
+			var/obj/structure/lewd_portal/portal = src.buckled
+			if(istype(portal, /obj/structure/lewd_portal))
+				buttons += CLIMAX_PORTAL
+
 			var/penis_climax_choice = climax_interaction && !manual ? CLIMAX_IN_OR_ON : tgui_alert(src, "Choose where to shoot your load.", "Load preference!", buttons) //SPLURT EDIT CHANGE - Interactions
+
 			var/create_cum_decal = FALSE
 
 			if(!penis_climax_choice || penis_climax_choice == CLIMAX_ON_FLOOR)
@@ -141,6 +148,11 @@
 						visible_message(span_userlove("[src] shoots [self_their] sticky load onto the floor!"), \
 							span_userlove("You shoot string after string of hot cum, hitting the floor!"))
 
+			else if(penis_climax_choice == CLIMAX_PORTAL)
+				to_chat(src, "You shoot string after string of hot cum, hitting whatever is on the other side!")
+				portal.relayed_body.visible_message("[portal.relayed_body] shoots its sticky load onto the floor!")
+				add_cum_splatter_floor(get_turf(portal.relayed_body))
+
 			else
 				target_choice = climax_interaction && !manual ? partner?.name : tgui_input_list(src, "Choose a person to cum in or on.", "Choose target!", interactable_inrange_mobs) //SPLURT EDIT CHANGE - Interactions
 				if(!target_choice)
@@ -172,7 +184,14 @@
 
 					//SPLURT EDIT CHANGE BEGIN - Interactions
 					var/climax_into_choice
-					var/interaction_inside = partner?.get_organ_slot(climax_interaction?.cum_target[interaction_position]) || target_buttons.Find(climax_interaction?.cum_target[interaction_position])
+					var/interaction_inside = partner?.get_organ_slot(climax_interaction?.cum_target[interaction_position])
+					if(!interaction_inside)
+						interaction_inside = target_buttons.Find(climax_interaction?.cum_target[interaction_position])
+						if(interaction_inside)
+							interaction_inside = climax_interaction.cum_target[interaction_position]
+					else
+						var/obj/item/organ/genital = interaction_inside
+						interaction_inside = genital.slot
 
 					if(climax_interaction && !manual && interaction_inside)
 						climax_into_choice = climax_interaction.cum_target[interaction_position]
@@ -181,7 +200,7 @@
 					else
 						climax_into_choice = "On [target_mob_them]"
 
-					if(climax_interaction && !manual && climax_interaction.show_climax(src, target_mob, interaction_position))
+					if(climax_interaction && !manual && climax_interaction.show_climax(src, target_mob, interaction_position, portal)) //I think gloryhole portals could be way less snowflakey
 						create_cum_decal = !interaction_inside
 					else if(!climax_into_choice)
 					//SPLURT EDIT CHANGE END
@@ -199,10 +218,27 @@
 							span_userlove("You hilt your cock into [target_mob]'s [climax_into_choice], shooting cum into [target_mob_them]!"))
 						to_chat(target_mob, span_userlove("Your [climax_into_choice] fills with warm cum as [src] shoots [self_their] load into it."))
 						conditional_pref_sound(get_turf(target_mob), climax_into_choice == "mouth" ? pick('modular_zzplurt/sound/interactions/mouthend (1).ogg', 'modular_zzplurt/sound/interactions/mouthend (2).ogg') : 'modular_zzplurt/sound/interactions/endout.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds) //SPLURT EDIT CHANGE - Interactions
-						//SPLURT EDIT ADDITION BEGIN - Genital Inflation
+						//SPLURT EDIT ADDITION BEGIN - Genital Inflation and pregnancy
 						var/datum/component/interactable/interactable = target_mob.GetComponent(/datum/component/interactable)
 						if(interactable)
 							interactable.climax_inflate_genital(src, "testicles", climax_into_choice)
+						var/client/preference_source = GET_CLIENT(target_mob)
+						#ifdef TESTING
+						if(!preference_source)
+							preference_source = GET_CLIENT(src)
+						#endif
+						if(ishuman(target_mob) && preference_source && \
+							!HAS_TRAIT(src, TRAIT_INFERTILE) && !HAS_TRAIT(target_mob, TRAIT_INFERTILE))
+							var/genital_pass = FALSE
+							switch(interaction_inside)
+								if(ORGAN_SLOT_ANUS)
+									genital_pass = preference_source.prefs.read_preference(/datum/preference/toggle/pregnancy/anal_insemination)
+								if(ORGAN_SLOT_VAGINA)
+									genital_pass = preference_source.prefs.read_preference(/datum/preference/toggle/pregnancy/vaginal_insemination)
+								if(CLIMAX_TARGET_MOUTH)
+									genital_pass = preference_source.prefs.read_preference(/datum/preference/toggle/pregnancy/oral_insemination)
+							if(genital_pass && prob(preference_source.prefs.read_preference(/datum/preference/numeric/pregnancy/chance)))
+								target_mob.apply_status_effect(/datum/status_effect/pregnancy, target_mob, src)
 						//SPLURT EDIT ADDITION END
 
 			var/obj/item/organ/genital/testicles/testicles = get_organ_slot(ORGAN_SLOT_TESTICLES)
@@ -308,7 +344,14 @@
 					target_buttons += "On [target_mob_them]"
 
 					var/climax_into_choice
-					var/interaction_inside = partner?.get_organ_slot(climax_interaction?.cum_target[interaction_position]) || target_buttons.Find(climax_interaction?.cum_target[interaction_position])
+					var/interaction_inside = partner?.get_organ_slot(climax_interaction?.cum_target[interaction_position])
+					if(!interaction_inside)
+						interaction_inside = target_buttons.Find(climax_interaction?.cum_target[interaction_position])
+						if(interaction_inside)
+							interaction_inside = climax_interaction.cum_target[interaction_position]
+					else
+						var/obj/item/organ/genital = interaction_inside
+						interaction_inside = genital.slot
 
 					if(climax_interaction && !manual && interaction_inside)
 						climax_into_choice = climax_interaction.cum_target[interaction_position]
@@ -394,3 +437,4 @@
 #undef CLIMAX_ON_FLOOR
 #undef CLIMAX_IN_OR_ON
 #undef CLIMAX_OPEN_CONTAINER
+#undef CLIMAX_PORTAL

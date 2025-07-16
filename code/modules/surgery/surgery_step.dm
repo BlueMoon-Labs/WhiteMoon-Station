@@ -151,7 +151,10 @@
 
 		if((prob(100-fail_prob) || (iscyborg(user) && !silicons_obey_prob)) && !try_to_fail)
 			if(success(user, target, target_zone, tool, surgery))
-				update_surgery_mood(target, SURGERY_STATE_SUCCESS)
+				if((tool && tool.item_flags & CRUEL_IMPLEMENT) || (accept_hand && surgery.surgery_flags & SURGERY_MORBID_CURIOSITY && HAS_MIND_TRAIT(user, TRAIT_MORBID)))
+					update_surgery_mood(target, SURGERY_STATE_FAILURE)
+				else
+					update_surgery_mood(target, SURGERY_STATE_SUCCESS)
 				play_success_sound(user, target, target_zone, tool, surgery)
 				// BUBBER EDIT ADDITION BEGIN - Show surgery speed to viewers
 				var/feedback_bubble = get_feedback_message(user, target, speed_mod)
@@ -245,11 +248,24 @@
 			span_notice("[user] succeeds!"),
 			span_notice("[user] finishes."),
 		)
+	// BUBBER EDIT: prevents blood from being splashed / added to the surgeon's gloves if the patient's limb / organ (eyes) are robotic
 	if(ishuman(user))
 		var/mob/living/carbon/human/surgeon = user
-		surgeon.add_blood_DNA_to_items(target.get_blood_dna_list(), ITEM_SLOT_GLOVES)
+		if (ishuman(target))
+			var/mob/living/carbon/human/human_target = target
+			var/obj/item/bodypart/target_bodypart = target.get_bodypart(target_zone)
+			var/obj/item/organ/eyes/target_eyes = target.get_organ_slot(ORGAN_SLOT_EYES)
+			if(target_bodypart)
+				if(target_bodypart.bodytype != BODYTYPE_ROBOTIC && !HAS_TRAIT(human_target, TRAIT_NOBLOOD))
+					surgeon.add_blood_DNA_to_items(target.get_blood_dna_list(), ITEM_SLOT_GLOVES)
+			else if(target_eyes) // snowflake case for eyes
+				if(target_eyes.organ_flags != ORGAN_ROBOTIC && !HAS_TRAIT(human_target, TRAIT_NOBLOOD))
+					surgeon.add_blood_DNA_to_items(target.get_blood_dna_list(), ITEM_SLOT_GLOVES)
+		else
+			surgeon.add_blood_DNA_to_items(target.get_blood_dna_list(), ITEM_SLOT_GLOVES)
 	else
 		user.add_mob_blood(target)
+	// BUBBER EDIT END
 	return TRUE
 
 /datum/surgery_step/proc/play_success_sound(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -313,9 +329,11 @@
 /datum/surgery_step/proc/check_morbid_curiosity(mob/user, obj/item/tool, datum/surgery/surgery)
 	if(!(surgery.surgery_flags & SURGERY_MORBID_CURIOSITY))
 		return FALSE
-	if(tool && !(tool.item_flags & CRUEL_IMPLEMENT))
-		return FALSE
 	if(!HAS_MIND_TRAIT(user, TRAIT_MORBID))
+		return FALSE
+	if(!tool && accept_hand)
+		return TRUE
+	if(tool && !(tool.item_flags & CRUEL_IMPLEMENT))
 		return FALSE
 	return TRUE
 

@@ -366,8 +366,7 @@
 
 /datum/supply_pack/security/armory/thermal
 	name = "Thermal Pistol Crate"
-	desc = "Contains a pair of holsters each with two experimental thermal pistols, \
-		using nanites as the basis for their ammo. Can be shaken to reload."
+	desc = "Contains a pair of holsters each with two experimental thermal pistols, using nanites as the basis for their ammo. Can be shaken to reload."
 	cost = CARGO_CRATE_VALUE * 10
 	contains = list(/obj/item/storage/belt/holster/energy/thermal = 2)
 	crate_name = "thermal pistol crate"

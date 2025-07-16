@@ -18,6 +18,7 @@ $include map_vote.txt
 $include splurt/discord.txt
 $include splurt/fetish_content.txt
 $include splurt/game_options.txt
+$include splurt/age_gate.txt
 
 # You can use the @ character at the beginning of a config option to lock it from being edited in-game
 # Example usage:
@@ -49,7 +50,7 @@ STATIONNAME Space Station 13
 #MAX_HUB_POP 100
 
 ## Lobby time: This is the amount of time between rounds that players have to setup their characters and be ready.
-LOBBY_COUNTDOWN 120
+LOBBY_COUNTDOWN 240
 
 ## Round End Time: This is the amount of time after the round ends that players have to murder death kill each other.
 ROUND_END_COUNTDOWN 90
@@ -140,7 +141,7 @@ VOTE_DELAY 6000
 VOTE_PERIOD 600
 
 ## prevents dead players from voting or starting votes
-NO_DEAD_VOTE
+# NO_DEAD_VOTE
 
 ## players' votes default to "No vote" (otherwise,  default to "No change")
 # DEFAULT_NO_VOTE
@@ -495,20 +496,6 @@ DISABLE_HIGH_POP_MC_MODE_AMOUNT 60
 ## Uncomment to set the number of /world/Reboot()s before the DreamDaemon restarts itself. 0 means restart every round. Requires tgstation server tools.
 #ROUNDS_UNTIL_HARD_RESTART 10
 
-
-##Default view size, in tiles.
-##	By default, this is 15x15, which gets simplified to 7 by byond
-##  15x15 would be the standard square view. 21x15 is what goonstation uses for widescreen.
-##  Setting this to something different from DEFAULT_VIEW_SQUARE will enable widescreen toggles
-##	Do note that changing this value will affect the title screen. The title screen will have to be updated manually if this is changed.
-DEFAULT_VIEW 21x15
-
-##Default view size, in tiles. Should *always* be square.
-## The alternative square viewport size if you're using a widescreen view size
-## You probably shouldn't ever be changing this, but it's here if you want to.
-DEFAULT_VIEW_SQUARE 15x15
-
-
 ## Enable automatic profiling - Byond 513.1506 and newer only.
 #AUTO_PROFILE
 
@@ -663,3 +650,7 @@ TGUI_MAX_CHUNK_COUNT 32
 
 ## Uncomment and replace with the URL where users can verify their byond accounts
 #FORUM_LINK_URI
+
+## While this is uncommented, server initialization will include some asset generation usually useful for development.
+## It increases initialization time significantly so you'll want to disable this in live environments.
+GENERATE_ASSETS_IN_INIT

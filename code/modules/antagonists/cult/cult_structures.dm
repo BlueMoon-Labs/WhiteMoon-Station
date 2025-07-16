@@ -70,7 +70,7 @@
 /obj/structure/destructible/cult/proc/conceal()
 	set_density(FALSE)
 	visible_message(span_danger("[src] fades away."))
-	SetInvisibility(INVISIBILITY_OBSERVER, id=type)
+	SetInvisibility(INVISIBILITY_HIDDEN_RUNES, id=type)
 	alpha = 100
 	set_light_power(0)
 	set_light_range(0)

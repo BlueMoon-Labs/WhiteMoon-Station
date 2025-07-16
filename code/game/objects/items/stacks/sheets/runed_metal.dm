@@ -34,6 +34,15 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list( \
 		category = CAT_CULT, \
 	), \
 	new /datum/stack_recipe/radial( \
+		title = "Station Curse Sphere", \
+		result_type = /obj/item/station_curse, \
+		req_amount = 50, \
+		time = 30 SECONDS, \
+		desc = span_cult_bold("Сфера повергает станцию гневу Нар'Си при использовании. Призывает Её Армаду."), \
+		required_noun = "runed metal sheet", \
+		category = CAT_CULT, \
+	), \
+	new /datum/stack_recipe/radial( \
 		title = "daemon forge", \
 		result_type = /obj/structure/destructible/cult/item_dispenser/forge, \
 		req_amount = 3, \

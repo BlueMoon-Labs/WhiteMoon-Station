@@ -213,7 +213,7 @@
 
 /// Succeed in putting something inside us
 /mob/living/basic/space_dragon/proc/eat(mob/living/food)
-	var/health_recovered = food.maxHealth * 0.25
+	var/health_recovered = food.maxHealth * 0.5
 	if(shark_form)
 		if(istype(food, /mob/living/basic/carp))
 			health_recovered *= 1.75 // plus 7.5 points when eating advanced space carps (from the rift)

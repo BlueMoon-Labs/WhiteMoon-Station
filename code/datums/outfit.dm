@@ -309,6 +309,10 @@
 			for(var/implant_type in implants)
 				var/obj/item/implant/implanter = SSwardrobe.provide_type(implant_type, user)
 				implanter.implant(user, null, TRUE)
+		if (cybernetic_implants) // MOON ADD START
+			for (var/cybernetic_implant_type in cybernetic_implants)
+				var/obj/item/organ/C = new cybernetic_implant_type()
+				C.replace_into(user) // MOON ADD END
 
 		// Insert the skillchips associated with this outfit into the target.
 		if(skillchips)

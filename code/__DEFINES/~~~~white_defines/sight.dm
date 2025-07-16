@@ -1,0 +1,3 @@
+// Hidden cult runes
+#define INVISIBILITY_HIDDEN_RUNES  30
+#define SEE_INVISIBLE_HIDDEN_RUNES 30

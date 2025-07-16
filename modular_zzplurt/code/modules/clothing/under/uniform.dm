@@ -25,6 +25,7 @@
 	icon_state = "tunic"
 	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_NO_VARIATION
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 
 /obj/item/clothing/under/lumberjack
 	name = "lumberjack outfit"
@@ -84,6 +85,7 @@
 	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 
 /obj/item/clothing/under/bluedress
 	name = "Blue Royal Dress"
@@ -94,6 +96,7 @@
 	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 
 /obj/item/clothing/under/performer
 	name = "Performers one piece"
@@ -104,6 +107,7 @@
 	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 
 /obj/item/clothing/under/blutigen_undergarment
 	name = "Blutigen Undergarments"
@@ -114,6 +118,7 @@
 	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 
 /obj/item/clothing/under/raccveralls
 	name = "form fitting overalls"
@@ -238,13 +243,15 @@
 	desc = "Chain for your Master's erotic asphyxiation not included."
 	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "leia"
+	icon_state = "leia_outfit"
+	post_init_icon_state = "leia"
 	icon_state_preview = "leia"
 	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	greyscale_colors = "#C61818#D4AF37"
 	greyscale_config = /datum/greyscale_config/leia_outfit
 	greyscale_config_worn = /datum/greyscale_config/leia_outfit/worn
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 /datum/greyscale_config/leia_outfit
@@ -262,9 +269,12 @@
 	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "poly_performer"
+	can_adjust = FALSE
+	post_init_icon_state = "poly_performer"
 	greyscale_colors = "#FFFFFF"
 	greyscale_config = /datum/greyscale_config/performer
 	greyscale_config_worn = /datum/greyscale_config/performer/worn
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 /datum/greyscale_config/performer
@@ -419,13 +429,14 @@
 	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "wench"
-	can_adjust = TRUE
+	post_init_icon_state = "wench"
 	alt_covers_chest = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#ffffff#242424#96710f"
 	greyscale_config = /datum/greyscale_config/wench
 	greyscale_config_worn = /datum/greyscale_config/wench/worn
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 /obj/item/clothing/under/misc/tian_dress
@@ -434,11 +445,14 @@
 	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "tian_dress"
+	post_init_icon_state = "tian_dress"
+	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#7c1649#006cec"
 	greyscale_config = /datum/greyscale_config/tian_dress
 	greyscale_config_worn = /datum/greyscale_config/tian_dress/worn
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 /obj/item/clothing/under/misc/vneck
@@ -447,11 +461,14 @@
 	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "vneckdress"
+	post_init_icon_state = "vneckdress"
+	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#1c1c1c"
 	greyscale_config = /datum/greyscale_config/vneck
 	greyscale_config_worn = /datum/greyscale_config/vneck/worn
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 /obj/item/clothing/under/misc/revealingdress
@@ -460,11 +477,14 @@
 	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "revealingdress"
+	post_init_icon_state = "revealingdress"
+	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#211919#4ce2ff"
 	greyscale_config = /datum/greyscale_config/revealingdress
 	greyscale_config_worn = /datum/greyscale_config/revealingdress/worn
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 /obj/item/clothing/under/misc/rippedpunk
@@ -474,11 +494,14 @@
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
 	worn_icon_digi = 'modular_zzplurt/icons/mob/clothing/uniform_digi.dmi'
 	icon_state = "rippedpunk"
+	post_init_icon_state = "rippedpunk"
+	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	greyscale_colors = "#211919#4ce2ff"
 	greyscale_config = /datum/greyscale_config/rippedpunk
 	greyscale_config_worn = /datum/greyscale_config/rippedpunk/worn
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 /obj/item/clothing/under/misc/gothic
@@ -487,11 +510,14 @@
 	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "gothic"
+	post_init_icon_state = "gothic"
+	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#232323#232323#232323#232323"
 	greyscale_config = /datum/greyscale_config/gothic
 	greyscale_config_worn = /datum/greyscale_config/gothic/worn
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 /obj/item/clothing/under/misc/pentagram
@@ -500,11 +526,14 @@
 	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "pentagram"
+	post_init_icon_state = "pentagram"
+	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#211919#232323"
 	greyscale_config = /datum/greyscale_config/pentagram
 	greyscale_config_worn = /datum/greyscale_config/pentagram/worn
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 /obj/item/clothing/under/misc/swoop
@@ -513,11 +542,14 @@
 	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "swoop"
+	post_init_icon_state = "swoop"
+	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#f2ce66#272525"
 	greyscale_config = /datum/greyscale_config/swoop
 	greyscale_config_worn = /datum/greyscale_config/swoop/worn
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 /obj/item/clothing/under/misc/asym
@@ -526,11 +558,14 @@
 	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "asym"
+	post_init_icon_state = "asym"
+	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#8abe67#8abe67"
 	greyscale_config = /datum/greyscale_config/asym
 	greyscale_config_worn = /datum/greyscale_config/asym/worn
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 /obj/item/clothing/under/misc/sheer
@@ -539,11 +574,14 @@
 	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "sheer"
+	post_init_icon_state = "sheer"
+	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#3e769c"
 	greyscale_config = /datum/greyscale_config/sheer
 	greyscale_config_worn = /datum/greyscale_config/sheer/worn
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 /obj/item/clothing/under/misc/corsetdress
@@ -552,11 +590,14 @@
 	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "corsetdress"
+	post_init_icon_state = "corsetdress"
+	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#1e1b1e#f6efdb#4b6c5a#d4ccb3"
 	greyscale_config = /datum/greyscale_config/corsetdress
 	greyscale_config_worn = /datum/greyscale_config/corsetdress/worn
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 /obj/item/clothing/under/misc/miniskirt
@@ -565,11 +606,14 @@
 	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "miniskirt"
+	post_init_icon_state = "miniskirt"
+	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = GROIN
 	greyscale_colors = "#0e0e0e"
 	greyscale_config = /datum/greyscale_config/miniskirt_alt
 	greyscale_config_worn = /datum/greyscale_config/miniskirt_alt/worn
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 /obj/item/clothing/under/misc/miniskirt_sheer
@@ -578,11 +622,14 @@
 	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "miniskirt_sheer"
+	post_init_icon_state = "miniskirt_sheer"
+	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = GROIN
 	greyscale_colors = "#0e0e0e"
 	greyscale_config = /datum/greyscale_config/miniskirt_sheer
 	greyscale_config_worn = /datum/greyscale_config/miniskirt_sheer/worn
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 // Configs for Greyscale Dresses //

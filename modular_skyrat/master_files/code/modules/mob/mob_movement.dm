@@ -6,12 +6,12 @@
 
 	if(HAS_TRAIT(crawler, TRAIT_PRONE))
 		visible_message("[crawler] starts to get up")
-		if(!do_after(crawler, 3 SECONDS))
+		if(!do_after(crawler, 5 DECISECONDS))
 			return
 		SEND_SIGNAL(crawler, COMSIG_MOVABLE_REMOVE_PRONE_STATE)
 	else if(crawler.can_army_crawl())
 		visible_message("[crawler] begins to lower themself further")
-		if(!do_after(crawler, 3 SECONDS, extra_checks = CALLBACK(crawler, PROC_REF(can_army_crawl))))
+		if(!do_after(crawler, 5 DECISECONDS, extra_checks = CALLBACK(crawler, PROC_REF(can_army_crawl))))
 			if(!crawler.resting)
 				balloon_alert(crawler, "must be laying down!")
 			return

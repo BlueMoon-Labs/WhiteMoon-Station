@@ -91,22 +91,22 @@
  * * Presence of the <, >, \ and / characters.
  * * Presence of ASCII special control characters (horizontal tab and new line not included).
  * */
-/proc/reject_bad_text(text, max_length = 512, ascii_only = TRUE)
-	if(ascii_only)
-		if(length(text) > max_length)
-			return null
-		var/static/regex/non_ascii = regex(@"[^\x20-\x7E\t\n]")
-		if(non_ascii.Find(text))
-			return null
-	else if(length_char(text) > max_length)
-		return null
-	var/static/regex/non_whitespace = regex(@"\S")
-	if(!non_whitespace.Find(text))
-		return null
-	var/static/regex/bad_chars = regex(@"[\\<>/\x00-\x08\x11-\x1F]")
-	if(bad_chars.Find(text))
-		return null
-	return text
+// /proc/reject_bad_text(text, max_length = 512, ascii_only = TRUE)
+// 	if(ascii_only)
+// 		if(length(text) > max_length)
+// 			return null
+// 		var/static/regex/non_ascii = regex(@"[^\x20-\x7E\t\n]")
+// 		if(non_ascii.Find(text))
+// 			return null
+// 	else if(length_char(text) > max_length)
+// 		return null
+// 	var/static/regex/non_whitespace = regex(@"\S")
+// 	if(!non_whitespace.Find(text))
+// 		return null
+// 	var/static/regex/bad_chars = regex(@"[\\<>/\x00-\x08\x11-\x1F]")
+// 	if(bad_chars.Find(text))
+// 		return null
+// 	return text
 
 
 /**

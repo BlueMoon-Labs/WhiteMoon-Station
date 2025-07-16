@@ -55,9 +55,15 @@
 	inserted_id = null
 	desc += span_info("There is an old tag on the back of the device[pick(vanity_tags)]. 'Last Serviced: 1025-[pick("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12")]-[pick("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "10", "31")]'.")
 
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), src, 'modular_zzplurt/sound/machines/room_controller_sound.ogg', 50), 3 SECONDS)
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/atom/movable, say), "Welcome to Hilbert's Hotel."), 3 SECONDS)
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/atom/movable, say), "Enjoy your stay!"), 5 SECONDS)
 	update_appearance()
+
+/obj/machinery/room_controller/Destroy(force)
+	if(bluespace_box)
+		QDEL_NULL(bluespace_box)
+	. = ..()
 
 /obj/machinery/room_controller/update_overlays()
 	. = ..()
@@ -285,7 +291,6 @@
 	control_computer.frozen_item += bluespace_box
 	if(departing_mob.mind)
 		departing_mob.mind.objectives = list()
-		departing_mob.mind.special_role = null
 	visible_message(span_notice("[src] whizzes as it swallows the ID card."))
 	playsound(src, 'sound/machines/terminal/terminal_success.ogg', 50, TRUE)
 	say("Transfer successful.")

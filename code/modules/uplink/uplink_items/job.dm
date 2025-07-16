@@ -315,7 +315,8 @@
 	lock_other_purchases = TRUE
 	cant_discount = TRUE
 	item = /obj/item/his_grace
-	cost = 500 // BUBBER EDIT
+	population_minimum = TRAITOR_POPULATION_LOWPOP
+	cost = 25
 	surplus = 0
 	restricted_roles = list(JOB_CHAPLAIN)
 	purchasable_from = ~UPLINK_SPY

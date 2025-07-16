@@ -2,7 +2,6 @@
 
 # Local overrides--you can use this to change the config for your dev environment (like setting up SQL) without worrying about committing it
 /config/dev_overrides.txt
-/code/_dev_compile_options.dm
 
 #Ignore everything in datafolder and subdirectories
 /data/**/*
@@ -177,6 +176,11 @@ Temporary Items
 
 #Visual studio stuff
 *.vscode/*
+
+# Cursor stuff
+*.cursor/*
+.cursorrules
+
 /tools/MapAtmosFixer/MapAtmosFixer/obj/*
 /tools/MapAtmosFixer/MapAtmosFixer/bin/*
 /tools/CreditsTool/bin/*
