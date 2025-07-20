@@ -10459,6 +10459,7 @@
 #include "modular_zzz\code\modules\loadout\categories\neck.dm"
 #include "modular_zzz\code\modules\loadout\categories\pocket.dm"
 #include "modular_zzz\code\modules\loadout\categories\suits.dm"
+#include "modular_zzz\code\modules\loadout\categories\toys.dm"
 #include "modular_zzz\code\modules\loadout\categories\uniform.dm"
 #include "modular_zzz\code\modules\mecha\mecha_inteq.dm"
 #include "modular_zzz\code\modules\mob\living\emote.dm"
@@ -10535,5 +10536,4 @@
 #include "modular_zzz\modules\uplink\job.dm"
 #include "modular_zzz\modules\uplink\suits.dm"
 #include "modular_zzz\modules\void\void.dm"
-#include "modular_zzz\code\modules\loadout\categories\toys.dm"
 // END_INCLUDE
