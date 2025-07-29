@@ -691,6 +691,10 @@
 	name = "Flowerchild (Ponytail Only)"
 	icon_state = "hair_flowerchild_ponyful"
 
+/datum/sprite_accessory/hair/nova/traxsex
+	name = "Traxsex Ponytail"
+	icon_state = "hair_traxsex"
+
 // Facial hair
 
 /datum/sprite_accessory/facial_hair/nova
