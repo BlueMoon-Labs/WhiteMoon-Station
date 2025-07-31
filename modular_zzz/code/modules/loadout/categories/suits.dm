@@ -86,7 +86,7 @@
 /datum/loadout_item/suit/armor/kazeshini_cape/alt
 	name = "Alt Kazeshini Cape"
 	item_path = /obj/item/clothing/suit/toggle/kazeshini_cape/alt
-	ckeywhitelist = list("mercreaper", "siamant")
+	ckeywhitelist = list("mercreaper", "siamant", "flippingtable", "romontesque")
 
 /datum/loadout_item/suit/montur
 	name = "Dark Montur"
