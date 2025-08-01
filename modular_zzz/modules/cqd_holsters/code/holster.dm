@@ -34,6 +34,9 @@
 
 	icon_state = initial(icon_state)
 
+	if(isteshari(user))
+		icon_state = initial(icon_state) + "_hidden"
+
 	// Вызываем родительский прок после проверок.
 	. = ..()
 
