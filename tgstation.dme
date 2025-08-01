@@ -10380,6 +10380,7 @@
 #include "modular_zzz\code\game\items\sec_hailer.dm"
 #include "modular_zzz\code\game\machinery\handled_jukebox.dm"
 #include "modular_zzz\code\game\machinery\jukebox.dm"
+#include "modular_zzz\code\game\machinery\vending.dm"
 #include "modular_zzz\code\game\objects\effects\posters.dm"
 #include "modular_zzz\code\game\objects\effects\spawners\melee.dm"
 #include "modular_zzz\code\game\objects\items\drugs.dm"

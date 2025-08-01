@@ -2,6 +2,12 @@
 / Тут будут разные перезаписи и иной код который будет выдавать кобуру кому либо.
 */
 
+// Добавление в вендор
+/obj/machinery/vending/security
+    zzz_premium = list(
+        /obj/item/clothing/accessory/cqd_holster = 6,
+    )
+
 // Ящик БЩ
 /obj/structure/closet/secure_closet/blueshield/New()
 	. = ..()
