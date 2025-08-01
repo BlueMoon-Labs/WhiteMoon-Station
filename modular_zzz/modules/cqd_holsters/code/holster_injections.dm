@@ -18,7 +18,7 @@
 	new /obj/item/clothing/accessory/cqd_holster/aesthetic(src)
 
 // Ящик НТРа
-/obj/structure/closet/secure_closet/nanotrasen_consultant/station/PopulateContents()
+/obj/structure/closet/secure_closet/nanotrasen_consultant/PopulateContents()
 	. = ..()
 	new /obj/item/clothing/accessory/cqd_holster/aesthetic(src)
 
