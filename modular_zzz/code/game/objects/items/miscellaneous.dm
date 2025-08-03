@@ -53,3 +53,40 @@
 	icon = 'modular_zzz/icons/obj/accessories.dmi'
 	icon_state = "banner-norn"
 	desc = "Banner of kingdom Norn"
+
+/obj/item/banner/catcrin
+	name = "Banner of Catcrin Empire"
+	icon = 'modular_zzz/icons/obj/accessories.dmi'
+	icon_state = "banner_catcrin"
+	desc = "Banner of Catcrin Empire"
+
+/obj/item/sign/flag/catcrin
+	name = "folded flag of the Catcrin Empire"
+	desc = "The folded flag of the Catcrin Empire."
+	icon = 'modular_zzz/icons/obj/accessories.dmi'
+	icon_state = "flag_cetcrin"
+	sign_path = /obj/structure/sign/flag/catcrin
+
+/obj/structure/sign/flag/catcrin
+	name = "flag of Catcrin Empire"
+	desc = "The official flag of Catcrin Empire. Mostly flown as a ceremonial piece, or to mark land on a new frontier."
+	icon = 'modular_zzz/icons/obj/accessories_32x48.dmi'
+	icon_state = "flag_cetcrin"
+	pixel_y = -12
+
+/obj/item/clothing/accessory/ac_patch
+	name = "PMC AC patch"
+	desc = "Patch that wear every Mercenary  in PMC Adamas Cattus. It looks like a cat... Or dog... in the some sort of diamond.'"
+	icon = 'modular_zzz/icons/obj/accessories.dmi'
+	worn_icon = 'modular_zzz/icons/mob/clothing/accessories.dmi'
+	worn_icon_digi = 'modular_zzz/icons/mob/clothing/accessories.dmi'
+	icon_state = "ac_patch"
+
+/obj/item/storage/box/catcrin_kit
+	name = "Catcrin kit"
+	desc = "Regular box that contains a full kit of Catcrin accessories."
+
+/obj/item/storage/box/catcrin_kit/PopulateContents()
+	new /obj/item/clothing/accessory/ac_patch(src)
+	new /obj/item/sign/flag/catcrin(src)
+	new /obj/item/banner/catcrin(src)

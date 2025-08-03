@@ -60,3 +60,7 @@
 	name = "MI13 combat uniform"
 	item_path = /obj/item/clothing/under/MI13_uniform
 	ckeywhitelist = list("enigma418")
+
+/datum/loadout_item/uniform/catcrin_underarmor
+	name = "Catcrin underarmor unifrom"
+	item_path = /obj/item/clothing/under/catcrin_underarmor

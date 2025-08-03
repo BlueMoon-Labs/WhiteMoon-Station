@@ -68,3 +68,18 @@
 	name = "Vulp Two-shade"
 	icon = 'modular_zzz/icons/mob/sprite_accessory/snouts.dmi'
 	icon_state = "vulp2"
+
+/datum/sprite_accessory/snouts/mammal/catcrin_synth1
+	name = "Synthetic catcrin full snout"
+	icon = 'modular_zzz/icons/mob/sprite_accessory/snouts.dmi'
+	icon_state = "catcrin_synth1"
+
+/datum/sprite_accessory/snouts/mammal/catcrin_synth2
+	name = "Synthetic Catcrin visor one"
+	icon = 'modular_zzz/icons/mob/sprite_accessory/snouts.dmi'
+	icon_state = "catcrin_synth2"
+
+/datum/sprite_accessory/snouts/mammal/catcrin_synth3
+	name = "Synthetic Catcrin visor two"
+	icon = 'modular_zzz/icons/mob/sprite_accessory/snouts.dmi'
+	icon_state = "catcrin_synth3"
