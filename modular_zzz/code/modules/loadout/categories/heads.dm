@@ -93,3 +93,13 @@
 	name = "Space beret"
 	item_path = /obj/item/clothing/head/sp_beret
 	ckeywhitelist = list("enigma418")
+
+/datum/loadout_item/head/donator/skull_helmet
+	name = "Skull Helmet"
+	item_path = /obj/item/clothing/head/helmet/skull
+	ckeywhitelist = list("alrtrodemon")
+
+/datum/loadout_item/head/donator/skull_helmet
+	name = "Fixer Hat"
+	item_path = /obj/item/clothing/head/fixer_hat
+	ckeywhitelist = list("mercreaper")

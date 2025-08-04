@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(lowpop)
 		return
 
 /datum/controller/subsystem/lowpop/proc/send_announcement(message)
-	priority_announce(message, "Staffing Bureau")
+	priority_announce(message, "Кадровое Бюро")
 
 /datum/controller/subsystem/lowpop/fire(resumed)
 	lowpop_check()

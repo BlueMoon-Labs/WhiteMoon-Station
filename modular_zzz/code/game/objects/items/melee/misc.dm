@@ -69,7 +69,7 @@
 	righthand_file = 'modular_zzz/icons/mob/inhands/weapons/righthand.dmi'
 	hitsound = 'sound/items/weapons/bladeslice.ogg'
 	pickup_sound = 'sound/items/unsheath.ogg'
-	drop_sound = 'modular_zzz/sounds/misc/mech-zvonkiy-yarkiy.ogg'
+	drop_sound = 'modular_zzz/sound/misc/mech-zvonkiy-yarkiy.ogg'
 	block_sound = 'sound/items/weapons/block_blade.ogg'
 
 /obj/item/melee/sabre/kazeshini/pickup(mob/living/user)
@@ -93,7 +93,7 @@
 	righthand_file = 'modular_zzz/icons/mob/inhands/weapons/righthand.dmi'
 	hitsound = 'sound/items/weapons/bladeslice.ogg'
 	pickup_sound = 'sound/items/unsheath.ogg'
-	drop_sound = 'modular_zzz/sounds/misc/mech-zvonkiy-yarkiy.ogg'
+	drop_sound = 'modular_zzz/sound/misc/mech-zvonkiy-yarkiy.ogg'
 	block_sound = 'sound/items/weapons/block_blade.ogg'
 
 /obj/item/melee/sabre/cargo/kazeshini/pickup(mob/living/user)

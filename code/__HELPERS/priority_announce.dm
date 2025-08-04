@@ -62,14 +62,17 @@
 	var/header
 	switch(type)
 		if(ANNOUNCEMENT_TYPE_PRIORITY)
-			header = MAJOR_ANNOUNCEMENT_TITLE("Priority Announcement")
+			header = MAJOR_ANNOUNCEMENT_TITLE("Приоритетное Объявление")
 			if(length(title) > 0)
 				header += SUBHEADER_ANNOUNCEMENT_TITLE(title)
 		if(ANNOUNCEMENT_TYPE_CAPTAIN)
-			header = MAJOR_ANNOUNCEMENT_TITLE("Captain's Announcement")
-			GLOB.news_network.submit_article(text, "Captain's Announcement", NEWSCASTER_STATION_ANNOUNCEMENTS, null)
+			if(usr)
+				header = MAJOR_ANNOUNCEMENT_TITLE("Капитан Объявляет (— [usr.name])")
+			else
+				header = MAJOR_ANNOUNCEMENT_TITLE("Капитан Объявляет")
+			GLOB.news_network.submit_article(text, "Капитан Объявляет", NEWSCASTER_STATION_ANNOUNCEMENTS, null)
 		if(ANNOUNCEMENT_TYPE_SYNDICATE)
-			header = MAJOR_ANNOUNCEMENT_TITLE("Syndicate Captain's Announcement")
+			header = MAJOR_ANNOUNCEMENT_TITLE("Синдикат Объявляет")
 		else
 			header += generate_unique_announcement_header(title, sender_override)
 
@@ -93,16 +96,16 @@
 		if(length(title) > 0)
 			GLOB.news_network.submit_article(title + "<br><br>" + text, "[command_name()]", NEWSCASTER_STATION_ANNOUNCEMENTS, null)
 		else
-			GLOB.news_network.submit_article(text, "[command_name()] Update", NEWSCASTER_STATION_ANNOUNCEMENTS, null)
+			GLOB.news_network.submit_article(text, "[command_name()] Объявляет", NEWSCASTER_STATION_ANNOUNCEMENTS, null)
 
 /proc/print_command_report(text = "", title = null, announce=TRUE)
 	if(!title)
-		title = "Classified [command_name()] Update"
+		title = "Секретно: [command_name()]"
 
 	if(announce)
 		priority_announce(
-			text = "A report has been downloaded and printed out at all communications consoles.",
-			title = "Incoming Classified Message",
+			text = "Отчет был загружен и распечатан на всех коммуникационных консолях.",
+			title = "Входящее Секретное Сообщение",
 			sound = SSstation.announcer.get_rand_report_sound(),
 			has_important_message = TRUE,
 		)
@@ -160,10 +163,10 @@
 	var/message
 
 	if(current_level_number > previous_level_number)
-		title = "Attention! Security level elevated to [current_level_name]:"
+		title = "Внимание! Уровень тревоги повышен: [current_level_name]:"
 		message = selected_level.elevating_to_announcement
 	else
-		title = "Attention! Security level lowered to [current_level_name]:"
+		title = "Внимание! Уровень тревоги понижен: [current_level_name]:"
 		message = selected_level.lowering_to_announcement
 
 	var/list/level_announcement_strings = list()
@@ -179,7 +182,7 @@
 /proc/generate_unique_announcement_header(title, sender_override)
 	var/list/returnable_strings = list()
 	if(isnull(sender_override))
-		returnable_strings += MAJOR_ANNOUNCEMENT_TITLE("[command_name()] Update")
+		returnable_strings += MAJOR_ANNOUNCEMENT_TITLE("[command_name()] Объявляет")
 	else
 		returnable_strings += MAJOR_ANNOUNCEMENT_TITLE(sender_override)
 

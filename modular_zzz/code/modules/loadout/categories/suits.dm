@@ -92,3 +92,18 @@
 	name = "Dark Montur"
 	item_path = /obj/item/clothing/suit/montur
 	ckeywhitelist = list("enigma418")
+
+/datum/loadout_item/suit/fixer_costume
+	name = "Fixer Costume"
+	item_path = /obj/item/clothing/suit/fixer_costume
+	ckeywhitelist = list("mercreaper")
+
+/datum/loadout_item/suit/reaper_jacket
+	name = "Old Guard Jacket"
+	item_path = /obj/item/clothing/suit/armor/bluesec_jacket/reaper_jacket
+	ckeywhitelist = list("mercreaper")
+
+/datum/loadout_item/suit/reaper_winter_jacket
+	name = "Old Winter Guard Jacket"
+	item_path = /obj/item/clothing/suit/armor/bluesec_jacket/winter/reaper_jacket
+	ckeywhitelist = list("mercreaper")

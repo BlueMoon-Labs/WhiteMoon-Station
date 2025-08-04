@@ -793,10 +793,10 @@
 	icon_state = "millie"
 	lefthand_file = 'modular_zzz/icons/mob/inhands/millie_lefthand.dmi'
 	righthand_file = 'modular_zzz/icons/mob/inhands/millie_righthand.dmi'
-	squeak_override = list('modular_zzz/sounds/plush/milp1.ogg' = 1,
-							'modular_zzz/sounds/plush/milp2.ogg' = 1,
-							'modular_zzz/sounds/plush/milp3.ogg' = 1,
-							'modular_zzz/sounds/plush/milp5.ogg' = 1)
+	squeak_override = list('modular_zzz/sound/plush/milp1.ogg' = 1,
+							'modular_zzz/sound/plush/milp2.ogg' = 1,
+							'modular_zzz/sound/plush/milp3.ogg' = 1,
+							'modular_zzz/sound/plush/milp5.ogg' = 1)
 
 /obj/item/toy/plush/imports/lissara
 	name = "Lissara plush"

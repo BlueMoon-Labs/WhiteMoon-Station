@@ -17,4 +17,4 @@
 /datum/round_event/anomaly/anomaly_bioscrambler/announce(fake)
 	if(isnull(impact_area))
 		impact_area = placer.findValidArea()
-	priority_announce("Biologic limb swapping agent detected on [ANOMALY_ANNOUNCE_MEDIUM_TEXT] [impact_area.name]. Wear biosuits or other protective gear to counter the effects.", "Anomaly Alert", ANNOUNCER_SCRAMBLER_ANOMALY) // BUBBER EDIT - ANNOUNCER_ANOMALIES // SPLURT EDIT - ANNOUNCER_SCRAMBLER_ANOMALY
+	priority_announce("Биологический агент для замены конечностей обнаружен на [ANOMALY_ANNOUNCE_MEDIUM_TEXT] [impact_area.name]. Носите биокостюмы или другие средства защиты, чтобы противостоять его воздействию.", "ВНИМАНИЕ: АНОМАЛИЯ", ANNOUNCER_SCRAMBLER_ANOMALY) // BUBBER EDIT - ANNOUNCER_ANOMALIES // SPLURT EDIT - ANNOUNCER_SCRAMBLER_ANOMALY

@@ -297,9 +297,9 @@
 	launch_status = ENDGAME_LAUNCHED
 	setTimer(SSshuttle.emergency_escape_time)
 	priority_announce(
-		text = "The emergency shuttle is preparing for direct jump. Estimate [timeLeft(60 SECONDS)] minutes until the shuttle docks at [command_name()].",
-		title = "Emergency Shuttle Transit Failure",
-		sender_override = "Emergency Shuttle Uplink Alert",
+		text = "Эвакуационный Шаттл пристыковался к станции. Вам отведено [timeLeft(60 SECONDS)] секунд для того, чтобы занять своё место на борту шаттла отбытия.",
+		title = "Диспетчерская Служба ЦК",
+		sender_override = "Экстренное Оповещение",
 		color_override = "orange",
 	)
 

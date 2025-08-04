@@ -63,7 +63,7 @@
 /datum/weather/rad_storm/end()
 	if(..())
 		return
-	priority_announce("The station has passed the radiation belt, please report to medbay if you experience any unusual symptoms. Maintenance will lose all access again shortly.", "Radiation Alert Cleared", ANNOUNCER_RADIATIONPASSED) // BUBBER EDIT CHANGE
+	priority_announce("Станция пролетела через радиационный пояс. Пожалуйста, обратитесь в медпункт, если у вас возникнут какие-либо необычные симптомы.", "Радиационная тревога снята", ANNOUNCER_RADIATIONPASSED) // BUBBER EDIT CHANGE
 	status_alarm(FALSE)
 
 /datum/weather/rad_storm/proc/do_mutate(mob/living/carbon/human/mutant)

@@ -32,7 +32,7 @@
 
 /datum/round_event/zombie_infestation/announce(fake)
 	alert_sound_to_playing(sound('modular_skyrat/modules/alerts/sound/alerts/alert2.ogg'), override_volume = TRUE)
-	priority_announce("Автоматизированные системы фильтрации воздуха выявили грибковый патоген 'РОМЕРОЛ' в вентиляционных системах станции, введён карантин.", "Первый Уровень Биологической Угрозы", ANNOUNCER_MUTANTS)
+	priority_announce("Автоматизированные системы фильтрации воздуха выявили грибковый патоген 'РОМЕРОЛ' в вентиляционных системах станции, введён карантин.", "ВНИМАНИЕ: БИОЛОГИЧЕСКАЯ ОПАСНОСТЬ", ANNOUNCER_MUTANTS)
 
 /proc/try_to_zombie_infect_event(mob/living/carbon/human/target)
 	CHECK_DNA_AND_SPECIES(target)

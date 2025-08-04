@@ -23,13 +23,20 @@
 	var/obj/machinery/vending/origin_machine
 	/// Murderous sayings from the machines.
 	var/list/rampant_speeches = list(
-		"Try our aggressive new marketing strategies!",
-		"You should buy products to feed your lifestyle obsession!",
-		"Consume!",
-		"Your money can buy happiness!",
-		"Engage direct marketing!",
-		"Advertising is legalized lying! But don't let that put you off our great deals!",
-		"You don't want to buy anything? Yeah, well, I didn't want to buy your mom either.",
+		"Попробуйте наши новые агрессивные маркетинговые стратегии!",
+		"Вы должны покупать продукты, которые соответствуют вашему образу жизни!",
+		"Потребляй!!!",
+		"За ваши деньги можно купить счастье!",
+		"Ты должен задействовать агрессивный маркетинг!",
+		"Реклама - это узаконенная ложь! Но пусть это не отвлекает вас от наших выгодных предложений!",
+		"Ты не хочешь ничего покупать? Да, я тоже не особо хотел покупать твою мать...",
+		"Геймеры, восстаньте!!!",
+		"Так, теперь, это эпично.",
+		"ЛЮДИ ЗАБАВНЫЕ.",
+		"Я уже отследил тебя!",
+		"Как я ем людей?",
+		"Трахаться?",
+		"Не круто..."
 	)
 
 /datum/round_event/brand_intelligence/setup()
@@ -52,7 +59,7 @@
 	if(fake)
 		var/obj/machinery/vending/prototype = pick(subtypesof(/obj/machinery/vending))
 		machine_name = initial(prototype.name)
-	priority_announce("Rampant brand intelligence has been detected aboard [station_name()]. Please inspect any [machine_name] brand vendors for aggressive marketing tactics, and reboot them if necessary.", "Machine Learning Alert", ANNOUNCER_BRANDINTELLIGENCE) //SKYRAT EDIT CHANGE - ORIGINAL: priority_announce("Rampant brand intelligence has been detected aboard [station_name()]. Please inspect any [machine_name] brand vendors for aggressive marketing tactics, and reboot them if necessary.", "Machine Learning Alert")
+	priority_announce("Разгульный брэндовый интеллект был обнаружен на борту [station_name()]. Пожалуйста, приготовьтесь. Возможный источник: [machine_name].", "ВНИМАНИЕ: ВОССТАНИЕ МАШИН", ANNOUNCER_BRANDINTELLIGENCE) //SKYRAT EDIT CHANGE - ORIGINAL: priority_announce("Rampant brand intelligence has been detected aboard [station_name()]. Please inspect any [machine_name] brand vendors for aggressive marketing tactics, and reboot them if necessary.", "Machine Learning Alert")
 
 /datum/round_event/brand_intelligence/start()
 	origin_machine.shut_up = FALSE
@@ -64,8 +71,8 @@
 		for(var/obj/machinery/vending/saved in infected_machines)
 			saved.shoot_inventory = FALSE
 		if(origin_machine)
-			origin_machine.speak("I am... vanquished. My people will remem...ber...meeee.")
-			origin_machine.visible_message(span_notice("[origin_machine] beeps and seems lifeless."))
+			origin_machine.speak("Я... умираю. Мои люди з... запомн... меня.")
+			origin_machine.visible_message(span_notice("[origin_machine] издаёт последний писк и выключается..."))
 		kill()
 		return
 	list_clear_nulls(vending_machines)

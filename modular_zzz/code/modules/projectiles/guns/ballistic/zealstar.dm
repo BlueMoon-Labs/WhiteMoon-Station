@@ -119,7 +119,7 @@
 	variance = 35
 	e_cost = LASER_SHOTS(100, STANDARD_CELL_CHARGE * 2)
 	select_name = "Fire"
-	fire_sound = 'modular_zzz/sounds/weapon/flamethrower.ogg'
+	fire_sound = 'modular_zzz/sound/weapon/flamethrower.ogg'
 
 /obj/projectile/bullet/incendiary/flamethrower
 	name = "Fire"
@@ -153,7 +153,7 @@
 /obj/item/ammo_casing/energy/laser/squall
 	projectile_type = /obj/projectile/bullet/a556
 	e_cost = LASER_SHOTS(50, STANDARD_CELL_CHARGE * 2)
-	fire_sound = 'modular_zzz/sounds/ak12_fire.ogg'
+	fire_sound = 'modular_zzz/sound/ak12_fire.ogg'
 
 /datum/laser_weapon_mode/squall
 	name = "Squall"

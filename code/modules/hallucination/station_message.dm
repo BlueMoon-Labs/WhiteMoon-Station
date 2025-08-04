@@ -18,10 +18,10 @@
 
 /datum/hallucination/station_message/shuttle_dock/start()
 	priority_announce(
-					text = "[SSshuttle.emergency] has docked with the station. You have [DisplayTimeText(SSshuttle.emergency_dock_time)] to board the emergency shuttle.",
-					title = "Emergency Shuttle Arrival",
+					text = "[SSshuttle.emergency] пристыковался к станции. Вам отведено [DisplayTimeText(SSshuttle.emergency_dock_time)] для того, чтобы занять своё место на борту шаттла отбытия.",
+					title = "Диспетчерская Служба ЦК",
 					sound = ANNOUNCER_SHUTTLEDOCK,
-					sender_override = "Emergency Shuttle Uplink Alert",
+					sender_override = "Экстренное Оповещение",
 					players = list(hallucinator),
 					color_override = "orange",
 				)
@@ -95,7 +95,7 @@
 
 	priority_announce(
 		text = "Figments from an eldritch god are being summoned by [totally_real_cult_leader.real_name] into [fake_summon_area] from an unknown dimension. Disrupt the ritual at all costs!",
-		title = "[command_name()] Higher Dimensional Affairs",
+		title = "[command_name()]: Комитет O-5",
 		sound = 'sound/music/antag/bloodcult/bloodcult_scribe.ogg',
 		has_important_message = TRUE,
 		players = list(hallucinator),

@@ -20,20 +20,22 @@
 	announce_when = 2
 
 /datum/round_event/market_crash/announce(fake)
-	var/list/poss_reasons = list("the alignment of the moon and the sun",\
-		"some risky housing market outcomes",\
-		"the B.E.P.I.S. team's untimely downfall",\
-		"speculative TerraGov grants backfiring",\
-		"greatly exaggerated reports of Nanotrasen accountancy personnel being \"laid off\"",\
-		"a \"great investment\" into \"non-fungible tokens\" by a \"moron\"",\
-		"a number of raids from Tiger Cooperative agents",\
-		"supply chain shortages",\
-		"the \"Nanotrasen+\" social media network's untimely downfall",\
-		"the \"Nanotrasen+\" social media network's unfortunate success",\
-		"uhh, bad luck, we guess"
+	var/list/poss_reasons = list("положением Луны и Солнца",\
+		"некоторыми рискованными результатами на рынке жилья",\
+		"безвременного падения команды B.E.P.I.S.",\
+		"спекулятивными грантами TerraGov",\
+		"сильно преувеличенными сообщениями о том, что бухгалтерский персонал Nanotrasen был \"уволен\"",\
+		"\"большими инвестициями\" в \"несгораемые крипта-токены\", сделанные \"идиотом\"",\
+		"несколькими рейдами от агентов кооператива Тигр",\
+		"нехваткой поставок",\
+		"безвременным падением социальной сети \"Nanotrasen+\"",\
+		"безвременным падением социальной сети \"Maxx+\"",\
+		"неудачным успехом социальной сети \"Nanotrasen+\"",\
+		"падением влажности в воздухе",\
+		"невезухой"
 	)
 	var/reason = pick(poss_reasons)
-	priority_announce("Due to [reason], prices for on-station vendors will be increased for a short period.", "Nanotrasen Accounting Division", ANNOUNCER_MARKET_CRASH) // SPLURT EDIT - ORIGINAL: priority_announce("Due to [reason], prices for on-station vendors will be increased for a short period.", "Nanotrasen Accounting Division")
+	priority_announce("В связи с [reason], цены на станции будут повышены на короткий период.", "ВНИМАНИЕ: Изменение Цен", ANNOUNCER_MARKET_CRASH) // SPLURT EDIT - ORIGINAL: priority_announce("Due to [reason], prices for on-station vendors will be increased for a short period.", "Nanotrasen Accounting Division")
 
 /datum/round_event/market_crash/start()
 	. = ..()
@@ -46,7 +48,7 @@
 	REMOVE_TRAIT(SSeconomy, TRAIT_MARKET_CRASHING, MARKET_CRASH_EVENT_TRAIT)
 	SSeconomy.price_update()
 	SSeconomy.update_vending_prices()
-	priority_announce("Prices for on-station vendors have now stabilized.", "Nanotrasen Accounting Division")
+	priority_announce("Цены на станции стабилизировались.", "ВНИМАНИЕ: Изменение Цен")
 
 /datum/round_event/market_crash/tick()
 	. = ..()

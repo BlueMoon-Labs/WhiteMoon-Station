@@ -23,7 +23,7 @@
 
 	if(prob(explosion_chance) && isdog(user))
 		explosion(src, light_impact_range = 3, flame_range = 5, flash_range = 10)
-		playsound(src, 'modular_zzz/sounds/misc/kega.ogg', 100, 1)
+		playsound(src, 'modular_zzz/sound/misc/kega.ogg', 100, 1)
 		if(!QDELETED(src))
 			qdel(src)
 		return TRUE
@@ -71,7 +71,7 @@
 
 	if(prob(explosion_chance))
 		explosion(src, light_impact_range = 3, flame_range = 5, flash_range = 10)
-		playsound(src, 'modular_zzz/sounds/misc/kega.ogg', 100, 1)
+		playsound(src, 'modular_zzz/sound/misc/kega.ogg', 100, 1)
 		if(!QDELETED(src))
 			qdel(src)
 		return TRUE

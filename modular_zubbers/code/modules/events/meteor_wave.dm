@@ -14,33 +14,33 @@ GLOBAL_LIST_INIT(meteors_candy_halloween, list(
 	/// Number of SSevent ticks for the wave to last (TG original: 60)
 	var/wave_duration = 45
 	/// Prefix for the announcement
-	var/announce_prefix = "Meteor Alert"
+	var/announce_prefix = "ВНИМАНИЕ: МЕТЕОР"
 	/// Description for the announcement
-	var/announce_desc = "Meteors"
+	var/announce_desc = "Метеориты"
 	/// Added to the announcement giving a preview of the wave intensity
-	var/announce_fluff = "Crew are advised to take shelter within the central areas of the station."
+	var/announce_fluff = "Экипажу рекомендуется укрыться в центральных зонах станции."
 
 /datum/round_event/meteor_wave/threatening
 	warning_time = 420 EVENT_SECONDS // smoke a joint and start your mindless repairs
-	announce_fluff = "Portable shield generators may be procured by the cargo department. Ensure all sensitive areas and equipment are shielded."
+	announce_fluff = "Отдел Снабжения может предоставить портативные генераторы защиты. Убедитесь, что все важные зоны и важное оборудование защищено."
 
 /datum/round_event/meteor_wave/catastrophic
 	warning_time = 420 EVENT_SECONDS
-	announce_fluff = "Portable shield generators may be procured by the cargo department. Ensure all sensitive areas and equipment are shielded."
+	announce_fluff = "Отдел Снабжения может предоставить портативные генераторы защиты. Убедитесь, что все важные зоны и важное оборудование защищено."
 
 /datum/round_event/meteor_wave/dust_storm
 	warning_time = 6 EVENT_SECONDS
 
 /datum/round_event/meteor_wave/meaty
-	announce_prefix = "Oh crap, get the mop."
-	announce_desc = "Meaty ores"
-	announce_fluff = "Please refrain from eating the space meat. We know it's tempting, but this is not the time to test your culinary curiosity."
+	announce_prefix = "ВНИМАНИЕ: МЯСОРИТЫ."
+	announce_desc = "Мясориты"
+	announce_fluff = "Пожалуйста, воздержитесь от употребления космического мяса. Мы знаем, это заманчиво, но сейчас не время испытывать ваше кулинарное любопытство."
 
 /datum/round_event/meteor_wave/candy
 	wave_name = "candy"
-	announce_prefix = "2SPOOKY DELIVERY INCOMING"
-	announce_desc = "Spooky packages"
-	announce_fluff = "We're not responsible for what happens if you try to stick fragments in your mouth. Why do we even have to tell you that?"
+	announce_prefix = "ВНИМАНИЕ: НЕРЕАЛЬНО СТРАШНАЯ ДОСТАВКА"
+	announce_desc = "Конфетки"
+	announce_fluff = "Мы не несём ответственности за то, что произойдёт, если вы попытаетесь засунуть конфетку в рот. Зачем нам вообще вам это рассказывать?"
 
 /datum/round_event/meteor_wave/New()
 	. = ..()
@@ -88,7 +88,7 @@ GLOBAL_LIST_INIT(meteors_candy_halloween, list(
 
 /datum/round_event/meteor_wave/announce(fake)
 	priority_announce(
-			text = "[announce_desc] have been detected on collision course with the station. The energy field generator is disabled or missing. First collision in approximately [DisplayTimeText(start_when * 20, 10)]. [announce_fluff]",
+			text = "[announce_desc] были обнаружены на пути столкновения со станцией. Генератор энергетического поля отключён или отсутствует. Первое столкновение примерно через [DisplayTimeText(start_when * 20, 10)]. [announce_fluff]",
 			title = announce_prefix,
 			sound = ANNOUNCER_METEORWARNING,
 		)
@@ -102,10 +102,10 @@ GLOBAL_LIST_INIT(meteors_candy_halloween, list(
 /datum/round_event/meteor_wave/proc/meteor_reminder()
 	SSsecurity_level.minimum_security_level(min_level = SEC_LEVEL_ORANGE, eng_access = TRUE, maint_access = FALSE)
 	priority_announce(
-			text = "[announce_desc] approaching, brace for impact. Long range scanners indicate a high density of meteors incoming, the kind of impact that makes you rethink your life choices. So, hold on tight and try not to fly into anything too important.",
+			text = "[announce_desc] приближаются, готовьтесь к столкновению. Сканеры дальнего радуиса действия показывают высокую плотность приближающихся метеоров и такие столкновения заставляют вас пересмотреть свои жизненные решения. Так что держитесь крепче.",
 			title = announce_prefix,
 			sound = 'sound/items/radio/radio_important.ogg', // basically silent, since the securitylevel proc will make a sound
-			sender_override = "[command_name()] Engineering Division",
+			sender_override = "[command_name()]: Инженерный Отдел",
 			color_override = "orange",
 		)
 

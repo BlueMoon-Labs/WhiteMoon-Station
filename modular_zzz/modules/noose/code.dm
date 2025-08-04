@@ -99,7 +99,7 @@
 		if(buckle_mob(M))
 			user.visible_message(span_warning("[user] hangs [M != user ? "[M]" : "yourself"]!"),\
 				span_userdanger("[M != user ? "[user] hangs me" : "Hanging myself"]!"))
-			playsound(user.loc, 'modular_zzz/sounds/noose/noosed.ogg', 50, 1, -1)
+			playsound(user.loc, 'modular_zzz/sound/noose/noosed.ogg', 50, 1, -1)
 			log_combat(user, M, "hanged", src)
 			M.noosed = TRUE
 			return TRUE
@@ -138,7 +138,7 @@
 						span_suicide("[buckled_mob]'s gaze is directed into emptiness."))
 				if(prob(5))
 					buckled_mob.visible_message(pick(flavor_text))
-				playsound(buckled_mob.loc, 'modular_zzz/sounds/noose/noose_idle.ogg', 30, 1, -3)
+				playsound(buckled_mob.loc, 'modular_zzz/sound/noose/noose_idle.ogg', 30, 1, -3)
 
 /mob/living/carbon/human
 	var/noosed = FALSE

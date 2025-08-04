@@ -68,6 +68,6 @@
 		ведь принёс он людям священный обряд! Очи его открыли свой взор на меня, ведь я стал единым с пламенем, \
 		УЗРИТЕ МОЁ ВОЗНЕСЕНИЕ, ДА ВОСПЫЛАЕТ ЖЕ ПЕПЕЛЬНЫЙ ФОНАРЬ ВНОВЬ!"
 	announcement_text = "%SPOOKY% Страшись огня, ибо Владыка Пепла, %NAME% был пробуждён! Пламя поглотит все что встретит у себя на пути! %SPOOKY%"
-	announcement_sound = 'modular_zzz/sounds/heretic/ash_lore.ogg'
+	announcement_sound = 'modular_zzz/sound/heretic/ash_lore.ogg'
 
 

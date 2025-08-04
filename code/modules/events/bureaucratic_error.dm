@@ -10,11 +10,11 @@
 	announce_when = 1
 
 /datum/round_event/bureaucratic_error/announce(fake)
-	priority_announce("A recent bureaucratic error in the Organic Resources Department may result in personnel shortages in some departments and redundant staffing in others.", "Paperwork Mishap Alert", ANNOUNCER_BUREAUCRATIC_ERROR) // SPLURT EDIT - ORIGINAL: priority_announce("A recent bureaucratic error in the Organic Resources Department may result in personnel shortages in some departments and redundant staffing in others.", "Paperwork Mishap Alert")
+	priority_announce("Недавняя бюрократическая ошибка в Департаменте Органических Ресурсов может привести к кадровой нехватке в одних департаментах и избыточному укомплектованию штатов в других.", "Бюрократическая Тревога", ANNOUNCER_BUREAUCRATIC_ERROR) // SPLURT EDIT - ORIGINAL: priority_announce("A recent bureaucratic error in the Organic Resources Department may result in personnel shortages in some departments and redundant staffing in others.", "Paperwork Mishap Alert")
 
 /datum/round_event/bureaucratic_error/start()
 	var/list/jobs = SSjob.get_valid_overflow_jobs()
-	/* SKYRAT EDIT REMOVAL START
+	// BUBBER EDIT BEGIN /* SKYRAT EDIT REMOVAL START
 	if(prob(33)) // Only allows latejoining as a single role.
 		var/datum/job/overflow = pick_n_take(jobs)
 		overflow.spawn_positions = -1
@@ -23,7 +23,7 @@
 			var/datum/job/current = job
 			current.total_positions = 0
 		return
-	*/ // SKYRAT EDIT REMOVAL - no more locking off jobs
+	// BUBBER EDIT END */ // SKYRAT EDIT REMOVAL - no more locking off jobs
 	// Adds/removes a random amount of job slots from all jobs.
 	for(var/datum/job/current as anything in jobs)
 		current.total_positions = max(current.total_positions + rand(-2,4), 1) // SKYRAT EDIT CHANGE - No more locking off jobs - ORIGINAL: current.total_positions = max(current.total_positions + rand(-2,4), 0)

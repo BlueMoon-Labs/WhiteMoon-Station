@@ -374,7 +374,7 @@
 	priority_announce(
 		text = "Figments from an eldritch god are being summoned by [cultist.real_name] into [summon_location.get_original_area_name()] from an unknown dimension. Disrupt the ritual at all costs!",
 		sound = cult_music_played ? 'sound/announcer/notice/notice3.ogg' : 'sound/music/antag/bloodcult/bloodcult_scribe.ogg',
-		sender_override = "[command_name()] Higher Dimensional Affairs",
+		sender_override = "[command_name()]: Комитет O-5",
 		has_important_message = TRUE,
 	)
 	cult_music_played = TRUE

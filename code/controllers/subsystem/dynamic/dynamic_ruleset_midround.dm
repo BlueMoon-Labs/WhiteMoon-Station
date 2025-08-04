@@ -53,7 +53,7 @@
 	addtimer(CALLBACK(src, PROC_REF(announce_spiders)), rand(375, 600) SECONDS)
 
 /datum/dynamic_ruleset/midround/spiders/proc/announce_spiders()
-	priority_announce("Unidentified lifesigns detected coming aboard [station_name()]. Secure any exterior access, including ducting and ventilation.", "Lifesign Alert", ANNOUNCER_ALIENS)
+	priority_announce("На борту [station_name()] обнаружены неопознанные признаки жизни. Будьте бдительны.", "ВНИМАНИЕ: НЕОПОЗНАННЫЕ ФОРМЫ ЖИЗНИ", ANNOUNCER_ALIENS)
 
 /datum/dynamic_ruleset/midround/spiders/false_alarm()
 	announce_spiders()
@@ -134,7 +134,7 @@
 		payoff = max(PAYOFF_MIN, FLOOR(account.account_balance * 0.80, 1000))
 	var/datum/comm_message/threat = chosen_gang.generate_message(payoff)
 	//send message
-	priority_announce("Incoming subspace communication. Secure channel opened at all communication consoles.", "Incoming Message", SSstation.announcer.get_rand_report_sound())
+	priority_announce("Входящая подпространственная связь. Защищённый канал открыт на всех консолях связи.", "ВНИМАНИЕ: Вам Сообщение", SSstation.announcer.get_rand_report_sound())
 	threat.answer_callback = CALLBACK(src, PROC_REF(pirates_answered), threat, chosen_gang, payoff, world.time)
 	addtimer(CALLBACK(src, PROC_REF(spawn_pirates), threat, chosen_gang), RESPONSE_MAX_TIME)
 	GLOB.communications_controller.send_message(threat, unique = TRUE)
@@ -405,7 +405,7 @@
 	return pick(GLOB.blobstart)
 
 /datum/dynamic_ruleset/midround/from_ghosts/blob/false_alarm()
-	priority_announce("Confirmed outbreak of level 5 biohazard aboard [station_name()]. All personnel must contain the outbreak.", "Biohazard Alert", ANNOUNCER_OUTBREAK5)
+	priority_announce("Подтверждена вспышка биологической опасности уровня 5 на борту [station_name()]. Весь персонал должен противостоять эпидемии.", "Внимание: Биологическая Опасность", ANNOUNCER_OUTBREAK5)
 
 /datum/dynamic_ruleset/midround/from_ghosts/xenomorph
 	name = "Alien Infestation"
@@ -439,7 +439,7 @@
 	addtimer(CALLBACK(src, PROC_REF(announce_xenos)), rand(375, 600) SECONDS)
 
 /datum/dynamic_ruleset/midround/from_ghosts/xenomorph/proc/announce_xenos()
-	priority_announce("Unidentified lifesigns detected coming aboard [station_name()]. Secure any exterior access, including ducting and ventilation.", "Lifesign Alert", ANNOUNCER_ALIENS)
+	priority_announce("Неизвестные органические сигналы обнаружены на территории [station_name()]. Будьте бдительны.", "ВНИМАНИЕ: НЕОПОЗНАННЫЕ ФОРМЫ ЖИЗНИ", ANNOUNCER_ALIENS)
 
 /datum/dynamic_ruleset/midround/from_ghosts/xenomorph/false_alarm()
 	announce_xenos()
@@ -529,7 +529,7 @@
 	addtimer(CALLBACK(src, PROC_REF(announce_space_dragon)), rand(5, 10) SECONDS)
 
 /datum/dynamic_ruleset/midround/from_ghosts/space_dragon/proc/announce_space_dragon()
-	priority_announce("A large organic energy flux has been recorded near of [station_name()], please stand-by.", "Lifesign Alert")
+	priority_announce("Крупный органический сигнал был зафиксирован вблизи [station_name()]. Будьте бдительны.", "ВНИМАНИЕ: НЕОПОЗНАННЫЕ ФОРМЫ ЖИЗНИ")
 
 /datum/dynamic_ruleset/midround/from_ghosts/space_dragon/false_alarm()
 	announce_space_dragon()
@@ -1065,8 +1065,8 @@
 
 /datum/dynamic_ruleset/midround/from_living/traitor/false_alarm()
 	priority_announce(
-		"Attention crew, it appears that someone on your station has hijacked your telecommunications and broadcasted an unknown signal.",
-		"[command_name()] High-Priority Update",
+		"Внимание, экипаж! Похоже, кто-то на вашей станции взломал связь и передал неизвестный сигнал.",
+		"[command_name()]: Сверх-Важное Объявление",
 	)
 
 /datum/dynamic_ruleset/midround/from_living/malf_ai

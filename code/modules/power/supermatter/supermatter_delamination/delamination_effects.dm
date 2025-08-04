@@ -141,10 +141,10 @@
 	// say goodbye to that shuttle of yours
 	if(SSshuttle.emergency.mode != SHUTTLE_ESCAPE)
 		priority_announce(
-			text = "Fatal error occurred in emergency shuttle uplink during transit. Unable to reestablish connection.",
-			title = "Shuttle Failure",
+			text = "Произошла критическая ошибка в аварийном восходящем канале связи шаттла во время движения. Не удалось восстановить соединение.",
+			title = "Диспетчерская Служба ЦК",
 			sound = ANNOUNCER_SHUTTLE, // SKYRAT EDIT CHANGE - Announcer Sounds - ORIGINAL: sound = 'sound/announcer/announcement/announce_dig.ogg',
-			sender_override = "Emergency Shuttle Uplink Alert",
+			sender_override = "Экстренное Оповещение",
 			color_override = "grey",
 		)
 	else

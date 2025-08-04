@@ -37,7 +37,7 @@ GLOBAL_DATUM_INIT(communications_controller, /datum/communciations_controller, n
 	if(!can_announce(user, is_silicon))
 		return FALSE
 	if(is_silicon)
-		minor_announce(html_decode(input),"[user.name] announces:", players = players)
+		minor_announce(html_decode(input),"[user.name] Объявляет:", players = players, sound_override = 'modular_zzz/sound/announcer/default/ai_tone.ogg')
 		COOLDOWN_START(src, silicon_message_cooldown, COMMUNICATION_COOLDOWN_AI)
 	else
 		var/list/message_data = user.treat_message(input)
@@ -111,10 +111,10 @@ GLOBAL_DATUM_INIT(communications_controller, /datum/communciations_controller, n
 	print_command_report(., "[command_name()] Status Summary", announce=FALSE)
 	if(greenshift)
 		priority_announce(
-			"Thanks to the tireless efforts of our security and intelligence divisions, \
-				there are currently no credible threats to [station_name()]. \
-				All station construction projects have been authorized. Have a secure shift!",
-			"Security Report",
+			"Благодаря неустанным усилиям наших служб безопасности и разведки Nanotrasen, \
+				в настоящее время нет никаких реальных угроз для [station_name()]. \
+				Все Цели Смены были одобрены. Обеспечьте себе безопасную смену!",
+			"Диспетчерская Служба ЦК",
 			SSstation.announcer.get_rand_report_sound(),
 			color_override = "green",
 		)
@@ -123,15 +123,15 @@ GLOBAL_DATUM_INIT(communications_controller, /datum/communciations_controller, n
 			SSsecurity_level.set_level(SEC_LEVEL_BLUE, announce = FALSE)
 		priority_announce(
 			"[SSsecurity_level.current_security_level.elevating_to_announcement]\n\n\
-				A summary has been copied and printed to all communications consoles.",
-			"Security level elevated.",
+				Сводка была скопирована и распечатана на всех пультах связи.",
+			"Уровень тревоги повышен.",
 			ANNOUNCER_INTERCEPT,
 			color_override = SSsecurity_level.current_security_level.announcement_color,
 		)
 	else
 		priority_announce(
-			"A summary of the station's situation has been copied and printed to all communications consoles.",
-			"Security Report",
+			"Сводка ситуации на станции была скопирована и распечатана на всех пультах связи.",
+			"Диспетчерская Служба ЦК",
 			SSstation.announcer.get_rand_report_sound(),
 		)
 

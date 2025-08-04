@@ -160,32 +160,32 @@
 	var/announcement_title = ""
 	switch(backstory)
 		if(HUNTER_PACK_COPS)
-			announcement_text_list += "Attention Crew of [GLOB.station_name], this is the Police. A wanted criminal has been reported taking refuge on your station."
-			announcement_text_list += "We have a warrant from the SSC authorities to take them into custody. Officers have been dispatched to your location."
-			announcement_text_list += "We demand your cooperation in bringing this criminal to justice."
-			announcement_title += "Spacepol Command"
+			announcement_text_list += "Внимание, экипаж станции [GLOB.station_name], это Космическая Полиция. Нам известно, что на вашей станции скрывается галактической преступник."
+			announcement_text_list += "У нас есть ордер от органов государственной безопасности TerraGov на их задержание. Сотрудники Космической Полиции уже направлены к вам."
+			announcement_text_list += "Мы требуем вашего сотрудничества в привлечении этого преступника к ответственности."
+			announcement_title += "Космическая Полиция"
 		if(HUNTER_PACK_RUSSIAN)
 			announcement_text_list += "Zdraviya zhelaju, [GLOB.station_name] crew. We are coming to your station."
 			announcement_text_list += "There is a criminal aboard. We will arrest them and return them to the gulag. That's good, yes?"
-			announcement_title += "Russian Freighter"
+			announcement_title += "Командование СССП"
 		if(HUNTER_PACK_BOUNTY)
-			announcement_text_list += "[GLOB.station_name]. One of our bounty marks has ended up on your station. We will be arriving to collect shortly."
-			announcement_text_list += "Let's make this quick. If you don't want trouble, stay the hell out of our way."
-			announcement_title += "Unregistered Signal"
+			announcement_text_list += "[GLOB.station_name]. Одна из наших целей оказалась на территории вашей станции. Мы скоро приедем за ним."
+			announcement_text_list += "Давайте сделаем это быстро. Если не хотите проблем, держитесь от нас подальше."
+			announcement_title += "Незарегистрированный Сигнал"
 		if(HUNTER_PACK_PSYKER)
-			announcement_text_list += "HEY, CAN YOU HEAR US? We're coming to your station. There's a bad guy down there, really bad guy. We need to arrest them."
-			announcement_text_list += "We're also offering fortune telling services out of the front door if you have paying customers."
-			announcement_title += "Fortune-Telling Entertainment Shuttle"
+			announcement_text_list += "ЭЙ, ВЫ НАС СЛЫШИТЕ? Мы идём к вам на станцию. У вас там злодей, очень злодейский злодей. Нужно его арестовать."
+			announcement_text_list += "Мы также предлагаем услуги гадания на дому, если у вас есть платежеспособные клиенты."
+			announcement_title += "Гадательный Развлекательный Шаттл"
 		if(HUNTER_PACK_MI13)
-			announcement_text_list += "Illegal intrusion detected in the crew monitoring network. Central Command has been informed."
-			announcement_text_list += "Please report any suspicious individuals or behaviour to your local security team."
-			announcement_title += "Nanotrasen Intrusion Countermeasures Electronics"
+			announcement_text_list += "Обнаружено незаконное проникновение на территорию [GLOB.station_name]. Центральное командование проинформировано."
+			announcement_text_list += "Пожалуйста, сообщайте о любых подозрительных лицах или поведении отделу Службы Безопасности."
+			announcement_title += "ФМС Nanotrasen"
 	if(!length(announcement_text_list))
-		announcement_text_list += "Unidentified ship detected near the station."
+		announcement_text_list += "Неопознанное судно обнаружено вблизи станции."
 		stack_trace("Fugitive hunter announcement was unable to generate an announcement text based on backstory: [backstory]")
 
 	if(!length(announcement_title))
-		announcement_title += "Unknown Signal"
+		announcement_title += "Неизвестный Сигнал"
 		stack_trace("Fugitive hunter announcement was unable to generate an announcement title based on backstory: [backstory]")
 
 	priority_announce(jointext(announcement_text_list, " "), announcement_title)

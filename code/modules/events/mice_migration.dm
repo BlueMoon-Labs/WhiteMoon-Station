@@ -10,19 +10,19 @@
 	var/maximum_mice = 15
 
 /datum/round_event/mice_migration/announce(fake)
-	var/cause = pick("space-winter", "budget-cuts", "Ragnarok",
-		"space being cold", "\[REDACTED\]", "climate change",
-		"bad luck")
-	var/plural = pick("a number of", "a horde of", "a pack of", "a swarm of",
-		"a whoop of", "not more than [maximum_mice]")
-	var/name = pick("rodents", "mice", "squeaking things",
-		"wire eating mammals", "\[REDACTED\]", "energy draining parasites")
-	var/movement = pick("migrated", "swarmed", "stampeded", "descended")
-	var/location = pick("maintenance tunnels", "maintenance areas",
-		"\[REDACTED\]", "place with all those juicy wires")
+	var/cause = pick("космической зимы", "сокращения бюджета", "голода",
+		"холодного космоса", "\[ОТРЕДАКТИРОВАНО\]", "изменения климата",
+		"невезения")
+	var/plural = pick("несколько", "орава", "стая", "рой",
+		"группа", "не более [maximum_mice]")
+	var/name = pick("грызунов", "мышей", "пищащих тварей", "пищащих штук", "пожирателей проводов", "паразитирующих уничтожителей энергии",
+		"млекопитающих, поедающих провода,", "\[ОТРЕДАКТИРОВАНО\]", "паразитов, истощающих энергию,")
+	var/movement = pick("мигрируют", "роятся", "проникают", "обитают")
+	var/location = pick("технических тоннелях", "технической области",
+		"\[ОТРЕДАКТИРОВАНО\]")
 
-	priority_announce("Due to [cause], [plural] [name] have [movement] \
-		into the [location].", "Migration Alert",
+	priority_announce("Из-за [cause], [plural] [name] сейчас [movement] \
+		в [location].", "ВНИМАНИЕ: Мыши!",
 		SSstation.announcer.event_sounds[ANNOUNCER_MOUSE_MIGRATION] || 'sound/mobs/non-humanoids/mouse/mousesqueek.ogg') // SPLURT EDIT - ORIGINAL: 'sound/mobs/non-humanoids/mouse/mousesqueek.ogg'
 
 /datum/round_event/mice_migration/start()

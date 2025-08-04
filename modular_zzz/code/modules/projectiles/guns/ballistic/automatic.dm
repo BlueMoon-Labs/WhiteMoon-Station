@@ -7,7 +7,7 @@
 	lefthand_file = 'modular_zzz/icons/mob/inhands/weapons/lefthand.dmi'
 	righthand_file = 'modular_zzz/icons/mob/inhands/weapons/righthand.dmi'
 	accepted_magazine_type = /obj/item/ammo_box/magazine/ak12
-	fire_sound = 'modular_zzz/sounds/ak12_fire.ogg'
+	fire_sound = 'modular_zzz/sound/ak12_fire.ogg'
 	burst_delay = 2
 
 /obj/item/gun/ballistic/automatic/ar/ak12/update_icon_state()
@@ -26,11 +26,11 @@
 	fire_sound = pick('modular_zzplurt/sound/interactions/moan_m0.ogg', 'modular_zzplurt/sound/interactions/moan_m4.ogg', \
 	'modular_zzplurt/sound/interactions/moan_m5.ogg', 'modular_zzplurt/sound/interactions/moan_m6.ogg', \
 	'modular_zzplurt/sound/interactions/moan_m7.ogg', 'modular_zzplurt/sound/interactions/moan_m12.ogg', \
-	'modular_zzplurt/sound/interactions/moan_f2.ogg', 'modular_zzz/sounds/ak12_fire.ogg', 'modular_zzz/sounds/ak12_fire.ogg', \
-	'modular_zzz/sounds/ak12_fire.ogg', 'modular_zzz/sounds/ak12_fire.ogg', 'modular_zzz/sounds/ak12_fire.ogg', \
-	'modular_zzz/sounds/ak12_fire.ogg', 'modular_zzz/sounds/ak12_fire.ogg', 'modular_zzz/sounds/ak12_fire.ogg', \
-	'modular_zzz/sounds/ak12_fire.ogg', 'modular_zzz/sounds/ak12_fire.ogg', 'modular_zzz/sounds/ak12_fire.ogg', \
-	'modular_zzz/sounds/ak12_fire.ogg', 'modular_zzz/sounds/ak12_fire.ogg', 'modular_zzz/sounds/ak12_fire.ogg')
+	'modular_zzplurt/sound/interactions/moan_f2.ogg', 'modular_zzz/sound/ak12_fire.ogg', 'modular_zzz/sound/ak12_fire.ogg', \
+	'modular_zzz/sound/ak12_fire.ogg', 'modular_zzz/sound/ak12_fire.ogg', 'modular_zzz/sound/ak12_fire.ogg', \
+	'modular_zzz/sound/ak12_fire.ogg', 'modular_zzz/sound/ak12_fire.ogg', 'modular_zzz/sound/ak12_fire.ogg', \
+	'modular_zzz/sound/ak12_fire.ogg', 'modular_zzz/sound/ak12_fire.ogg', 'modular_zzz/sound/ak12_fire.ogg', \
+	'modular_zzz/sound/ak12_fire.ogg', 'modular_zzz/sound/ak12_fire.ogg', 'modular_zzz/sound/ak12_fire.ogg')
 	. = ..()
 
 /obj/item/gun/ballistic/automatic/ar/ak12/pink/update_icon_state()

@@ -5,7 +5,7 @@
 	weight = 1
 	earliest_start = 5 MINUTES
 	category = EVENT_CATEGORY_FRIENDLY
-	description = "A colourful display can be seen through select windows. And the kitchen."
+	description = "Через отдельные окна можно увидеть красочную экспозицию."
 
 /datum/round_event_control/aurora_caelus/can_spawn_event(players, allow_magic = FALSE)
 	if(!SSmapping.empty_space)
@@ -18,9 +18,9 @@
 	end_when = 80
 
 /datum/round_event/aurora_caelus/announce(fake)
-	priority_announce("[station_name()]: A harmless cloud of ions is approaching your station, and will exhaust their energy battering the hull. Nanotrasen has approved a short break for all employees to relax and observe this very rare event. During this time, starlight will be bright but gentle, shifting between quiet green and blue colors. Any staff who would like to view these lights for themselves may proceed to the area nearest to them with viewing ports to open space. We hope you enjoy the lights.",
+	priority_announce("[station_name()]: Безвредное облако ионов приближается к вашей станции, истощая свою энергию и стукаясь о корпус. Nanotrasen разрешает всем сотрудникам сделать короткий перерыв, чтобы расслабиться и понаблюдать за этим редким событием. В это время звездный свет будет ярким, но мягким, переходя от тихого зеленого к яркому синему цвету. Любой сотрудник, желающий увидеть эти огни самостоятельно, может отправиться в ближайший к ним район с видом на космос. Надеемся, что вам понравится это сияние.",
 	sound = SSstation.announcer.event_sounds[ANNOUNCER_AURORA_CAELUS] || 'sound/announcer/notice/notice2.ogg', // SPLURT EDIT - ORIGINAL: sound = 'sound/announcer/notice/notice2.ogg',
-	sender_override = "Nanotrasen Meteorology Division")
+	sender_override = "Отдел Метеорологии Nanotrasen")
 	if (fake)
 		return
 	for(var/V in GLOB.player_list)
@@ -32,8 +32,9 @@
 	fade_kitchen(fade_in = TRUE)
 
 /datum/round_event/aurora_caelus/start()
-	if(!prob(1) && !check_holidays(APRIL_FOOLS))
-		return
+	for(var/mob/living/carbon/human/player in GLOB.alive_mob_list)
+		if(is_station_level(player.z))
+			player.apply_status_effect(/datum/status_effect/pacify, 123 SECONDS)
 
 	var/list/human_blacklist = list()
 	for(var/area/station/service/kitchen/affected_area in GLOB.areas)
@@ -66,9 +67,9 @@
 /datum/round_event/aurora_caelus/end()
 	fade_space()
 	fade_kitchen()
-	priority_announce("The aurora caelus event is now ending. Starlight conditions will slowly return to normal. When this has concluded, please return to your workplace and continue work as normal. Have a pleasant shift, [station_name()], and thank you for watching with us.",
+	priority_announce("Событие, связанное с Космическим Сиянием, заканчивается. Звездный свет постепенно возвращается в нормальное состояние. Возвращайтесь на свое рабочее место и продолжайте работать в обычном режиме. Приятной смены [station_name()] и спасибо, что посмотрели за этим событием с нами.",
 	sound = 'sound/announcer/notice/notice2.ogg',
-	sender_override = "Nanotrasen Meteorology Division")
+	sender_override = "Отдел Метеорологии Nanotrasen")
 
 /datum/round_event/aurora_caelus/proc/fade_space(fade_in = FALSE)
 	set waitfor = FALSE
