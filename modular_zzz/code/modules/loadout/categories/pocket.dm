@@ -11,19 +11,19 @@
 /datum/loadout_item/pocket_items/irellia
 	name = "Irellia banner"
 	item_path = /obj/item/banner/irellia
-	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964", "wangig", "omantis", "sc1de", "kladmenuwu", "manafluff", "hardbass228", "flaffug")
+	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964", "wangig", "omantis", "sc1de", "kladmenuwu", "manafluff", "hardbass228", "flaffug", "runtimedead")
 
 /datum/loadout_item/pocket_items/rohai
 	name = "Rohai banner"
 	item_path = /obj/item/banner/rohai
-	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964", "wangig", "omantis", "sc1de", "kladmenuwu", "manafluff", "hardbass228", "flaffug")
+	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964", "wangig", "omantis", "sc1de", "kladmenuwu", "manafluff", "hardbass228", "flaffug", "runtimedead")
 
 /datum/loadout_item/pocket_items/norn
 	name = "Norn banner"
 	item_path = /obj/item/banner/norn
-	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964", "wangig", "omantis", "sc1de", "kladmenuwu", "manafluff", "hardbass228", "flaffug")
+	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964", "wangig", "omantis", "sc1de", "kladmenuwu", "manafluff", "hardbass228", "flaffug", "runtimedead")
 
 /datum/loadout_item/pocket_items/catcrin_kit
 	name = "Catcrin accessories"
 	item_path = /obj/item/storage/box/catcrin_kit
-	ckeywhitelist = list("oni3288", "ghos7ik", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx", "korinfellori", "troubleneko17th", "dimofon", "lichfail", "gisya", "dimakr", "cupteazee", "nopeingeneer", "silyamg", "lomodno", "goodmankekw", "junejuly", "ralseidreemuurr", "abrikos")
+	ckeywhitelist = list("oni3288", "ghos7ik", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx", "korinfellori", "troubleneko17th", "dimofon", "lichfail", "gisya", "dimakr", "cupteazee", "nopeingeneer", "silyamg", "lomodno", "goodmankekw", "junejuly", "ralseidreemuurr", "abrikos", "sutulayapsina")
