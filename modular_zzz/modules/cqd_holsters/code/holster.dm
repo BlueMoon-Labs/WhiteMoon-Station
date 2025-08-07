@@ -5,8 +5,8 @@
 /obj/item/clothing/accessory/cqd_holster
 	name = "CQD holster"
 	desc = "CQD model holster made of durable materials and has tactical weapon attachment points. CQD stands for Concealed Quick Draw, this holster model developed for more comfortable weapon carry among authorized personnel."
-	icon = 'modular_zzz/modules/cqd_holsters/icons/cqd_holster.dmi'
-	worn_icon = 'modular_zzz/modules/cqd_holsters/icons/cqd_holster_worn.dmi'
+	icon = 'modular_zzz/icons/cqd_holser_icons/cqd_holster.dmi'
+	worn_icon = 'modular_zzz/icons/cqd_holser_icons/cqd_holster_worn.dmi'
 	icon_state = "cqd-holster"
 	above_suit = FALSE
 	w_class = WEIGHT_CLASS_NORMAL
@@ -54,8 +54,8 @@
 /obj/item/clothing/accessory/cqd_holster/aesthetic
 	name = "aesthetic CQD holster"
 	desc = "CQD model holster made of durable materials and has tactical weapon attachment points. CQD stands for Concealed Quick Draw, this holster model developed for more comfortable weapon carry among authorized personnel. This one partly made of leather for aesthetics."
-	icon = 'modular_zzz/modules/cqd_holsters/icons/cqd_holster_aesthetic.dmi'
-	worn_icon = 'modular_zzz/modules/cqd_holsters/icons/cqd_holster_worn_aesthetic.dmi'
+	icon = 'modular_zzz/icons/cqd_holser_icons/cqd_holster_aesthetic.dmi'
+	worn_icon = 'modular_zzz/icons/cqd_holser_icons/cqd_holster_worn_aesthetic.dmi'
 
 /*
 *  Синдикатовская кобура
@@ -64,5 +64,5 @@
 /obj/item/clothing/accessory/cqd_holster/syndicate
 	name = "blood-red CQD holster"
 	desc = "CQD model holster made of durable materials and has tactical weapon attachment points. CQD stands for Concealed Quick Draw, this holster model developed for more comfortable weapon carry among authorized personnel. This one made of much more sophisticated materials and has strange red coloring."
-	icon = 'modular_zzz/modules/cqd_holsters/icons/cqd_holster_syndicate.dmi'
-	worn_icon = 'modular_zzz/modules/cqd_holsters/icons/cqd_holster_worn_syndicate.dmi'
+	icon = 'modular_zzz/icons/cqd_holser_icons/cqd_holster_syndicate.dmi'
+	worn_icon = 'modular_zzz/icons/cqd_holser_icons/cqd_holster_worn_syndicate.dmi'
