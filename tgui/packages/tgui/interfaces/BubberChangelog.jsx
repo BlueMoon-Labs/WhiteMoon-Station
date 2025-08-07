@@ -420,13 +420,14 @@ export const BubberChangelog = (props) => {
       const result = await links[0].text();
       const bubberResult = await links[1].text();
       const splurtResult = await links[2].text(); // SPLURT EDIT ADDITION: Changelog 3
-      const whiteResult = await links[2].text(); // WHITE EDIT ADDITION: Changelog 3
+      const whiteResult = await links[3].text(); // WHITE EDIT ADDITION: Changelog 3
 
       // SPLURT EDIT ADDITION: Changelog 3
       if (
         links[0].status !== 200 &&
         links[1].status !== 200 &&
-        links[2].status !== 200
+        links[2].status !== 200 &&
+        links[3].status !== 200
       ) {
         // SPLURT EDIT ADDITION END
         const timeout = 50 + attemptNumber * 50;
@@ -464,8 +465,8 @@ export const BubberChangelog = (props) => {
           );
         }
         // SPLURT EDIT ADDITION END
-        // WHITE EDIT ADDITION: Changelog 3
-        if (links[2].status === 200) {
+        // WHITE EDIT ADDITION: Changelog 4
+        if (links[3].status === 200) {
           setWhiteContents(
             yaml.load(whiteResult, { schema: yaml.CORE_SCHEMA }),
           );
