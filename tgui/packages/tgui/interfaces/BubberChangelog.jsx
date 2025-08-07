@@ -113,7 +113,7 @@ const DateDropdown = (props) => {
 };
 
 const ChangelogList = (props) => {
-  const { contents, bubberContents, splurtContents } = props; // SPLURT EDIT ADDITION: Changelog 3
+  const { contents, bubberContents, splurtContents, whiteContents } = props; // WHITE EDIT ADDITION: Changelog 4
 
   const combinedDates = {};
   Object.assign(
@@ -121,6 +121,7 @@ const ChangelogList = (props) => {
     typeof contents === 'object' ? contents : {},
     typeof bubberContents === 'object' ? bubberContents : {},
     typeof splurtContents === 'object' ? splurtContents : {}, // SPLURT EDIT ADDITION: Changelog 3
+    typeof whiteContents === 'object' ? whiteContents : {}, // WHITE EDIT ADDITION: Changelog 4
   );
 
   if (Object.keys(combinedDates).length < 1) {
@@ -146,6 +147,19 @@ const ChangelogList = (props) => {
             </Section>
           )}
           {/* SPLURT EDIT ADDITION END */}
+          {/* WHITE EDIT ADDITION: Changelog 4 */}
+          {whiteContents[date] && (
+            <Section mb={-2}>
+              {Object.entries(whiteContents[date]).map(([name, changes]) => (
+                <WhiteChangelogEntry
+                  key={name}
+                  author={name}
+                  changes={changes}
+                />
+              ))}
+            </Section>
+          )}
+          {/* WHITE EDIT ADDITION END */}
           {bubberContents[date] && (
             <Section mb={-2}>
               {Object.entries(bubberContents[date]).map(([name, changes]) => (
@@ -318,18 +332,71 @@ const SplurtChangelogEntry = (props) => {
 };
 // SPLURT EDIT ADDITION END
 
+// WHITE EDIT ADDITION: Changelog 3
+const WhiteChangelogEntry = (props) => {
+  const { author, changes } = props;
+
+  return (
+    <Stack.Item mb={-1} pb={1} key={author}>
+      <Box>
+        <h4>
+          <Image verticalAlign="bottom" src={resolveAsset('white_16.png')} />{' '}
+          {author} changed:
+        </h4>
+      </Box>
+      <Box ml={3} mt={-0.2}>
+        <Table>
+          {changes.map((change) => {
+            const changeType = Object.keys(change)[0];
+            return (
+              <Table.Row key={changeType + change[changeType]}>
+                <Table.Cell
+                  className={classes([
+                    'Changelog__Cell',
+                    'Changelog__Cell--Icon',
+                  ])}
+                >
+                  <Icon
+                    color={
+                      icons[changeType]
+                        ? icons[changeType].color
+                        : icons['unknown'].color
+                    }
+                    name={
+                      icons[changeType]
+                        ? icons[changeType].icon
+                        : icons['unknown'].icon
+                    }
+                    verticalAlign="middle"
+                  />
+                </Table.Cell>
+                <Table.Cell className="Changelog__Cell">
+                  {change[changeType]}
+                </Table.Cell>
+              </Table.Row>
+            );
+          })}
+        </Table>
+      </Box>
+    </Stack.Item>
+  );
+};
+// WHITE EDIT ADDITION END
+
 export const BubberChangelog = (props) => {
   const { data } = useBackend();
   const { dates } = data;
   const [contents, setContents] = useState('');
   const [bubberContents, setBubberContents] = useState('');
   const [splurtContents, setSplurtContents] = useState(''); // SPLURT EDIT ADDITION: Changelog 3
+  const [whiteContents, setWhiteContents] = useState(''); // WHITE EDIT ADDITION: Changelog 4
   const [selectedDate, setSelectedDate] = useState(dates[0]);
 
   useEffect(() => {
     setContents('Loading changelog data...');
     setBubberContents('Loading changelog data...');
     setSplurtContents('Loading changelog data...'); // SPLURT EDIT ADDITION: Changelog 3
+    setWhiteContents('Loading changelog data...'); // WHITE EDIT ADDITION: Changelog 4
     getData(selectedDate);
   }, [selectedDate]);
 
@@ -348,10 +415,12 @@ export const BubberChangelog = (props) => {
       fetch(resolveAsset(date + '.yml')),
       fetch(resolveAsset('bubber_' + date + '.yml')),
       fetch(resolveAsset('splurt_' + date + '.yml')), // SPLURT EDIT ADDITION: Changelog 3
+      fetch(resolveAsset('white_' + date + '.yml')), // WHITE EDIT ADDITION: Changelog 3
     ]).then(async (links) => {
       const result = await links[0].text();
       const bubberResult = await links[1].text();
       const splurtResult = await links[2].text(); // SPLURT EDIT ADDITION: Changelog 3
+      const whiteResult = await links[2].text(); // WHITE EDIT ADDITION: Changelog 3
 
       // SPLURT EDIT ADDITION: Changelog 3
       if (
@@ -371,6 +440,11 @@ export const BubberChangelog = (props) => {
           'Loading changelog data' + '.'.repeat(attemptNumber + 3),
         );
         // SPLURT EDIT ADDITION END
+        // WHITE EDIT ADDITION: Changelog 4
+        setWhiteContents(
+          'Loading changelog data' + '.'.repeat(attemptNumber + 3),
+        );
+        // WHITE EDIT ADDITION END
         setTimeout(() => {
           getData(date, attemptNumber + 1);
         }, timeout);
@@ -390,6 +464,13 @@ export const BubberChangelog = (props) => {
           );
         }
         // SPLURT EDIT ADDITION END
+        // WHITE EDIT ADDITION: Changelog 3
+        if (links[2].status === 200) {
+          setWhiteContents(
+            yaml.load(whiteResult, { schema: yaml.CORE_SCHEMA }),
+          );
+        }
+        // WHITE EDIT ADDITION END
       }
     });
   }
@@ -401,8 +482,9 @@ export const BubberChangelog = (props) => {
         <b>Thanks to: </b>
         /tg/station 13, Effigy, Stellar Haven, Baystation 12, /vg/station,
         NTstation, CDK Station devs, FacepunchStation, GoonStation devs, the
-        original Space Station 13 developers, and the countless others who have
-        contributed to the game.
+        original Space Station 13 developers, SkyRat, BubberStation,
+        SplurtStation, the many others who have contributed to the game and the
+        countless others who have contributed to the game.
       </p>
       <p>
         <a href="https://github.com/BlueMoon-Labs/WhiteMoon-Station">
@@ -430,13 +512,13 @@ export const BubberChangelog = (props) => {
         setSelectedDate={setSelectedDate}
       />
       <h2>Licenses</h2>
-      <Section title="S.P.L.U.R.T-tg">
+      <Section title="WhiteMoon">
         <p>
           {'All code is licensed under '}
           <a href="https://www.gnu.org/licenses/agpl-3.0.html">GNU AGPL v3</a>.
           {' See '}
-          <a href="https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/blob/master/LICENSE">
-            LICENSE
+          <a href="https://github.com/BlueMoon-Labs/WhiteMoon-Station/blob/master/LICENSE">
+            ЛИЦЕНЗИЯ
           </a>{' '}
           for more details.
         </p>
@@ -552,6 +634,7 @@ export const BubberChangelog = (props) => {
           contents={contents}
           bubberContents={bubberContents}
           splurtContents={splurtContents}
+          whiteContents={whiteContents}
         />
         {/* SPLURT EDIT ADDITION END */}
         {footer}

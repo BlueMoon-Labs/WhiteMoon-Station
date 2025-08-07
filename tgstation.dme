@@ -10418,6 +10418,8 @@
 #include "modular_zzz\code\modules\antagonists\pirate\pirate_gangs.dm"
 #include "modular_zzz\code\modules\antagonists\revolution\revolution.dm"
 #include "modular_zzz\code\modules\antagonists\wizard\defensive.dm"
+#include "modular_zzz\code\modules\asset_cache\asset_list.dm"
+#include "modular_zzz\code\modules\asset_cache\assets\tgui.dm"
 #include "modular_zzz\code\modules\bitrunning\domains\hard\bubblegum.dm"
 #include "modular_zzz\code\modules\bitrunning\domains\hard\colossus.dm"
 #include "modular_zzz\code\modules\bitrunning\domains\hard\hierophant.dm"
