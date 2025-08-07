@@ -1,87 +1,89 @@
 /datum/interaction/lewd/thighs_penis
 	name = "Захват бёдрами (С членом)"
-	description = "Возьмите партнёра в ловушку бёдрами, кладя свои гениталии на их лицо."
+	description = "Возьмите партнёра в ловушку бёдрами, кладя свои гениталии на его лицо."
 	message = list(
-		"presses their weight down onto %TARGET%'s face, blocking their vision completely.",
-		"forces their cock into %TARGET%'s face as they're stuck locked between their thighs.",
-		"slips their cock into %TARGET%'s helpless mouth, keeping their shaft pressed hard into their face."
+		"наседает на лицо %TARGET%, закрывая какой-либо обзор.",
+		"прижимает член к лицу %TARGET%, зажимая при этом между бёдер.",
+		"слегка проскальзывает членом в рот %TARGET%, продолжая крепко сдавливать голову бёдрами."
+
 	)
 
 /datum/interaction/lewd/thighs_vagina
 	name = "Захват бёдрами (С вагиной)"
-	description = "Возьмите партнёра в ловушку бёдрами, придавливая своей киской его лицо."
+	description = "Возьмите партнёра в ловушку бёдрами, вдавливая свою киску в его лицо."
 	message = list(
-		"presses their weight down onto %TARGET%'s face, blocking their vision completely.",
-		"rides %TARGET%'s face, grinding their wet pussy all over it.",
-		"grinds their pussy into %TARGET%'s face."
+		"наседает на лицо %TARGET%, закрывая какой-либо обзор.",
+		"\"седлает\" лицо %TARGET%, растирая о него свою влажную киску.",
+		"ёрзает своей киской по лицу %TARGET%, зажимая при этом бёдрами."
 	)
 
 /datum/interaction/lewd/thighfuck
-	name = "Thighfuck"
-	description = "Fuck their thighs."
+	name = "Бёдра: трахнуть"
+	description = "Насладитесь бёдрами партнёра довольно прямолинейным образом."
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"cums all over %TARGET%'s thighs",
-		"shoots their load onto %TARGET%'s legs",
-		"covers %TARGET%'s thighs in cum"
+		"кончает поверх бёдер %TARGET%.",
+		"стреляет семенем прямо поверх бёдер %TARGET%.",
+		"покрывает бёдра %TARGET% горячей спермой."
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"You cum all over %TARGET%'s thighs",
-		"You shoot your load onto %TARGET%'s legs",
-		"You cover %TARGET%'s thighs in cum"
+		"Вы кончаете поверх бёдер %TARGET%.",
+		"Вы стреляете семенем прямо поверх бёдер %TARGET%.",
+		"Вы покрываете бёдра %TARGET% горячей спермой."
 	))
 	cum_partner_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"%USER% cums all over your thighs",
-		"%USER% shoots their load onto your legs",
-		"%USER% covers your thighs in cum"
+		"%USER% кончает поверх ваших бёдер.",
+		"%USER% стреляет семенем прямо поверх ваших бёдер.",
+		"%USER% покрывает ваши бёдра горячей спермой."
 	))
 	message = list(
-		"fucks %TARGET%'s thighs",
-		"slides their cock between %TARGET%'s legs",
-		"thrusts between %TARGET%'s thighs",
-		"pounds against %TARGET%'s legs"
+		"трахает бёдра %TARGET%, проскальзывая между них членом.",
+		"скользит членом между бёдер %TARGET%.",
+		"толкает таз навстречу бёдрам %TARGET%, проникая между ними.",
+		"сношает междуножье %TARGET%."
 	)
 	user_messages = list(
-		"You feel %TARGET%'s thighs squeezing your cock",
-		"The warmth between %TARGET%'s legs feels amazing",
-		"%TARGET%'s soft thighs feel great around your shaft"
+		"Вы чувствуете горячие бёдра %TARGET%, сжимающие ваш член.",
+		"Тепло междуножья %TARGET% ощущается просто отлично.",
+		"Бёдра %TARGET% мягко обжимают ствол вашего члена."
+
 	)
 	target_messages = list(
-		"You feel %USER%'s cock sliding between your thighs",
-		"%USER%'s shaft rubs between your legs",
-		"The warmth of %USER%'s cock presses against your thighs"
+		"Вы ощущаете член %USER% скользящим между ваших бёдер.",
+		"Ствол члена %USER% трётся между ваших ног с лёгкой пульсацией.",
+		"Член %USER% с теплом вдавливается в ваши бёдра."
 	)
 
 /datum/interaction/lewd/thighjob
-	name = "Give Thighjob"
-	description = "Pleasure them with your thighs."
+	name = "Бёдра: \"оседлать\" партнёра"
+	description = "Сделайте партнёру и его пенису приятно своими бёдрами."
 	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"cums all over %USER%'s thighs",
-		"shoots their load onto %USER%'s legs",
-		"covers %USER%'s thighs in cum"
+		"кончает поверх бёдер %USER%.",
+		"стреляет семенем прямо поверх бёдер %USER%.",
+		"покрывает бёдра %USER% горячей спермой."
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"%TARGET% cums all over your thighs",
-		"%TARGET% shoots their load onto your legs",
-		"%TARGET% covers your thighs in cum"
+		"%TARGET% кончает поверх ваших бёдер.",
+		"%TARGET% стреляет семенем прямо поверх ваших бёдер.",
+		"%TARGET% покрывает ваши бёдра горячей спермой."
 	))
 	cum_partner_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"You cum all over %USER%'s thighs",
-		"You shoot your load onto %USER%'s legs",
-		"You cover %USER%'s thighs in cum"
+		"Вы кончаете поверх бёдер %USER%.",
+		"Вы стреляете семенем прямо поверх бёдер %USER%.",
+		"Вы покрываете бёдра %USER% горячей спермой."
 	))
 	message = list(
-		"squeezes %TARGET%'s cock between their thighs",
-		"works %TARGET%'s shaft with their legs",
-		"pleasures %TARGET% with their thighs",
-		"rubs %TARGET%'s cock between their legs"
+		"сжимает член %TARGET% между своих бёдер.",
+		"работает бёдрами над стволом члена %TARGET%, мягко сжимая его.",
+		"удовлеворяет %TARGET% своими бёдрами.",
+		"растирает член %TARGET% между своих ног."
 	)
 	user_messages = list(
-		"You feel %TARGET%'s cock throbbing between your thighs",
-		"The warmth of %TARGET%'s shaft feels nice between your legs",
-		"You squeeze %TARGET%'s cock with your thighs"
+		"Вы чувствуете, как член %TARGET% пульсирует между ваших бёдер.",
+		"The warmth of %TARGET%'s shaft feels nice between your legs.",
+		"You squeeze %TARGET%'s cock with your thighs."
 	)
 	target_messages = list(
-		"%USER%'s warm thighs squeeze your cock",
-		"Your shaft slides between %USER%'s legs",
-		"The softness of %USER%'s thighs feels amazing"
+		"Тёплые бёдра %USER% сжимают ваш член.",
+		"Ваш член легко скользит между ножек %USER%.",
+		"Мягкое междуножье %USER% ощущается бесподобно."
 	)

@@ -1,10 +1,6 @@
 /datum/interaction/lewd/portal/handjob
 	name = "Portal Handjob"
 	description = "Give them a handjob through the portal dildo."
-	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
-	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_ANY)
-	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
-	cum_target = list(CLIMAX_POSITION_TARGET = null)
 	message = list(
 		"strokes %TARGET%'s cock through the portal fleshlight",
 		"works %TARGET%'s shaft with their hand through the portal dildo",
@@ -83,25 +79,9 @@
 		)
 	)
 
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/bang1.ogg',
-		'modular_zzplurt/sound/interactions/bang2.ogg',
-		'modular_zzplurt/sound/interactions/bang3.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 0
-	target_pleasure = 4
-	user_arousal = 2
-	target_arousal = 6
-
 /datum/interaction/lewd/portal/finger_vagina
 	name = "Portal Fingering (Vagina)"
 	description = "Finger their pussy through the portal fleshlight."
-	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
-	target_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_ANY)
-	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_VAGINA)
-	cum_target = list(CLIMAX_POSITION_TARGET = null)
 	message = list(
 		"fingers %TARGET%'s pussy through the portal fleshlight",
 		"works their fingers in %TARGET%'s vagina through the portal fleshlight",
@@ -180,24 +160,9 @@
 		)
 	)
 
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/champ_fingering.ogg',
-		'modular_zzplurt/sound/interactions/champ2.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 0
-	target_pleasure = 4
-	user_arousal = 2
-	target_arousal = 6
-
 /datum/interaction/lewd/portal/finger_anus
 	name = "Portal Fingering (Anus)"
 	description = "Finger their ass through the portal fleshlight."
-	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
-	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_ANY)
-	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_BOTH)
-	cum_target = list(CLIMAX_POSITION_TARGET = null)
 	message = list(
 		"fingers %TARGET%'s ass through the portal fleshlight",
 		"works their fingers in %TARGET%'s anus through the portal fleshlight",
@@ -276,22 +241,9 @@
 		)
 	)
 
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/champ_fingering.ogg',
-		'modular_zzplurt/sound/interactions/champ2.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 0
-	target_pleasure = 3
-	user_arousal = 2
-	target_arousal = 4
-	target_pain = 1
-
 /datum/interaction/lewd/portal/finger_mouth
 	name = "Portal Fingering (Mouth)"
 	description = "Play with their mouth through the portal fleshlight."
-	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND, INTERACTION_REQUIRE_TARGET_MOUTH)
 	message = list(
 		"plays with %TARGET%'s mouth through the portal fleshlight",
 		"slides their fingers into %TARGET%'s mouth through the portal fleshlight",
@@ -326,24 +278,9 @@
 		"Fingers explore your mouth through the portal"
 	)
 
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/champ_fingering.ogg',
-		'modular_zzplurt/sound/interactions/champ2.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 0
-	target_pleasure = 1
-	user_arousal = 2
-	target_arousal = 2
-
 /datum/interaction/lewd/portal/finger_urethra
 	name = "Portal Fingering (Urethra)"
 	description = "Finger their urethra through the portal dildo."
-	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
-	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_ANY)
-	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
-	cum_target = list(CLIMAX_POSITION_TARGET = null)
 	message = list(
 		"fingers %TARGET%'s urethra through the portal dildo",
 		"works their fingers in %TARGET%'s cock through the portal dildo",
@@ -421,15 +358,3 @@
 			"The portal dildo's urethra contracts around your fingers"
 		)
 	)
-
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/champ_fingering.ogg',
-		'modular_zzplurt/sound/interactions/champ2.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 0
-	target_pleasure = 3
-	user_arousal = 2
-	target_arousal = 4
-	target_pain = 2

@@ -1,160 +1,142 @@
 /datum/interaction/lewd/portal/fuck_vagina
-	name = "Portal Fuck (Vagina)"
-	description = "Fuck their pussy through the portal fleshlight."
-	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
-	target_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_ANY)
-	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS, CLIMAX_POSITION_TARGET = CLIMAX_VAGINA)
-	cum_target = list(CLIMAX_POSITION_USER = ORGAN_SLOT_VAGINA, CLIMAX_POSITION_TARGET = ORGAN_SLOT_PENIS)
-
+	name = "Портальный секс (Вагинальный)"
+	description = "Киска через портал? Да, пожалуйста."
 	message = list(
-		"rams their cock into %TARGET%'s pussy through the portal fleshlight",
-		"pounds into %TARGET%'s vagina through the portal fleshlight",
-		"thrusts deep into %TARGET%'s wet hole through the portal fleshlight",
-		"fucks %TARGET%'s pussy through the portal fleshlight"
+		"вдалбливается в киску %TARGET% сквозь портальный фонарик.",
+		"проникает в киску %TARGET% своим членом сквозь портальный фонарик.",
+		"нежно проталкивается членом в киску %TARGET% сквозь портальный фонарик.",
+		"плавно разрабатывает киску %TARGET% сквозь портальный фонарик."
 	)
 	user_messages = list(
-		"You feel %TARGET%'s warm pussy squeezing around your cock through the portal",
-		"The wetness of %TARGET%'s vagina envelops your shaft through the portal",
-		"You thrust deep into %TARGET%'s tight pussy through the portal fleshlight"
+		"Вы чувствуете теплую киску %TARGET%, сжимающуюся вокруг вашего члена через портальный фонарик.",
+		"Влага киски %TARGET% обжимает ствол вашего члена через портальный фонарик.",
+		"Вы входите глубоко в киску %TARGET% через портальный фонарик."
 	)
 	target_messages = list(
-		"You feel %USER%'s cock pushing into your pussy through the portal panties",
-		"%USER%'s shaft slides deep into your vagina through the portal",
-		"The warmth of %USER%'s cock fills your pussy through the portal"
+		"Вы чувствуете, как член %USER% проталкивается в вашу киску через портальные трусики.",
+		"Ствол %USER% проскользывает глубоко в ваше влагалище через портал.",
+		"Теплый член %USER% заполняет вашу киску через портал."
 	)
 
 	hidden_message = list(
-		"rams their cock into the portal fleshlight's pussy",
-		"pounds into the portal fleshlight's vagina",
-		"thrusts deep into the portal fleshlight's wet hole",
-		"fucks the portal fleshlight's pussy"
+		"вдалбливается в портальную киску.",
+		"проникает в портальную киску через фонарик.",
+		"нежно проталкивается членом в портальную киску сквозь фонарик.",
+		"плавно разрабатывает портальную киску."
+
 	)
 	hidden_user_messages = list(
-		"You feel the warm pussy squeezing around your cock through the portal",
-		"The wetness of the portal fleshlight's vagina envelops your shaft",
-		"You thrust deep into the portal fleshlight's tight pussy"
+		"Вы чувствуете теплую портальную киску, сжимающуюся вокруг вашего члена.",
+		"Влага портальной киски обжимает ствол вашего члена.",
+		"Вы входите глубоко в портальную киску через фонарик."
+
 	)
 	hidden_target_messages = list(
-		"You feel a cock pushing into your pussy through the portal panties",
-		"A shaft slides deep into your vagina through the portal",
-		"The warmth of a cock fills your pussy through the portal"
+		"Вы чувствуете проталкивающийся в вашу киску член, через портальные трусики.",
+		"Ствол горячего члена проскользывает глубоко в ваше влагалище через портал.",
+		"Чей-то теплый член заполняет вашу киску через портал."
 	)
 
 	cum_message_text_overrides = list(
 		CLIMAX_POSITION_USER = list(
-			"%CUMMING% cums hard into %CAME_IN%'s pussy through the portal fleshlight",
-			"%CUMMING% fills %CAME_IN%'s vagina with their seed through the portal fleshlight",
-			"%CUMMING% pumps their load deep into %CAME_IN%'s pussy through the portal fleshlight"
+			"%CUMMING% кончает глубоко в киску %CAME_IN%, используя портал.",
+			"%CUMMING% наполняет влагалище %CAME_IN% до краёв семенем, используя портал.",
+			"%CUMMING% стреляет семенем внутрь киски %CAME_IN%, используя портал."
 		),
 		CLIMAX_POSITION_TARGET = list(
-			"%CUMMING%'s pussy squeezes tightly around %CAME_IN%'s cock as they cum through the portal",
-			"%CUMMING% climaxes hard on %CAME_IN%'s shaft through the portal",
-			"%CUMMING%'s vagina contracts in orgasm around %CAME_IN%'s member through the portal"
+			"Портальная киска %CUMMING% туго сжимается на члене %CAME_IN% во время оргазма.",
+			"%CUMMING% оргазмирует прямо на ствол члена %CAME_IN% через портал.",
+			"Вагина %CUMMING% сжимается в оргазме вокруг члена %CAME_IN% через портал."
 		)
 	)
 	cum_self_text_overrides = list(
 		CLIMAX_POSITION_USER = list(
-			"You cum hard into %CAME_IN%'s pussy through the portal fleshlight",
-			"You fill %CAME_IN%'s vagina with your seed through the portal fleshlight",
-			"You pump your load deep into %CAME_IN%'s pussy through the portal fleshlight"
+			"Вы глубоко кончаете в киску %CAME_IN%, используя портал.",
+			"Вы наполняете влагалище %CAME_IN% до краёв семенем, используя портал.",
+			"Вы стреляете семенем внутрь киски %CAME_IN%, используя портал."
+
 		),
 		CLIMAX_POSITION_TARGET = list(
-			"Your pussy squeezes tightly around %CAME_IN%'s cock as you cum through the portal",
-			"You climax hard on %CAME_IN%'s shaft through the portal",
-			"Your vagina contracts in orgasm around %CAME_IN%'s member through the portal"
+			"Ваша портальная киска туго сжимается на члене %CAME_IN% во время оргазма.",
+			"Вы оргазмируете прямо на ствол члена %CAME_IN% через портал.",
+			"Ваша вагина сжимается в оргазме вокруг члена %CAME_IN% через портал."
 		)
 	)
 	cum_partner_text_overrides = list(
 		CLIMAX_POSITION_USER = list(
-			"You feel %CUMMING%'s hot seed flooding your pussy through the portal panties",
-			"%CUMMING% fills your vagina with their cum through the portal panties",
-			"Your pussy is filled with %CUMMING%'s warm cum through the portal"
+			"Горячее семя %CUMMING% наполняет вашу киску через портальные трусики.",
+			"%CUMMING% наполняет вашу вагину своим семенем через портальные трусики.",
+			"Ваша киска наполненна горячим семенем %CUMMING%, благодаря порталу."
 		),
 		CLIMAX_POSITION_TARGET = list(
-			"You feel %CUMMING%'s pussy squeeze around your cock as they cum through the portal",
-			"%CUMMING% climaxes on your shaft through the portal fleshlight",
-			"The portal fleshlight's pussy contracts around your member as %CUMMING% cums"
+			"Вы ощущаете, как портальная киска %CUMMING% туго сжимается на вашем члене во время оргазма.",
+			"%CUMMING% оргазмирует прямо на ствол вашего члена через портал.",
+			"Вагина %CUMMING% сжимается в оргазме вокруг вашего члена через портал."
 		)
 	)
 
 	hidden_cum_message_text_overrides = list(
 		CLIMAX_POSITION_USER = list(
-			"cums hard into the portal fleshlight's pussy",
-			"fills the portal fleshlight's vagina with their seed",
-			"pumps their load deep into the portal fleshlight's pussy"
+			"кончает глубоко в портальную киску.",
+			"наполняет портальное влагалище до краёв семенем.",
+			"стреляет семенем внутрь портальной киски."
 		),
 		CLIMAX_POSITION_TARGET = list(
-			"The portal panties' pussy squeezes tightly around the cock as they cum",
-			"The wearer climaxes hard through the portal panties",
-			"The portal panties' vagina contracts in orgasm"
+			"Портальная киска сжимается вокруг вашего члена во время оргазма.",
+			"Носитель порталок ярко оргазмирует через свои трусики.",
+			"Киски портальной вагины сжимается в оргазме."
 		)
 	)
 	hidden_cum_self_text_overrides = list(
 		CLIMAX_POSITION_USER = list(
-			"You cum hard into the portal fleshlight's pussy",
-			"You fill the portal fleshlight's vagina with your seed",
-			"You pump your load deep into the portal fleshlight's pussy"
+			"Вы глубоко кончаете в портальную киску.",
+			"Вы наполняете портальное влагалище до краёв семенем, используя портал.",
+			"Вы стреляете семенем внутрь портальной киски."
 		),
 		CLIMAX_POSITION_TARGET = list(
-			"Your pussy squeezes tightly around the cock as you cum through the portal",
-			"You climax hard through the portal panties",
-			"Your vagina contracts in orgasm around the member through the portal"
+			"Ваша киска туго сжимается на портальном члене во время оргазма.",
+			"Вы оргазмируете прямо на ствол портального члена.",
+			"Ваша вагина сжимается в оргазме вокруг члена через портал."
 		)
 	)
 	hidden_cum_partner_text_overrides = list(
 		CLIMAX_POSITION_USER = list(
-			"You feel hot seed flooding your pussy through the portal panties",
-			"Warm cum fills your vagina through the portal panties",
-			"Your pussy is filled with cum through the portal"
+			"Вы ощущаете, как горячее семя наполняет вашу киску через портальные трусики.",
+			"Вас наполняют горячим семенем через портальные трусики.",
+			"Ваша киска наполненна горячим семенем благодаря порталу."
 		),
 		CLIMAX_POSITION_TARGET = list(
-			"You feel the pussy squeeze around your cock as they cum through the portal",
-			"The portal fleshlight's user climaxes on your shaft",
-			"The portal fleshlight's pussy contracts around your member"
+			"Вы ощущаете, как портальная киска туго сжимается на вашем члене во время оргазма.",
+			"Портальная киска оргазмирует прямо на ствол вашего члена через портал.",
+			"Вагина вашего портального любовника сжимается в оргазме вокруг вашего члена."
 		)
 	)
-
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/bang1.ogg',
-		'modular_zzplurt/sound/interactions/bang2.ogg',
-		'modular_zzplurt/sound/interactions/bang3.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 6
-	target_pleasure = 6
-	user_arousal = 8
-	target_arousal = 8
 
 /datum/interaction/lewd/portal/fuck_vagina/post_interaction(mob/living/user, mob/living/target)
 	. = ..()
 	if(prob(5 + target.arousal))
 		var/list/arousal_messages = list(
-			"%TARGET% moans in pleasure as they're fucked through the portal.",
-			"%TARGET% gasps as the cock pushes deeper through the portal.",
-			"%TARGET% trembles from the portal fucking.",
-			"%TARGET% shudders in arousal from the portal penetration."
+			"%TARGET% стонет в удовольствии во время портального секса.",
+			"%TARGET% приоткрывает рот в момент как член через портал проникает глубже.",
+			"%TARGET% вздрагивает, ощущая, что член протолкнулся глубже через портал.",
+			"Тело %TARGET% пробирает дрожь возбуждения от портального проникновения."
 		)
 		var/target_message = list(pick(arousal_messages))
 		target.visible_message(span_lewd(replacetext(target_message, "%TARGET%", target)))
 
 /datum/interaction/lewd/portal/fuck_anus
-	name = "Portal Fuck (Anus)"
-	description = "Fuck their ass through the portal fleshlight."
-	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
-	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_ANY)
-	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS, CLIMAX_POSITION_TARGET = CLIMAX_BOTH)
-	cum_target = list(CLIMAX_POSITION_USER = ORGAN_SLOT_ANUS)
+	name = "Портальный секс (Анальный)"
+	description = "Почему бы и не попробовать задницу тоже, раз предлагают?"
 	message = list(
-		"rams their cock into %TARGET%'s ass through the portal fleshlight",
-		"pounds into %TARGET%'s anus through the portal fleshlight",
-		"thrusts deep into %TARGET%'s tight hole through the portal fleshlight",
-		"fucks %TARGET%'s ass through the portal fleshlight"
+		"вдавливает свой член в задницу %TARGET% через портальный фонарик.",
+		"долбится в задницу %TARGET%, используя портальный фонарик.",
+		"проникает глубоко в тугую попку %TARGET% благодаря портальному фонарику.",
+		"пользуется попкой %TARGET% через портальнйы фонарик."
 	)
 	user_messages = list(
-		"You feel %TARGET%'s tight ass squeezing around your cock through the portal",
-		"The warmth of %TARGET%'s anus envelops your shaft through the portal",
-		"You thrust deep into %TARGET%'s tight ass through the portal fleshlight"
+		"Вы ощущете узкую задницу %TARGET%, обжимающую ствол вашего члена через портал.",
+		"Вы делаете приятно своему члену благодаря тёплой портальной попке %TARGET%",
+		"Вы проникаете глубоко в тугой зад %TARGET% через портальный фонарик."
 	)
 	target_messages = list(
 		"You feel %USER%'s cock pushing into your ass through the portal panties",
@@ -253,19 +235,6 @@
 		)
 	)
 
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/bang1.ogg',
-		'modular_zzplurt/sound/interactions/bang2.ogg',
-		'modular_zzplurt/sound/interactions/bang3.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 6
-	target_pleasure = 4
-	user_arousal = 8
-	target_arousal = 6
-	target_pain = 2
-
 /datum/interaction/lewd/portal/fuck_anus/post_interaction(mob/living/user, mob/living/target)
 	. = ..()
 	if(prob(5 + target.arousal))
@@ -281,10 +250,6 @@
 /datum/interaction/lewd/portal/fuck_mouth
 	name = "Portal Fuck (Mouth)"
 	description = "Fuck their mouth through the portal fleshlight."
-	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)
-	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
-	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
-	cum_target = list(CLIMAX_POSITION_USER = CLIMAX_TARGET_MOUTH)
 	message = list(
 		"rams their cock into %TARGET%'s mouth through the portal fleshlight",
 		"pounds into %TARGET%'s throat through the portal fleshlight",
@@ -392,18 +357,6 @@
 			"The portal fleshlight's mouth contracts around your member"
 		)
 	)
-
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/oral1.ogg',
-		'modular_zzplurt/sound/interactions/oral2.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 6
-	target_pleasure = 2
-	user_arousal = 8
-	target_arousal = 4
-
 /datum/interaction/lewd/portal/fuck_mouth/post_interaction(mob/living/user, mob/living/target)
 	. = ..()
 	if(prob(5 + target.arousal))
@@ -419,10 +372,6 @@
 /datum/interaction/lewd/portal/fuck_urethra
 	name = "Portal Fuck (Urethra)"
 	description = "Fuck their urethra through the portal dildo."
-	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
-	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_ANY)
-	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS, CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
-	cum_target = list(CLIMAX_POSITION_USER = ORGAN_SLOT_PENIS, CLIMAX_POSITION_TARGET = ORGAN_SLOT_PENIS)
 	message = list(
 		"rams their cock into %TARGET%'s urethra through the portal dildo",
 		"pounds into %TARGET%'s cockhole through the portal dildo",
@@ -531,19 +480,6 @@
 		)
 	)
 
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/bang1.ogg',
-		'modular_zzplurt/sound/interactions/bang2.ogg',
-		'modular_zzplurt/sound/interactions/bang3.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 6
-	target_pleasure = 4
-	user_arousal = 8
-	target_arousal = 6
-	target_pain = 4
-
 /datum/interaction/lewd/portal/fuck_urethra/post_interaction(mob/living/user, mob/living/target)
 	. = ..()
 	if(prob(5 + target.arousal))
@@ -559,11 +495,6 @@
 /datum/interaction/lewd/portal/vaginal_ride
 	name = "Portal Vaginal Ride"
 	description = "Ride the portal dildo with your vagina."
-	user_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
-	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_ANY)
-	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_VAGINA, CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
-	cum_target = list(CLIMAX_POSITION_USER = ORGAN_SLOT_PENIS, CLIMAX_POSITION_TARGET = ORGAN_SLOT_VAGINA)
-
 	message = list(
 		"rides %TARGET%'s cock with their pussy through the portal dildo",
 		"bounces their vagina on %TARGET%'s shaft through the portal dildo",
@@ -635,26 +566,9 @@
 		)
 	)
 
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/bang1.ogg',
-		'modular_zzplurt/sound/interactions/bang2.ogg',
-		'modular_zzplurt/sound/interactions/bang3.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 6
-	target_pleasure = 6
-	user_arousal = 8
-	target_arousal = 8
-
 /datum/interaction/lewd/portal/anal_ride
 	name = "Portal Anal Ride"
 	description = "Ride the portal dildo with your ass."
-	user_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
-	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_ANY)
-	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_BOTH, CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
-	cum_target = list(CLIMAX_POSITION_TARGET = ORGAN_SLOT_ANUS)
-
 	message = list(
 		"rides %TARGET%'s cock with their ass through the portal dildo",
 		"bounces their anus on %TARGET%'s shaft through the portal dildo",
@@ -726,27 +640,9 @@
 		)
 	)
 
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/bang1.ogg',
-		'modular_zzplurt/sound/interactions/bang2.ogg',
-		'modular_zzplurt/sound/interactions/bang3.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 6
-	target_pleasure = 6
-	user_arousal = 8
-	target_arousal = 8
-
-
 /datum/interaction/lewd/portal/urethral_ride
 	name = "Portal Urethral Ride"
 	description = "Let them fuck your urethra through the portal dildo."
-	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
-	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_ANY)
-	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS, CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
-	cum_target = list(CLIMAX_POSITION_USER = ORGAN_SLOT_PENIS)
-
 	message = list(
 		"takes %TARGET%'s cock into their urethra through the portal dildo",
 		"rides %TARGET%'s shaft with their cockhole through the portal dildo",
@@ -833,19 +729,6 @@
 		)
 	)
 
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/bang1.ogg',
-		'modular_zzplurt/sound/interactions/bang2.ogg',
-		'modular_zzplurt/sound/interactions/bang3.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 4
-	target_pleasure = 6
-	user_arousal = 6
-	target_arousal = 8
-	user_pain = 4
-
 /datum/interaction/lewd/portal/urethral_ride/post_interaction(mob/living/user, mob/living/target)
 	. = ..()
 	if(prob(5 + user.arousal))
@@ -863,10 +746,6 @@
 /datum/interaction/lewd/portal/frotting
 	name = "Portal Frotting"
 	description = "Rub your cock against theirs through the portal dildo."
-	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
-	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_ANY)
-	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS, CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
-	cum_target = list(CLIMAX_POSITION_USER = null, CLIMAX_POSITION_TARGET = null)
 	message = list(
 		"rubs their cock against %TARGET%'s penis through the portal dildo",
 		"grinds their shaft against %TARGET%'s member through the portal dildo",
@@ -975,18 +854,6 @@
 		)
 	)
 
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/bang1.ogg',
-		'modular_zzplurt/sound/interactions/bang2.ogg',
-		'modular_zzplurt/sound/interactions/bang3.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 4
-	target_pleasure = 4
-	user_arousal = 6
-	target_arousal = 6
-
 /datum/interaction/lewd/portal/frotting/post_interaction(mob/living/user, mob/living/target)
 	. = ..()
 	if(prob(5 + target.arousal))
@@ -1003,9 +870,6 @@
 /datum/interaction/lewd/portal/tribadism
 	name = "Portal Tribadism"
 	description = "Grind your pussy against theirs through the portal."
-	target_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_ANY)
-	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_VAGINA, CLIMAX_POSITION_TARGET = CLIMAX_VAGINA)
-	cum_target = list(CLIMAX_POSITION_USER = ORGAN_SLOT_VAGINA, CLIMAX_POSITION_TARGET = ORGAN_SLOT_VAGINA)
 	message = list(
 		"grinds their pussy against %TARGET%'s cunt through the portal fleshlight",
 		"rubs their cunt against %TARGET%'s pussy through the portal fleshlight",
@@ -1039,18 +903,6 @@
 		"A cunt rubs against your own through the portal",
 		"A pussy works against yours through the portal"
 	)
-
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/squelch1.ogg',
-		'modular_zzplurt/sound/interactions/squelch2.ogg',
-		'modular_zzplurt/sound/interactions/squelch3.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 6
-	target_pleasure = 6
-	user_arousal = 10
-	target_arousal = 10
 
 
 

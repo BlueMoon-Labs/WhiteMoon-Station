@@ -1,13 +1,13 @@
 /datum/interaction/lewd/titgrope_self
-	name = "Grope Breasts (self)"
-	description = "Grope your own breasts."
+	name = "Грудь: поласкать (Собственную)"
+	description = "Ухватитесь за собственную грудь."
 	message = list(
-		"gently gropes their breast",
-		"softly squeezes their breasts",
-		"grips their breasts",
-		"runs a few fingers over their breast",
-		"delicately teases their nipple",
-		"traces a touch across their breast"
+		"мягко обхватывает рукой свою грудь.",
+		"несильно сжимает свои груди.",
+		"ухватывается за свою грудь.",
+		"проходится по соскам своими пальцами.",
+		"дразнит пальцами себя и свои соски.",
+		"аккуратно касается собственных грудей."
 	)
 
 /datum/interaction/lewd/titgrope_self/post_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -15,13 +15,13 @@
 	if(!ishuman(user))
 		return
 	if(prob(5 + user.arousal))
-		user.visible_message(span_lewd("<b>\The [user]</b> [pick(
-			"shivers in arousal.",
-			"moans quietly.",
-			"breathes out a soft moan.",
-			"gasps.",
-			"shudders softly.",
-			"trembles as their hands run across bare skin.")]"))
+		user.visible_message(span_lewd("<b>[user]</b> [pick(
+			"дрожит в возбуждении.",
+			"тихонечко постанывает.",
+			"выдыхает мягкий стон.",
+			"открывает рот в стоне.",
+			"мягко вздрагивает.",
+			"продрагивает от касания собственной руки.")]"))
 
 	var/obj/item/liquid_container
 	var/obj/item/cached_item = user.get_active_held_item()
@@ -47,30 +47,34 @@
 			qdel(R)
 
 /datum/interaction/lewd/self_nipsuck
-	name = "Suck Nipples (self)"
-	description = "Suck your own nipples."
+	name = "Соски: пососать (Собственные)"
+	description = "Обласкайте языком и обсосите собственне соски."
 	message = list(
-		"brings their own milk tanks to their mouth and sucks deeply into them",
-		"takes a big sip of their own fresh milk",
-		"fills their own mouth with a big gulp of their warm milk"
+		"\"берёт\" у себя молочко, присасываясь к собственным грудям.",
+		"пьёт из собственных грудей парное молоко.",
+		"наполняет свой рот большим глотком своего горячего молока."
 	)
 
 /datum/interaction/lewd/breastfuck_self
-	name = "Breastfuck (self)"
-	description = "Fuck your own breasts."
+	name = "Груди: ублажить (Себя)"
+	description = "Воспользуйтесь своими грудями по прямому сексуальному назначению."
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(
 		"cums all over their own breasts",
 		"shoots their load onto their tits",
 		"covers their breasts in cum"
+
+		"кончает поверх собственных грудей.",
+		"стреляет семенем поверх своих сисек.",
+		"покрывает свои соски горячим семенем."
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"You cum all over your own breasts",
-		"You shoot your load onto your tits",
-		"You cover your breasts in cum"
+		"Вы кончаете поверх собственных грудей.",
+		"Вы стреляете семенем поверх своих сисек.",
+		"Вы покрываете свои соски горячим семенем."
 	))
 	message = list(
-		"fucks their own breasts",
-		"slides their cock between their breasts",
-		"thrusts between their tits",
-		"pleasures themself with their breasts"
+		"трахает собственные груди членом.",
+		"скользит своим членом между собственных грудей.",
+		"опускает и поднимает свои груди, обтирая ими свой член.",
+		"прикусывает губу в наслаждении, тазом проникая между собственными же грудями."
 	)

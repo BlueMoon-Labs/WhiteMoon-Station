@@ -1,10 +1,6 @@
 /datum/interaction/lewd/portal/oral_penis
-	name = "Portal Oral (Penis)"
-	description = "Suck their cock through the portal dildo."
-	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
-	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_ANY)
-	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
-	cum_target = list(CLIMAX_POSITION_TARGET = CLIMAX_TARGET_MOUTH)
+	name = "Портальный минет"
+	description = "Фелляция, горячими устами, языком и глоткой, портальным образом."
 	message = list(
 		"sucks %TARGET%'s cock through the portal dildo",
 		"works %TARGET%'s shaft with their mouth through the portal dildo",
@@ -83,33 +79,9 @@
 		)
 	)
 
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/bj1.ogg',
-		'modular_zzplurt/sound/interactions/bj2.ogg',
-		'modular_zzplurt/sound/interactions/bj3.ogg',
-		'modular_zzplurt/sound/interactions/bj4.ogg',
-		'modular_zzplurt/sound/interactions/bj5.ogg',
-		'modular_zzplurt/sound/interactions/bj6.ogg',
-		'modular_zzplurt/sound/interactions/bj7.ogg',
-		'modular_zzplurt/sound/interactions/bj8.ogg',
-		'modular_zzplurt/sound/interactions/bj9.ogg',
-		'modular_zzplurt/sound/interactions/bj10.ogg',
-		'modular_zzplurt/sound/interactions/bj11.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 0
-	target_pleasure = 6
-	user_arousal = 4
-	target_arousal = 8
-
 /datum/interaction/lewd/portal/oral_vagina
-	name = "Portal Oral (Vagina)"
+	name = "Портальный куннилингус"
 	description = "Lick their pussy through the portal fleshlight."
-	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
-	target_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_ANY)
-	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_VAGINA)
-	cum_target = list(CLIMAX_POSITION_TARGET = CLIMAX_TARGET_MOUTH)
 	message = list(
 		"licks %TARGET%'s pussy through the portal fleshlight",
 		"works %TARGET%'s vagina with their tongue through the portal fleshlight",
@@ -188,24 +160,9 @@
 		)
 	)
 
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/oral1.ogg',
-		'modular_zzplurt/sound/interactions/oral2.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 0
-	target_pleasure = 6
-	user_arousal = 4
-	target_arousal = 8
-
 /datum/interaction/lewd/portal/oral_anus
-	name = "Portal Oral (Anus)"
+	name = "Портальный анилингус"
 	description = "Rim their ass through the portal fleshlight."
-	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
-	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_ANY)
-	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_BOTH)
-	cum_target = list(CLIMAX_POSITION_TARGET = null)
 	message = list(
 		"licks %TARGET%'s ass through the portal fleshlight",
 		"works %TARGET%'s anus with their tongue through the portal fleshlight",
@@ -284,22 +241,9 @@
 		)
 	)
 
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/oral1.ogg',
-		'modular_zzplurt/sound/interactions/oral2.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 0
-	target_pleasure = 4
-	user_arousal = 4
-	target_arousal = 6
-	target_pain = 1
-
 /datum/interaction/lewd/portal/oral_mouth
-	name = "Portal Kiss"
+	name = "Портальный поцелуй"
 	description = "Kiss them through the portal fleshlight."
-	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH, INTERACTION_REQUIRE_TARGET_MOUTH)
 	message = list(
 		"kisses %TARGET% through the portal fleshlight",
 		"presses their lips against %TARGET%'s through the portal fleshlight",
@@ -333,26 +277,3 @@
 		"A mouth presses against yours through the portal",
 		"Someone kisses you deeply through the portal"
 	)
-
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/kiss1.ogg',
-		'modular_zzplurt/sound/interactions/kiss2.ogg',
-		'modular_zzplurt/sound/interactions/kiss3.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 1
-	target_pleasure = 1
-	user_arousal = 2
-	target_arousal = 2
-
-/datum/interaction/lewd/portal/oral_mouth/post_interaction(mob/living/user, mob/living/target)
-	. = ..()
-	// Check if user has TRAIT_KISS_SLUT and increase their lust
-	if(HAS_TRAIT(user, TRAIT_KISS_SLUT))
-		user.adjust_pleasure(10, target, interaction = src, position = CLIMAX_POSITION_USER)
-		user.adjust_arousal(10)
-	// Check if target has TRAIT_KISS_SLUT and increase their lust
-	if(HAS_TRAIT(target, TRAIT_KISS_SLUT))
-		target.adjust_pleasure(10, user, interaction = src, position = CLIMAX_POSITION_TARGET)
-		target.adjust_arousal(10)

@@ -1,5 +1,5 @@
 /datum/interaction/lewd/nipplefuck
-	name = "Секс: проникнуть в соски"
+	name = "Соски: трахнуть"
 	description = "Трахните соски партнёра, если такое с ними возможно."
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(
 		"покрывает семенем соски %TARGET%",

@@ -77,12 +77,6 @@
 			"%TARGET% Выстреливает все что есть на вашу %FEET%."
 		)
 	)
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/foot_dry1.ogg',
-		'modular_zzplurt/sound/interactions/foot_dry3.ogg',
-		'modular_zzplurt/sound/interactions/foot_wet1.ogg',
-		'modular_zzplurt/sound/interactions/foot_wet2.ogg'
-	)
 
 /datum/interaction/lewd/footjob/act(mob/living/user, mob/living/target)
 	var/list/original_messages = message.Copy()
