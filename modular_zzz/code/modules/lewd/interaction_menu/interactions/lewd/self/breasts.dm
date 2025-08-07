@@ -59,10 +59,6 @@
 	name = "Груди: ублажить (Себя)"
 	description = "Воспользуйтесь своими грудями по прямому сексуальному назначению."
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"cums all over their own breasts",
-		"shoots their load onto their tits",
-		"covers their breasts in cum"
-
 		"кончает поверх собственных грудей.",
 		"стреляет семенем поверх своих сисек.",
 		"покрывает свои соски горячим семенем."
