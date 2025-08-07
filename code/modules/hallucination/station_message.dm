@@ -94,7 +94,7 @@
 	var/area/fake_summon_area = GLOB.areas_by_type[fake_summon_area_type]
 
 	priority_announce(
-		text = "Figments from an eldritch god are being summoned by [totally_real_cult_leader.real_name] into [fake_summon_area] from an unknown dimension. Disrupt the ritual at all costs!",
+		text = "Мы наблюдаем призыв Сверх-Существа со стороны [totally_real_cult_leader.real_name] на территории [fake_summon_area] из Красного Измерения. Остановите ритуал любой ценой!",
 		title = "[command_name()]: Комитет O-5",
 		sound = 'sound/music/antag/bloodcult/bloodcult_scribe.ogg',
 		has_important_message = TRUE,

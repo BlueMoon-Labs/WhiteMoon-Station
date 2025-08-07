@@ -372,7 +372,7 @@
 	var/area/summon_location = get_area(cultist)
 	var/static/cult_music_played = FALSE
 	priority_announce(
-		text = "Figments from an eldritch god are being summoned by [cultist.real_name] into [summon_location.get_original_area_name()] from an unknown dimension. Disrupt the ritual at all costs!",
+		text = "Мы наблюдаем призыв Сверх-Существа со стороны [cultist.real_name] на территории [summon_location.get_original_area_name()] из Красного Измерения. Остановите ритуал любой ценой!",
 		sound = cult_music_played ? 'sound/announcer/notice/notice3.ogg' : 'sound/music/antag/bloodcult/bloodcult_scribe.ogg',
 		sender_override = "[command_name()]: Комитет O-5",
 		has_important_message = TRUE,
