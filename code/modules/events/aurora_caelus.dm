@@ -36,6 +36,9 @@
 		if(is_station_level(player.z))
 			player.apply_status_effect(/datum/status_effect/pacify, 123 SECONDS)
 
+	if(!prob(10) && !check_holidays(APRIL_FOOLS))
+		return
+
 	var/list/human_blacklist = list()
 	for(var/area/station/service/kitchen/affected_area in GLOB.areas)
 		var/obj/machinery/oven/roast_ruiner = locate() in affected_area

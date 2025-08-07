@@ -10517,6 +10517,7 @@
 #include "modular_zzz\code\modules\storyteller\event_defines\ghostset\wizard.dm"
 #include "modular_zzz\code\modules\storyteller\event_defines\moderate\mold.dm"
 #include "modular_zzz\code\modules\surgery\bodyparts\_bodyparts.dm"
+#include "modular_zzz\code\modules\tgui_panel\telemetry.dm"
 #include "modular_zzz\code\modules\uplink\uplink_items\badass.dm"
 #include "modular_zzz\code\modules\uplink\uplink_items\clownops.dm"
 #include "modular_zzz\code\modules\uplink\uplink_items\dangerous.dm"
