@@ -75,13 +75,13 @@
 	name = "Rohai Infantry helmet"
 	item_path = /obj/item/clothing/head/helmet/sec/rohai_helmet
 	restricted_roles = list(ALL_JOBS_SEC)
-	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964", "wangig", "omantis", "sc1de", "kladmenuwu", "manafluff", "hardbass228", "flaffug")
+	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964", "wangig", "omantis", "sc1de", "kladmenuwu", "manafluff", "hardbass228", "flaffug", "runtimedead")
 
 /datum/loadout_item/head/helmet/sec/rhsa12
 	name = "R-HSA-12"
 	item_path = /obj/item/clothing/head/helmet/sec/rhsa12
 	restricted_roles = list(ALL_JOBS_SEC)
-	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964", "wangig", "omantis", "sc1de", "kladmenuwu", "manafluff", "hardbass228", "flaffug")
+	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964", "wangig", "omantis", "sc1de", "kladmenuwu", "manafluff", "hardbass228", "flaffug", "runtimedead")
 
 /datum/loadout_item/head/helmet/sec/aegis
 	name = "AEGIS-X Tactical Helmet"
