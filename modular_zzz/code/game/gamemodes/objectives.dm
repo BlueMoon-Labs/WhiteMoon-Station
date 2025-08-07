@@ -42,7 +42,7 @@
 /datum/objective/assassinate/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Убейте [target.name], в должности [!target_role_type ? target.assigned_role.title : english_list(target.get_special_roles())] ОДИН РАЗ." //NOVA EDIT CHANGE
+		explanation_text = "Убейте [target.name], в должности [!target_role_type ? target.assigned_role.title : english_list(target.get_special_roles())], ОДИН РАЗ." //NOVA EDIT CHANGE
 	else
 		explanation_text = "Свободное задание."
 
@@ -50,14 +50,14 @@
 /datum/objective/mutiny/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Уничтожьте или изгоните [target.name], в должности [!target_role_type ? target.assigned_role.title : english_list(target.get_special_roles())]."
+		explanation_text = "Убейте или изгоните [target.name] в ГЕЙТ, в должности [!target_role_type ? target.assigned_role.title : english_list(target.get_special_roles())]."
 	else
 		explanation_text = "Свободное задание."
 
 // Maroon
 /datum/objective/maroon/update_explanation_text()
 	if(target?.current)
-		explanation_text = "Не дайте [target.name], в должности [!target_role_type ? target.assigned_role.title : english_list(target.get_special_roles())] уйти со станции живым."
+		explanation_text = "Не дайте [target.name], в должности [!target_role_type ? target.assigned_role.title : english_list(target.get_special_roles())] уйти со станции живым. Вы в праве уничтожить [target.name]."
 	else
 		explanation_text = "Свободное задание."
 

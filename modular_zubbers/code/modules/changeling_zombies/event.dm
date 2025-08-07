@@ -27,11 +27,28 @@
 	contains = list() //We don't put contents in this to do snowflake content in populate_contents
 	crate_type = /obj/structure/closet/crate/changeling_zombie
 
+/obj/structure/closet/crate/changeling_zombie
+	var/virus_released = FALSE
+
+/obj/structure/closet/crate/changeling_zombie/after_open(mob/living/user, force)
+	. = ..()
+	if(!virus_released)
+		virus_released = TRUE
+		playsound(src, 'sound/effects/smoke.ogg', 50, TRUE, -3)
+		var/datum/reagents/zombie_holder = new(10)
+		var/zombie_holder_location = get_turf(src)
+		zombie_holder.add_reagent(/datum/reagent/changeling_zombie_virus, 30)
+		var/datum/effect_system/fluid_spread/smoke/chem/quick/smoke = new
+		smoke.set_up(6, holder = src, location = zombie_holder_location, carry = zombie_holder)
+		smoke.start()
+		QDEL_NULL(zombie_holder)
+
 /obj/structure/closet/crate/changeling_zombie/PopulateContents()
 	new /obj/item/reagent_containers/cup/glass/changeling_zombie_virus(src)
+	new /obj/item/reagent_containers/cup/glass/changeling_zombie_virus(src)
+	new /obj/item/reagent_containers/cup/glass/changeling_zombie_virus(src)
+	new /obj/item/reagent_containers/cup/glass/changeling_zombie_virus(src)
 	new /obj/item/reagent_containers/cup/glass/changeling_zombie_virus/empty(src)
-	var/obj/item/reagent_containers/cup/glass/changeling_zombie_virus/empty/broken_one = new(src)
-	broken_one.smash(src.loc,null,FALSE,TRUE)
 
 //The cure.
 /obj/item/paper/fluff/shuttles/changeling_zombie_instructions/Initialize(mapload, ...)

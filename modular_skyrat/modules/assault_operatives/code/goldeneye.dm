@@ -39,19 +39,19 @@ SUBSYSTEM_DEF(goldeneye)
 	if(uploaded_keys >= required_keys)
 		activate()
 		return
-	priority_announce("UNAUTHORISED KEYCARD UPLOAD DETECTED. [uploaded_keys]/[required_keys] KEYCARDS UPLOADED.", "GoldenEye Defence Network")
+	priority_announce("ОБНАРУЖЕНА НЕСАНКЦИОНИРОВАННАЯ ЗАГРУЗКА КАРТЫ-КЛЮЧА. [uploaded_keys]/[required_keys] КАРТОЧЕК-КЛЮЧЕЙ ЗАГРУЖЕНО.", "Сеть защиты GoldenEye")
 
 /// Activates goldeneye.
 /datum/controller/subsystem/goldeneye/proc/activate()
-	var/message = "/// GOLDENEYE DEFENCE NETWORK BREACHED /// \n \
-	Unauthorised GoldenEye Defence Network access detected. \n \
-	ICARUS online. \n \
-	Targeting system override detected... \n \
-	New target: /NTSS13/ \n \
-	ICARUS firing protocols activated. \n \
-	ETA to fire: [ignition_time / 10] seconds."
+	var/message = "/// СЕТЬ ЗАЩИТЫ GoldenEye ПРОРВАНА /// \n \
+	Обнаружен несанкционированный доступ к сети защиты GoldenEye. \n \
+	ICARUS на связи. \n \
+	Обнаружено переопределение системы наведения... \n \
+	Новая цель: /NTSS13/ \n \
+	Активированы протоколы стрельбы ICARUS. \n \
+	Расчетное время ожидания для стрельбы: [ignition_time / 10] секунд."
 
-	priority_announce(message, "GoldenEye Defence Network", ANNOUNCER_ICARUS)
+	priority_announce(message, "Сеть защиты GoldenEye", ANNOUNCER_ICARUS)
 	goldeneye_activated = TRUE
 
 	addtimer(CALLBACK(src, PROC_REF(fire_icarus)), ignition_time)

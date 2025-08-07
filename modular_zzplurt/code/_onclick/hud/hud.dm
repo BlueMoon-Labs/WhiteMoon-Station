@@ -1,12 +1,12 @@
 // SPLURT EDIT - Extra inventory
 
 GLOBAL_LIST_INIT(extra_inventory_ui_styles, list(
-	'icons/hud/screen_midnight.dmi' = 'modular_zzplurt/icons/hud/screen_midnight.dmi',
-	'icons/hud/screen_retro.dmi' = 'modular_zzplurt/icons/hud/screen_retro.dmi',
-	'icons/hud/screen_plasmafire.dmi' = 'modular_zzplurt/icons/hud/screen_plasmafire.dmi',
-	'icons/hud/screen_slimecore.dmi' = 'modular_zzplurt/icons/hud/screen_slimecore.dmi',
-	'icons/hud/screen_operative.dmi' = 'modular_zzplurt/icons/hud/screen_operative.dmi',
-	'icons/hud/screen_clockwork.dmi' = 'modular_zzplurt/icons/hud/screen_clockwork.dmi',
+	'icons/hud/screen_midnight.dmi' = 'modular_zzz/icons/hud/screen_midnight.dmi',
+	'icons/hud/screen_retro.dmi' = 'modular_zzz/icons/hud/screen_retro.dmi',
+	'icons/hud/screen_plasmafire.dmi' = 'modular_zzz/icons/hud/screen_plasmafire.dmi',
+	'icons/hud/screen_slimecore.dmi' = 'modular_zzz/icons/hud/screen_slimecore.dmi',
+	'modular_zzz/icons/hud/screen_operative.dmi' = 'modular_zzz/icons/hud/screen_operative_extor.dmi',
+	'icons/hud/screen_clockwork.dmi' = 'modular_zzz/icons/hud/screen_clockwork.dmi',
 ))
 
 

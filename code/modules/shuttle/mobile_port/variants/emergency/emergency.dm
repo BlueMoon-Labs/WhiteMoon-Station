@@ -49,7 +49,7 @@
 		SSshuttle.emergency_last_call_loc = null
 
 	priority_announce(
-		text = "Шаттл отбытия был вызван. [red_alert ? "Подтверждён Красный Код, отправлен приоритетный шаттл. " : "" ]Он прибудет через [(timeLeft(60 SECONDS))] минут.[reason][SSshuttle.emergency_last_call_loc ? "\n\nСигнал вызова был отслежен. Результаты можно отследить на любой консоли коммуникаций." : "" ][SSshuttle.admin_emergency_no_recall ? "\n\nВНИМАНИЕ: Подпрограммы вызова шаттла отключены; Вызов невозможен." : ""]",
+		text = "Шаттл отбытия был вызван. [red_alert ? "Подтверждён Красный Код, отправлен приоритетный шаттл. " : "" ]Он прибудет через [(timeLeft(60 SECONDS))] минут.[reason][SSshuttle.emergency_last_call_loc ? "\n\nСигнал вызова был отслежен. Результаты можно отследить на любой консоли коммуникаций." : "" ][SSshuttle.admin_emergency_no_recall ? "\n\nВНИМАНИЕ: Подпрограммы отзыва шаттла отключены; Отзыв невозможен." : ""]",
 		title = "Диспетчерская Служба ЦК",
 		sound = ANNOUNCER_SHUTTLECALLED,
 		sender_override = "Экстренное Оповещение",
@@ -297,9 +297,9 @@
 	launch_status = ENDGAME_LAUNCHED
 	setTimer(SSshuttle.emergency_escape_time)
 	priority_announce(
-		text = "The emergency shuttle is preparing for direct jump. Estimate [timeLeft(60 SECONDS)] minutes until the shuttle docks at [command_name()].",
-		title = "Emergency Shuttle Transit Failure",
-		sender_override = "Emergency Shuttle Uplink Alert",
+		text = "Эвакуационный Шаттл пристыковался к станции. Вам отведено [timeLeft(60 SECONDS)] секунд для того, чтобы занять своё место на борту шаттла отбытия.",
+		title = "Диспетчерская Служба ЦК",
+		sender_override = "Экстренное Оповещение",
 		color_override = "orange",
 	)
 

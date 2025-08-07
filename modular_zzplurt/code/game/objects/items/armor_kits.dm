@@ -23,16 +23,21 @@
 	var/used = FALSE
 
 	if(!isobj(interacting_with))
-		return NONE
+		return FALSE
 
 	var/obj/item/target = interacting_with
 
 	if(!(target.slot_flags & target_slot))
-		to_chat(user, "<span class = 'notice'>You can't reinforce [target] with [src].</span>")
-		return NONE
+		to_chat(user, "<span class = 'notice'>Вы не можете улучшить [target] при помощи [src].</span>")
+		return FALSE
 
 	var/obj/item/clothing/C = target
 	var/datum/armor/curr_armor = C.get_armor()
+
+	for(var/stat in ARMOR_LIST_DAMAGE())
+		if(curr_armor.get_rating(stat) > 0)
+			to_chat(user, "<span class='notice'>[C] уже имеет броню.</span>")
+			return FALSE
 
 	for(var/curr_stat in ARMOR_LIST_DAMAGE())
 		if(!curr_armor.get_rating(curr_stat) || curr_armor.get_rating(curr_stat) < actual_armor.get_rating(curr_stat))
@@ -42,14 +47,14 @@
 	if(used)
 		if(change_allowed)
 			C.allowed = target_allowed
-		user.visible_message("<span class = 'notice'>[user] reinforces [C] with [src].</span>", \
-		"<span class = 'notice'>You reinforce [C] with [src], making it as protective as \a [armor_text].</span>")
+		user.visible_message("<span class = 'notice'>[user] улучшает [C] при помощи [src].</span>", \
+		"<span class = 'notice'>Ты улучшаешь [C] до уровня [armor_text] при помощи [src]..</span>")
 		C.name = "[target_prefix] [C.name]"
 		qdel(src)
 		return ITEM_INTERACT_SUCCESS
 
-	to_chat(user, "<span class = 'notice'>You don't need to reinforce [C] any further.")
-	return NONE
+	to_chat(user, "<span class = 'notice'>Тебе больше не нужно улучшать [C].")
+	return FALSE
 
 /obj/item/armorkit/helmet
 	name = "rampart headgear kit"

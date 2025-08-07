@@ -67,7 +67,7 @@ GLOBAL_VAR_INIT(is_void_already_spawned, FALSE)
 
 /obj/effect/particle_effect/sparks/void_fissure/LateInitialize()
 	flick(icon_state, src)
-	playsound(src, 'modular_zzz/sounds/void/sound.ogg', 30, TRUE, SHORT_RANGE_SOUND_EXTRARANGE, use_reverb = TRUE)
+	playsound(src, 'modular_zzz/sound/void/sound.ogg', 30, TRUE, SHORT_RANGE_SOUND_EXTRARANGE, use_reverb = TRUE)
 	QDEL_IN(src, 30)
 
 /obj/effect/step_trigger/void
@@ -93,7 +93,7 @@ GLOBAL_VAR_INIT(is_void_already_spawned, FALSE)
 	var/obj/effect/particle_effect/sparks/void_fissure/void_hueta = new /obj/effect/particle_effect/sparks/void_fissure(src.loc)
 	animate(void_hueta, pixel_z = 0, pixel_x = 0, time = 8, easing = LINEAR_EASING)
 	if(!istype(triggerer, /mob/living/basic/void_monster) && prob(6))
-		var/sound/sound = sound('modular_zzz/sounds/void/trip_blast.wav')
+		var/sound/sound = sound('modular_zzz/sound/void/trip_blast.wav')
 		sound.environment = 23
 		sound.volume = 100
 		SEND_SOUND(triggerer.client, sound)
@@ -106,7 +106,7 @@ GLOBAL_VAR_INIT(is_void_already_spawned, FALSE)
 	requires_power = FALSE
 	default_gravity = STANDARD_GRAVITY
 	name = "void"
-	ambient_buzz = 'modular_zzz/sounds/void/void.ogg'
+	ambient_buzz = 'modular_zzz/sound/void/void.ogg'
 	ambient_buzz_vol = 30
 
 // Void Light
@@ -145,7 +145,7 @@ GLOBAL_VAR_INIT(is_void_already_spawned, FALSE)
 		var/mob/living/carbon/M = user
 		M.AdjustParalyzed(60)
 		M.adjustBruteLoss(30)
-		var/sound/sound = sound('modular_zzz/sounds/void/trip_blast.wav')
+		var/sound/sound = sound('modular_zzz/sound/void/trip_blast.wav')
 		sound.environment = 23
 		sound.volume = 200
 		SEND_SOUND(M.client, sound)

@@ -80,7 +80,7 @@ GLOBAL_LIST_EMPTY(jam_on_wardec)
 /obj/item/nuclear_challenge/proc/war_was_declared(mob/living/user, memo)
 	priority_announce(
 		text = memo,
-		title = "Declaration of War",
+		title = "Объявление Войны",
 		sound = announcement_sound,
 		has_important_message = TRUE,
 		sender_override = "Nuclear Operative Outpost",
@@ -193,7 +193,7 @@ GLOBAL_LIST_EMPTY(jam_on_wardec)
 
 	priority_announce(
 		text = memo,
-		title = "Declaration of War",
+		title = "Объявление Войны",
 		sound = announcement_sound,
 		has_important_message = TRUE,
 		sender_override = "Nuclear Operative Outpost",

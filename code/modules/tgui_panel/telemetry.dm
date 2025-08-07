@@ -106,7 +106,8 @@
 
 	// This fucker has a history of playing on a banned account.
 	if(found)
-		var/msg = "[key_name(client)] has a banned account in connection history! (Matched: [found["ckey"]], [found["address"]], [found["computer_id"]])"
+		var/msg = "[key_name(client)] has a banned account in connection history! https://iphub.info/?ip=[client.address] (Actual: [client.ckey], [client.address], [client.computer_id] ) (Matched: [found["ckey"]], [found["address"]], [found["computer_id"]])"
+		suspect_message_to_admin_chat(msg)
 		message_admins(msg)
 		send2tgs_adminless_only("Banned-user", msg)
 		log_admin_private(msg)

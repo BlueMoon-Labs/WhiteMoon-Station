@@ -35,23 +35,23 @@
 	if(!start_side)
 		start_side = pick(GLOB.cardinals)
 
-	var/start_side_text = "unknown"
+	var/start_side_text = "неизвестной"
 	switch(start_side)
 		if(NORTH)
-			start_side_text = "fore"
+			start_side_text = "северной"
 		if(SOUTH)
-			start_side_text = "aft"
+			start_side_text = "южной"
 		if(EAST)
-			start_side_text = "starboard"
+			start_side_text = "восточной"
 		if(WEST)
-			start_side_text = "port"
+			start_side_text = "западной"
 		else
-			stack_trace("Sandstorm event given [start_side] as unrecognized direction. Cancelling event...")
+			stack_trace("Событие «Песчаная буря» указало [start_side] как нераспознанное направление. Отмена события..")
 			kill()
 			return
 
-	priority_announce("A large wave of space dust is approaching from the [start_side_text] side of the station. \
-		Impact is expected in the next two minutes. All employees are encouranged to assist in repairs and damage mitigation if possible.", "Collision Emergency Alert")
+	priority_announce("Космическая пыль была обнаружена на пути столкновения со станцией - с [start_side_text] стороны. \
+		Удар ожидается в ближайшие две минуты. Всем сотрудникам рекомендуется по возможности оказать помощь в ремонте и уменьшении ущерба обшивки станции.", "BНИМАНИЕ: Космическая Пыль")
 
 /datum/round_event/sandstorm/tick()
 	spawn_meteors(15, GLOB.meteors_sandstorm, start_side)

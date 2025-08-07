@@ -71,5 +71,5 @@
 		Люди этого мира, услышьте меня - ибо час пробил! Маршал ведёт мою армию! \
 		Реальность склонится перед Властителем Ночи... ИЛИ БУДЕТ РАЗОРВАНА В КЛОЧЬЯ! УЗРИТЕ МОЁ ВОСХОЖДЕНИЕ"
 	announcement_text = "%SPOOKY% Ever coiling vortex. Reality unfolded. ARMS OUTREACHED, THE LORD OF THE NIGHT, %NAME% has ascended! Fear the ever twisting hand! %SPOOKY%"
-	announcement_sound = 'modular_zzz/sounds/heretic/flesh_lore.ogg'
+	announcement_sound = 'modular_zzz/sound/heretic/flesh_lore.ogg'
 

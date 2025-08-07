@@ -42,10 +42,10 @@
 ///Minimum amount the pirates will demand
 #define PAYOFF_MIN 20000
 ///How long pirates will wait for a response before attacking
-#define RESPONSE_MAX_TIME 2 MINUTES
+#define RESPONSE_MAX_TIME 5 MINUTES
 
 /// How long till a spessman should come back after being captured and sent to the holding facility (which some antags use)
-#define COME_BACK_FROM_CAPTURE_TIME 6 MINUTES
+#define COME_BACK_FROM_CAPTURE_TIME 3 MINUTES //BUBBERSTATION CHANGE: 6 MINUTES TO 3 MINUTES.
 
 //ERT Types
 #define ERT_BLUE "Blue"
@@ -450,3 +450,5 @@ GLOBAL_LIST_INIT(human_invader_antagonists, list(
 
 /// Camera net used by battle royale objective
 #define BATTLE_ROYALE_CAMERA_NET "battle_royale_camera_net"
+
+#define MALF_MAX_PP 400

@@ -1,4 +1,4 @@
-/obj/item/clothing/under
+/obj/item/clothing/under/syndicate
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION | CLOTHING_DIGITIGRADE_MASK
 
 /obj/item/clothing/under/rank/security/officer/acradorsuit

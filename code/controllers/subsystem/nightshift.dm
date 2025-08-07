@@ -27,7 +27,7 @@ SUBSYSTEM_DEF(nightshift)
 	priority_announce(
 		text = message,
 		sound = 'sound/announcer/notice/notice2.ogg',
-		sender_override = "Automated Lighting System Announcement",
+		sender_override = "Автоматическая Система Освещения",
 		color_override = "grey",
 	)
 
@@ -41,9 +41,9 @@ SUBSYSTEM_DEF(nightshift)
 		if(night_time)
 			announcing = FALSE
 			if(!emergency)
-				announce("Restoring night lighting configuration to normal operation.")
+				announce("Восстановление нормальной работы конфигурации ночного освещения.")
 			else
-				announce("Disabling night lighting: Station is in a state of emergency.")
+				announce("Отключение ночного освещения: станция находится в аварийном состоянии.")
 	if(emergency)
 		night_time = FALSE
 	if(nightshift_active != night_time)
@@ -55,9 +55,9 @@ SUBSYSTEM_DEF(nightshift)
 		nightshift_active = active
 		if(announce)
 			if (active)
-				announce("Good evening, crew. To reduce power consumption and stimulate the circadian rhythms of some species, all of the lights aboard the station have been dimmed for the night.")
+				announce("Добрый вечер, экипаж. Чтобы снизить потребление энергии и стимулировать Биоритмы некоторых видов, все осветительные приборы на борту станции были приглушены на ночь.")
 			else
-				announce("Good morning, crew. As it is now day time, all of the lights aboard the station have been restored to their former brightness.")
+				announce("Доброе утро, экипаж. Поскольку сейчас дневное время, все осветительные приборы на борту станции были восстановлены до их прежней яркости.")
 	for(var/obj/machinery/power/apc/APC as anything in currentrun)
 		currentrun -= APC
 		if (APC.area && (APC.area.type in GLOB.the_station_areas))

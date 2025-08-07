@@ -15,7 +15,7 @@
 	. = ..()
 
 	M.add_client_colour(/datum/client_colour/zvezdochka, DRUGS_SOURCE)
-	var/sound/sound = sound(pick('modular_zzz/sounds/ambience/LYENEN.ogg', 'modular_zzz/sounds/ambience/LYENEN2.ogg'), TRUE)
+	var/sound/sound = sound(pick('modular_zzz/sound/ambience/LYENEN.ogg', 'modular_zzz/sound/ambience/LYENEN2.ogg'), TRUE)
 	sound.environment = 35
 	sound.volume = 30
 	SEND_SOUND(M.client, sound)
@@ -118,7 +118,7 @@
 	. = ..()
 
 	M.add_client_colour(/datum/client_colour/pendosovka, DRUGS_SOURCE)
-	var/sound/sound = sound(pick('modular_zzz/sounds/ambience/CAPITAL1.ogg', 'modular_zzz/sounds/ambience/CAPITAL2.ogg'), TRUE)
+	var/sound/sound = sound(pick('modular_zzz/sound/ambience/CAPITAL1.ogg', 'modular_zzz/sound/ambience/CAPITAL2.ogg'), TRUE)
 	sound.environment = 45
 	sound.volume = 40
 	SEND_SOUND(M.client, sound)
@@ -275,7 +275,7 @@
 						H.adjust_derpspeech(5 SECONDS)
 						H.adjust_timed_status_effect(5 SECONDS, /datum/status_effect/speech/slurring/cult)
 					if(!tripsoundstarted)
-						var/sound/sound = sound('modular_zzz/sounds/cometodaddy.ogg', TRUE)
+						var/sound/sound = sound('modular_zzz/sound/cometodaddy.ogg', TRUE)
 						sound.environment = 23
 						sound.volume = 100
 						SEND_SOUND(H.client, sound)
@@ -293,7 +293,7 @@
 						var/rotation = max(min(round(current_cycle/4), 20),360)
 						for(var/atom/movable/screen/plane_master/whole_screen in screens)
 							if(prob(3))
-								var/sound/sound = sound('modular_zzz/sounds/trip_blast.wav')
+								var/sound/sound = sound('modular_zzz/sound/trip_blast.wav')
 								sound.environment = 23
 								sound.volume = 100
 								SEND_SOUND(H.client, sound)
@@ -328,7 +328,7 @@
 		if("statues")
 			high_message = "Расслабон..."
 			if(!tripsoundstarted)
-				var/sound/sound = sound('modular_zzz/sounds/caves8.ogg', TRUE)
+				var/sound/sound = sound('modular_zzz/sound/caves8.ogg', TRUE)
 				sound.environment = 23
 				sound.volume = 80
 				SEND_SOUND(H.client, sound)
@@ -342,7 +342,7 @@
 					INVOKE_ASYNC(src, .proc/handle_sounds, H)
 				create_statue(H)
 				if(prob(3))
-					var/sound/sound = sound('modular_zzz/sounds/trip_blast.wav')
+					var/sound/sound = sound('modular_zzz/sound/trip_blast.wav')
 					sound.environment = 23
 					sound.volume = 100
 					SEND_SOUND(H.client, sound)
@@ -399,7 +399,7 @@
 				var/mob/living/carbon/human/M = AM
 				M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5, 170)
 				to_chat(M, "<b>[readable_corrupted_text("ПШШШШШШШШШШШШШШШШШШШ!!!")]</b>")
-				var/sound/sound = sound('modular_zzz/sounds/pshsh.ogg')
+				var/sound/sound = sound('modular_zzz/sound/pshsh.ogg')
 				sound.environment = 23
 				sound.volume = 20
 				SEND_SOUND(M, sound)
@@ -436,8 +436,8 @@
 /obj/effect/client_image_holder/hallucination/ovoshi/attack_hand(mob/living/carbon/C)
 	if(prob(10))
 		to_chat(C, "<b>ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ!!!</b>")
-	var/sound/sound = sound(pick('modular_zzz/sounds/wallhit.ogg', \
-		'modular_zzz/sounds/wallhit2.ogg', 'modular_zzz/sounds/wallhit3.ogg'))
+	var/sound/sound = sound(pick('modular_zzz/sound/wallhit.ogg', \
+		'modular_zzz/sound/wallhit2.ogg', 'modular_zzz/sound/wallhit3.ogg'))
 	sound.environment = 23
 	sound.volume = rand(50, 100)
 	SEND_SOUND(C.client, sound)

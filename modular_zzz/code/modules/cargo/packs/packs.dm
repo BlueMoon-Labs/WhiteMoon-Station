@@ -17,7 +17,7 @@
 	area_string = "the gateway chamber"
 
 /datum/supply_pack/misc/vanguard_surplus
-	cost = CARGO_CRATE_VALUE * 10
+	cost = CARGO_CRATE_VALUE * 15
 	access_view = ACCESS_GATEWAY
 	access = ACCESS_GATEWAY
 	contains = list(

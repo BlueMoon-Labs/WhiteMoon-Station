@@ -70,13 +70,13 @@
 	name = "R-SA-12"
 	item_path = /obj/item/clothing/suit/armor/rsa12
 	restricted_roles = list(ALL_JOBS_SEC)
-	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964", "wangig", "omantis", "sc1de", "kladmenuwu", "manafluff", "hardbass228", "flaffug")
+	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964", "wangig", "omantis", "sc1de", "kladmenuwu", "manafluff", "hardbass228", "flaffug", "runtimedead")
 
 /datum/loadout_item/suit/armor/rohai_armor
 	name = "Rohai Infantry Armor"
 	item_path = /obj/item/clothing/suit/armor/rohai_armor
 	restricted_roles = list(ALL_JOBS_SEC)
-	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964", "wangig", "omantis", "sc1de", "kladmenuwu", "manafluff", "hardbass228", "flaffug")
+	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964", "wangig", "omantis", "sc1de", "kladmenuwu", "manafluff", "hardbass228", "flaffug", "runtimedead")
 
 /datum/loadout_item/suit/armor/kazeshini_cape
 	name = "Kazeshini Cape"
@@ -86,9 +86,24 @@
 /datum/loadout_item/suit/armor/kazeshini_cape/alt
 	name = "Alt Kazeshini Cape"
 	item_path = /obj/item/clothing/suit/toggle/kazeshini_cape/alt
-	ckeywhitelist = list("mercreaper", "siamant")
+	ckeywhitelist = list("mercreaper", "siamant", "flippingtable", "romontesque")
 
 /datum/loadout_item/suit/montur
 	name = "Dark Montur"
 	item_path = /obj/item/clothing/suit/montur
 	ckeywhitelist = list("enigma418")
+
+/datum/loadout_item/suit/fixer_costume
+	name = "Fixer Costume"
+	item_path = /obj/item/clothing/suit/fixer_costume
+	ckeywhitelist = list("mercreaper")
+
+/datum/loadout_item/suit/reaper_jacket
+	name = "Old Guard Jacket"
+	item_path = /obj/item/clothing/suit/armor/bluesec_jacket/reaper_jacket
+	ckeywhitelist = list("mercreaper")
+
+/datum/loadout_item/suit/reaper_winter_jacket
+	name = "Old Winter Guard Jacket"
+	item_path = /obj/item/clothing/suit/armor/bluesec_jacket/winter/reaper_jacket
+	ckeywhitelist = list("mercreaper")

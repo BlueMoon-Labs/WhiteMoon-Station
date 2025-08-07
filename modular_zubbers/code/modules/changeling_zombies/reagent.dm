@@ -25,6 +25,8 @@
 	list_reagents = list()
 
 /obj/item/reagent_containers/cup/glass/changeling_zombie_virus/smash(...)
+	if(!list_reagents)
+		return
 	playsound(src, 'sound/effects/smoke.ogg', 50, TRUE, -3)
 	var/datum/reagents/zombie_holder = new(10)
 	var/zombie_holder_location = get_turf(src) //we need to set up the smoke beforehand

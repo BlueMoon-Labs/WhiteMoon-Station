@@ -114,19 +114,19 @@
 	..()
 	if(href_list["cancel"])
 		if(!triggering)
-			to_chat(usr, span_admin("You are too late to cancel that event"))
+			to_chat(usr, span_admin("Вы слишком поздно отменили это событие."))
 			return
 		triggering = FALSE
-		message_admins("[key_name_admin(usr)] cancelled event [name].")
-		log_admin_private("[key_name(usr)] cancelled event [name].")
+		message_admins("[key_name_admin(usr)] отменил событие [name].")
+		log_admin_private("[key_name(usr)] отменил событие [name].")
 		SSblackbox.record_feedback("tally", "event_admin_cancelled", 1, typepath)
 	if(href_list["different_event"])
 		if(!triggering)
-			to_chat(usr, span_admin("Too late to change events now!"))
+			to_chat(usr, span_admin("Слишком поздно менять событие!"))
 			return
 		triggering = FALSE
-		message_admins("[key_name_admin(usr)] chose to have event [name] rolled into a different event.")
-		log_admin_private("[key_name(usr)] rerolled event [name].")
+		message_admins("[key_name_admin(usr)] выбрал, чтобы событие [name] было заменено на другое событие.")
+		log_admin_private("[key_name(usr)] повторно запущено событие [name].")
 		SSblackbox.record_feedback("tally", "event_admin_rerolled", 1, typepath)
 		SSevents.spawnEvent(excluded_event = src)
 
@@ -168,7 +168,7 @@ Runs the event
 		return round_event
 
 	triggering = FALSE
-	log_game("[random ? "Random" : "Forced"] Event triggering: [name] ([typepath]).")
+	log_game("[random ? "Случайное" : "Принудительное"] срабатывание события: [name] ([typepath]).")
 
 	if(alert_observers)
 		round_event.announce_deadchat(random, event_cause)
@@ -219,7 +219,7 @@ Runs the event
 
 ///Announces the event name to deadchat, override this if what an event should show to deadchat is different to its event name.
 /datum/round_event/proc/announce_deadchat(random, cause)
-	deadchat_broadcast(" has just been[random ? " randomly" : ""] triggered[cause ? " by [cause]" : ""]!", "<b>[control.name]</b>", message_type=DEADCHAT_ANNOUNCEMENT) //STOP ASSUMING IT'S BADMINS!
+	deadchat_broadcast(" был только что[random ? " случайно" : ""] запущен[cause ? " по [cause]" : ""]!", "<b>[control.name]</b>", message_type=DEADCHAT_ANNOUNCEMENT) //STOP ASSUMING IT'S BADMINS!
 
 //Called when the tick is equal to the start_when variable.
 //Allows you to start before announcing or vice versa.
@@ -235,7 +235,7 @@ Runs the event
 	if(control.alert_observers)
 		if (atom_of_interest)
 			notify_ghosts(
-				"[control.name] has an object of interest: [atom_of_interest]!",
+				"У [control.name] есть интересный объект: [atom_of_interest]!",
 				source = atom_of_interest,
 			)
 	return

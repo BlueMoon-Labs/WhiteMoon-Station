@@ -80,3 +80,12 @@
 	worn_icon_digi = 'modular_zzz/icons/mob/clothing/heads.dmi'
 	lefthand_file = 'modular_zzz/icons/mob/clothing/lefthand.dmi'
 	righthand_file = 'modular_zzz/icons/mob/clothing/righthand.dmi'
+
+/obj/item/clothing/head/fixer_hat
+	name = "Fixer Hat"
+	desc = "Fixer Hat."
+	icon_state = "fixer_hat"
+	worn_icon_state = "fixer_hat"
+	icon = 'modular_zzz/icons/obj/clothing/heads.dmi'
+	worn_icon = 'modular_zzz/icons/mob/clothing/heads.dmi'
+	supports_variations_flags = CLOTHING_SNOUTED_VARIATION_NO_NEW_ICON

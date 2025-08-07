@@ -215,7 +215,8 @@ GLOBAL_VAR_INIT(changeling_zombies_detected,FALSE)
 			TRAIT_TUMOR_SUPPRESSED,
 			TRAIT_RDS_SUPPRESSED,
 			TRAIT_EASYDISMEMBER,
-			TRAIT_HARD_SOLES
+			TRAIT_HARD_SOLES,
+			TRAIT_FAKEDEATH,
 		),
 		TRAIT_CHANGELING_ZOMBIE
 	)
@@ -263,8 +264,10 @@ GLOBAL_VAR_INIT(changeling_zombies_detected,FALSE)
 				if(chosen_turf)
 					GLOB.changeling_zombies_detected = TRUE
 					priority_announce(
-						"Notice: A stolen Wizard Federation virus that \"animes(sic) the dead\" may or may not have accidentally been delivered to the station via supply pod. Please return contents of said supply pod to the nearest Nanotrasen representative. In case of accidental infection, use the cure with the instructions delivered to [chosen_turf.loc].",
-						"Reanimation Virus Alert",
+						"Внимание: украденный вирус Федерации Волшебников, который «оживляет мертвецов», мог быть случайно доставлен на \
+						станцию в контейнере снабжения. Пожалуйста, верните содержимое контейнера ближайшему представителю Nanotrasen. \
+						В случае случайного заражения используйте лекарство, следуя инструкции. Место приземления: [chosen_turf.loc].",
+						"Оповещение о вирусе реанимации",
 						ANNOUNCER_ANIMES
 					)
 					podspawn(list(

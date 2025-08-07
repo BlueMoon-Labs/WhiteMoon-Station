@@ -791,7 +791,12 @@
 	desc = "A cute pink girl. The soft silicone gives off a pleasant strawberry-raspberry scent. When you squeeze the doll slightly, her tongue comes out in a funny way."
 	inhand_icon_state = null
 	icon_state = "millie"
-	squeak_override = list('modular_zzplurt/sound/voice/plush/millie.ogg' = 1)
+	lefthand_file = 'modular_zzz/icons/mob/inhands/millie_lefthand.dmi'
+	righthand_file = 'modular_zzz/icons/mob/inhands/millie_righthand.dmi'
+	squeak_override = list('modular_zzz/sound/plush/milp1.ogg' = 1,
+							'modular_zzz/sound/plush/milp2.ogg' = 1,
+							'modular_zzz/sound/plush/milp3.ogg' = 1,
+							'modular_zzz/sound/plush/milp5.ogg' = 1)
 
 /obj/item/toy/plush/imports/lissara
 	name = "Lissara plush"

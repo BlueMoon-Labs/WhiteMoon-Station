@@ -10,11 +10,11 @@ GLOBAL_LIST_INIT(cme_loot_list, list(
 
 /obj/item/strange
 
-#define CME_UNKNOWN "unknown"
-#define CME_MINIMAL "minimal"
-#define CME_MODERATE "moderate"
-#define CME_EXTREME "extreme"
-#define CME_ARMAGEDDON "armageddon"
+#define CME_UNKNOWN "НЕИЗВЕСТНАЯ"
+#define CME_MINIMAL "МИНИМАЛЬНАЯ"
+#define CME_MODERATE "СРЕДНЯЯ"
+#define CME_EXTREME "ЭКСТРЕМАЛЬНАЯ"
+#define CME_ARMAGEDDON "АРМАГЕДДОН"
 
 //Times are SECONDS, they're devided by 2 because that's how long the controller takes to process. 20 deciseconds = 2 seconds. I know, it's dumb as fuck.
 //NOT ANYMORE, NOW WE MULTIPLY BY A HALF

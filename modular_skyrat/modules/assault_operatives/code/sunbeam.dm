@@ -163,7 +163,7 @@
 	announce_when = 1 // Instant announcement
 
 /datum/round_event/icarus_sunbeam/announce(fake)
-	priority_announce("/// ICARUS SUNBEAM WEAPONS SYSTEM ACTIVATED, USE EXTREME CAUTION! ///", "GoldenEye Defence Network", ANNOUNCER_KLAXON)
+	priority_announce("/// АКТИВИРОВАН СОЛНЕЧНЫЙ ЛУЧ ЗАЩИТНОГО КОМПЛЕКСА ICARUS. БУДЬТЕ КРАЙНЕ ОСТОРОЖНЫ! ///", "Сеть защиты GoldenEye", ANNOUNCER_KLAXON)
 	alert_sound_to_playing('modular_skyrat/modules/assault_operatives/sound/sunbeam_fire.ogg')
 
 /datum/round_event/icarus_sunbeam/start()

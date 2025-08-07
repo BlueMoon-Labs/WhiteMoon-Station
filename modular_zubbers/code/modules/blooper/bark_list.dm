@@ -440,3 +440,9 @@
 	id = "weh"
 	soundpath = 'modular_skyrat/modules/emotes/sound/voice/weh.ogg'
 
+/datum/blooper/xenohiss
+	name = "Xenohiss"
+	id = "Xenohiss"
+	soundpath = 'modular_zubbers/code/modules/blooper/voice/bloopers/Xenohiss.ogg'
+	minspeed = 10
+	maxspeed = 16

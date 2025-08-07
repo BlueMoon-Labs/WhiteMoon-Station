@@ -58,7 +58,7 @@
 	icon = 'modular_zzz/icons/obj/clothing/suits.dmi'
 	worn_icon = 'modular_zzz/icons/mob/clothing/suits.dmi'
 	worn_icon_digi = 'modular_zzz/icons/mob/clothing/suits.dmi'
-	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_NECK
+	slot_flags = ITEM_SLOT_NECK
 	icon_state = "rev_mori"
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
@@ -81,3 +81,43 @@
 	lefthand_file = 'modular_zzz/icons/mob/clothing/lefthand.dmi'
 	righthand_file = 'modular_zzz/icons/mob/clothing/righthand.dmi'
 	icon_state = "montur"
+
+/obj/item/clothing/suit/costume/striped_sweater
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/fixer_costume
+	name = "Fixer Costume"
+	desc = "Fixer Costume."
+	icon_state = "fixer_costume"
+	worn_icon_state = "fixer_costume"
+	icon = 'modular_zzz/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_zzz/icons/mob/clothing/suits.dmi'
+	supports_variations_flags = CLOTHING_NO_VARIATION
+
+/obj/item/clothing/suit/armor/bluesec_jacket
+	name = "Bluesec Jacket"
+	desc = "Bluesec Jacket."
+	icon_state = "bluesec_jacket"
+	icon = 'modular_zzz/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_zzz/icons/mob/clothing/suits.dmi'
+	supports_variations_flags = CLOTHING_NO_VARIATION
+
+/obj/item/clothing/suit/armor/bluesec_jacket/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/toggle_icon)
+
+/obj/item/clothing/suit/armor/bluesec_jacket/winter
+	name = "Winter Bluesec Jacket"
+	desc = "Winter Bluesec Jacket."
+	icon_state = "bluesec_winter_jacket"
+
+/obj/item/clothing/suit/armor/bluesec_jacket/reaper_jacket
+	name = "Old Guard Jacket"
+	desc = "Old Guard Jacket."
+	icon_state = "reaper_jacket"
+
+/obj/item/clothing/suit/armor/bluesec_jacket/winter/reaper_jacket
+	name = "Old Winter Guard Jacket"
+	desc = "Old Winter Guard Jacket."
+	icon_state = "reaper_winter_jacket"

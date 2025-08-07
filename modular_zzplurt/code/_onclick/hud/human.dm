@@ -93,9 +93,11 @@
 	if(usr.hud_used.extra_shown && targetmob.hud_used)
 		usr.hud_used.extra_shown = FALSE
 		usr.client.screen -= targetmob.hud_used.extra_inventory
+		src.icon_state = "toggle_extra"
 	else
 		usr.hud_used.extra_shown = TRUE
 		usr.client.screen += targetmob.hud_used.extra_inventory
+		src.icon_state = "toggle_extra_active"
 
 	targetmob.hud_used.extra_inventory_update(usr)
 

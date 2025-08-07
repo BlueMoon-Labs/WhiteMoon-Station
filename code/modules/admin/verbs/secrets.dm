@@ -153,7 +153,7 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 			set_station_name(new_name)
 			log_admin("[key_name(holder)] renamed the station to \"[new_name]\".")
 			message_admins(span_adminnotice("[key_name_admin(holder)] renamed the station to: [new_name]."))
-			priority_announce("[command_name()] has renamed the station to \"[new_name]\".")
+			priority_announce("[command_name()] переименовало станцию: \"[new_name]\".")
 		if("reset_name")
 			var/confirmed = tgui_alert(usr,"Are you sure you want to reset the station name?", "Confirm", list("Yes", "No", "Cancel"))
 			if(confirmed != "Yes")
@@ -162,7 +162,7 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 			set_station_name(new_name)
 			log_admin("[key_name(holder)] reset the station name.")
 			message_admins(span_adminnotice("[key_name_admin(holder)] reset the station name."))
-			priority_announce("[command_name()] has renamed the station to \"[new_name]\".")
+			priority_announce("[command_name()] переименовало станцию: \"[new_name]\".")
 		if("night_shift_set")
 			var/val = tgui_alert(holder, "What do you want to set night shift to? This will override the automatic system until set to automatic again.", "Night Shift", list("On", "Off", "Automatic"))
 			switch(val)
@@ -357,9 +357,9 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 			SSeconomy.full_ancap = !SSeconomy.full_ancap
 			message_admins("[key_name_admin(holder)] toggled Anarcho-capitalist mode")
 			if(SSeconomy.full_ancap)
-				priority_announce("The NAP is now in full effect.", null, SSstation.announcer.get_rand_report_sound())
+				priority_announce("НПД вступило в полную силу.", null, SSstation.announcer.get_rand_report_sound())
 			else
-				priority_announce("The NAP has been revoked.", null, SSstation.announcer.get_rand_report_sound())
+				priority_announce("НПД было отозвано.", null, SSstation.announcer.get_rand_report_sound())
 		if("send_shuttle_back")
 			if (!is_funmin)
 				return
@@ -367,7 +367,7 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 				to_chat(usr, span_warning("Emergency shuttle not currently in transit!"), confidential = TRUE)
 				return
 			var/make_announcement = tgui_alert(usr, "Make a CentCom announcement?", "Emergency shuttle return", list("Yes", "Custom Text", "No")) || "No"
-			var/announcement_text = "Emergency shuttle trajectory overriden, rerouting course back to [station_name()]."
+			var/announcement_text = "Траектория аварийного шаттла переопределена, курс изменен обратно на [station_name()]."
 			if (make_announcement == "Custom Text")
 				announcement_text = tgui_input_text(usr, "Custom CentCom announcement", "Emergency shuttle return", multiline = TRUE) || announcement_text
 			var/new_timer = tgui_input_number(usr, "How long should the shuttle remain in transit?", "When are we droppin' boys?", 180, 600)
@@ -378,9 +378,9 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 			if (make_announcement != "No")
 				priority_announce(
 					text = announcement_text,
-					title = "Shuttle Trajectory Override",
+					title = "Диспетчерская Служба ЦК",
 					sound =  'sound/announcer/announcement/announce_dig.ogg',
-					sender_override = "Emergency Shuttle Uplink Alert",
+					sender_override = "Экстренное Оповещение",
 					color_override = "grey",
 				)
 			SSshuttle.emergency.timer = INFINITY
@@ -731,10 +731,10 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 		return
 	if (make_announcement != "No")
 		priority_announce(
-			text = "[SSshuttle.emergency] has returned to the station.",
-			title = "Emergency Shuttle Override",
+			text = "[SSshuttle.emergency] вернулся на станцию.",
+			title = "Диспетчерская Служба ЦК",
 			sound = ANNOUNCER_SHUTTLEDOCK,
-			sender_override = "Emergency Shuttle Uplink Alert",
+			sender_override = "Экстренное Оповещение",
 			color_override = "grey",
 		)
 	SSshuttle.emergency.mode = SHUTTLE_IDLE

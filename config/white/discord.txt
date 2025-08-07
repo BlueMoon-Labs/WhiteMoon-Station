@@ -1,0 +1,2 @@
+## Chat for suspicious login log
+#CHAT_SUSPECT_LOGIN suspect

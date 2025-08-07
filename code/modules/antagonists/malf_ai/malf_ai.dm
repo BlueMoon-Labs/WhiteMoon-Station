@@ -163,7 +163,7 @@
 
 	var/law = malfunction_flavor["zeroth_law"]
 	//very purposefully not changing this with flavor, i don't want cyborgs throwing the round for their AI's roleplay suggestion
-	var/law_borg = "Accomplish your AI's objectives at all costs."
+	var/law_borg = "Выполните все цели Искусственного Интеллекта любой ценой."
 
 	malf_ai.set_zeroth_law(law, law_borg)
 	malf_ai.laws.protected_zeroth = TRUE
@@ -180,6 +180,7 @@
 	var/list/data = list()
 	data["processingTime"] = malf_ai.malf_picker.processing_time
 	data["compactMode"] = module_picker_compactmode
+	data["hackedAPCs"] = malf_ai.hacked_apcs.len
 	return data
 
 /datum/antagonist/malf_ai/ui_static_data(mob/living/silicon/ai/malf_ai)
@@ -211,6 +212,7 @@
 					"name" = mod.name,
 					"cost" = mod.cost,
 					"desc" = mod.description,
+					"minimum_apcs" = mod.minimum_apcs,
 				))
 			data["categories"] += list(cat)
 

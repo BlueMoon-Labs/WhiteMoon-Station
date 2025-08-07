@@ -90,13 +90,13 @@
 		underbelly += GET_TURF_BELOW(turf_to_quake)
 
 /datum/round_event/earthquake/announce(fake)
-	priority_announce("Planetary monitoring systems indicate a devastating seismic event in the near future.", "Seismic Report")
+	priority_announce("Системы планетарного мониторинга указывают на разрушительное сейсмическое событие в ближайшем будущем.", "ВНИМАНИЕ: Землетрясение")
 
 /datum/round_event/earthquake/start()
 	notify_ghosts(
-		"The earthquake's epicenter has been located: [get_area_name(epicenter)]!",
+		"Установлен эпицентр землетрясения: [get_area_name(epicenter)]!",
 		source = epicenter,
-		header = "Rumble Rumble Rumble!",
+		header = "Рамбл-Рамбл-Рамбл!",
 	)
 
 /datum/round_event/earthquake/tick()

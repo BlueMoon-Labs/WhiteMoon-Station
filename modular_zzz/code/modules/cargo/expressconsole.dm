@@ -19,8 +19,7 @@
 	COMPANY_NAME_DONK_CO,
 	COMPANY_NAME_DEFOREST_MEDICAL,
 	COMPANY_NAME_NRI_SURPLUS,
-	COMPANY_NAME_BLACKSTEEL_FOUNDATION,
-	COMPANY_NAME_NAKAMURA_ENGINEERING_MODSUITS)
+	COMPANY_NAME_BLACKSTEEL_FOUNDATION)
 		)//dear God i pray to you so this bullshit would work. I DO NOT WANT TO STUDY ALL THIS NIGHTMARE BELLOW THIS MESSAGE
 
 	for(var/armament_category as anything in SSarmaments.entries)//babe! it's 4pm, time for the company importing logic

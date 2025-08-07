@@ -48,7 +48,7 @@
 	admin_setup = null
 
 /datum/round_event/carp_migration/pipe_carp
-	fluff_signal = "Unknown engineering entities"
+	fluff_signal = "Неизвестные инженерные организмы"
 	carp_type = /mob/living/basic/carp/advanced/pipe_carp
 	var/turf/pipes_turf
 	var/obj/effect/landmark/carpspawn/engineering

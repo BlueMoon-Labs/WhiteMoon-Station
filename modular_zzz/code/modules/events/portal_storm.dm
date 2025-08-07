@@ -7,7 +7,7 @@
 						/mob/living/basic/trooper/syndicate/ranged/smg/anthro = 4,\
 						/mob/living/basic/trooper/syndicate/ranged/anthro = 4,\
 						/mob/living/basic/viscerator = 8)
-	triggersound = 'modular_zzz/sounds/ambience/storm/syndie_storm.ogg'
+	triggersound = 'modular_zzz/sound/ambience/storm/syndie_storm.ogg'
 
 /datum/round_event/portal_storm/portal_storm_narsie
 	boss_types = list(/mob/living/simple_animal/hostile/cult/magic/elite = 2)
@@ -41,7 +41,7 @@
 						/mob/living/basic/clown/lube = 5,\
 						/mob/living/basic/clown/banana = 5,\
 						/mob/living/basic/clown/fleshclown = 4)
-	triggersound = 'modular_zzz/sounds/ambience/storm/clown_storm.ogg'
+	triggersound = 'modular_zzz/sound/ambience/storm/clown_storm.ogg'
 
 /datum/round_event/portal_storm
 	var/triggersound

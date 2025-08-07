@@ -4,3 +4,11 @@
 	icon = 'modular_zzz/icons/obj/clothing/gloves.dmi'
 	worn_icon = 'modular_zzz/icons/mob/clothing/gloves.dmi'
 	icon_state = "hahun_gloves"
+
+/obj/item/clothing/gloves/color/black/fixer_gloves
+	name = "Fixer Gloves"
+	icon_state = "fixer_gloves"
+	worn_icon_state = "fixer_gloves"
+	icon = 'modular_zzz/icons/obj/clothing/gloves.dmi'
+	worn_icon = 'modular_zzz/icons/mob/clothing/gloves.dmi'
+

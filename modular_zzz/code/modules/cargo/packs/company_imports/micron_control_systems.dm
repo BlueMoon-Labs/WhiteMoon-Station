@@ -86,3 +86,9 @@
 	subcategory = "Weapon"
 	item_type = /obj/item/gun/microfusion/mcr01/advanced
 	cost = PAYCHECK_COMMAND * 12
+
+/datum/armament_entry/company_import/micron/aeg
+	name = "Hoshi Modular Laser Carbine"
+	subcategory = "Weapon"
+	item_type = /obj/item/gun/energy/modular_laser_rifle/carbine
+	cost = PAYCHECK_COMMAND * 50

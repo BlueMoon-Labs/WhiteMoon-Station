@@ -122,32 +122,33 @@
 
 /datum/round_event/cme/announce(fake)
 	if(fake)
-		priority_announce("Critical Coronal mass ejection detected! Expected intensity: [uppertext(cme_intensity)]. Impact in: [rand(200, 300)] seconds. \
-		All synthetic and non-organic lifeforms should seek shelter immediately! \
-		Ensure all sensitive equipment is shielded.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+		priority_announce("Обнаружен критический выброс корональной массы Звезды! Ожидаемая интенсивность: [uppertext(cme_intensity)]. Ожидайте столкновение в течении [rand(200, 300)] секунд. \
+		Все синтетические формы жизни должны немедленно искать убежище! \
+		Убедитесь, что всё важное оборудование имеет ЕМП-защиту.", "ВНИМАНИЕ: Солнечная Вспышка", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 	else
 		switch(cme_intensity)
 			if(CME_UNKNOWN)
-				priority_announce("Coronal mass ejection detected! Expected intensity: UNKNOWN. Impact in: [round((start_when * SSevents.wait) * 0.1, 0.1)] seconds. \
-				All synthetic and non-organic lifeforms should seek shelter immediately! \
-				Neutralize magnetic field bubbles at all costs.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+				priority_announce("Обнаружен выброс корональной массы Звезды! Ожидаемая интенсивность: НЕИЗВЕСТНАЯ. Ожидайте столкновение в течении [round((start_when * SSevents.wait) * 0.1, 0.1)] секунд. \
+				Все синтетические формы жизни должны немедленно искать убежище! \
+				Нейтрализуйте 'Аномальные Бублики', пузыри с временно стабилизированным магнитным полем, любой ценой.", "ВНИМАНИЕ: Солнечная Вспышка", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 			if(CME_MINIMAL)
-				priority_announce("Coronal mass ejection detected! Expected intensity: [uppertext(cme_intensity)]. Impact in: [round((start_when * SSevents.wait) * 0.1, 0.1)] seconds. \
-				All synthetic and non-organic lifeforms should seek shelter immediately! \
-				Neutralize magnetic field bubbles at all costs.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+				priority_announce("Обнаружен выброс корональной массы Звезды! Ожидаемая интенсивность: [uppertext(cme_intensity)]. Ожидайте столкновение в течении [round((start_when * SSevents.wait) * 0.1, 0.1)] секунд. \
+				Все синтетические формы жизни должны немедленно искать убежище! \
+				Нейтрализуйте 'Аномальные Бублики', пузыри с временно стабилизированным магнитным полем, любой ценой.", "ВНИМАНИЕ: Солнечная Вспышка", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 			if(CME_MODERATE)
-				priority_announce("Coronal mass ejection detected! Expected intensity: [uppertext(cme_intensity)]. Impact in: [round((start_when * SSevents.wait) * 0.1, 0.1)] seconds. \
-				All synthetic and non-organic lifeforms should seek shelter immediately! \
-				Neutralize magnetic field bubbles at all costs.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+				priority_announce("Обнаружен выброс корональной массы Звезды! Ожидаемая интенсивность: [uppertext(cme_intensity)]. Ожидайте столкновение в течении [round((start_when * SSevents.wait) * 0.1, 0.1)] секунд. \
+				Все синтетические формы жизни должны немедленно искать убежище! \
+				Нейтрализуйте 'Аномальные Бублики', пузыри с временно стабилизированным магнитным полем, любой ценой.", "ВНИМАНИЕ: Солнечная Вспышка", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 			if(CME_EXTREME)
 				addtimer(CALLBACK(src, PROC_REF(cme_level_callback), SEC_LEVEL_ORANGE, TRUE, FALSE), (round((start_when * SSevents.wait) * 0.1, 0.1)) SECONDS)
-				priority_announce("Critical Coronal mass ejection detected! Expected intensity: [uppertext(cme_intensity)]. Impact in: [round((start_when * SSevents.wait) * 0.1, 0.1)] seconds. \
-				All synthetic and non-organic lifeforms should seek shelter immediately! \
-				Neutralize magnetic field bubbles at all costs.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+				priority_announce("Critical Обнаружен выброс корональной массы Звезды! Ожидаемая интенсивность: [uppertext(cme_intensity)]. Ожидайте столкновение в течении [round((start_when * SSevents.wait) * 0.1, 0.1)] секунд. \
+				Все синтетические формы жизни должны немедленно искать убежище! \
+				Нейтрализуйте 'Аномальные Бублики', пузыри с временно стабилизированным магнитным полем, любой ценой.", "ВНИМАНИЕ: Солнечная Вспышка", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 			if(CME_ARMAGEDDON)
 				addtimer(CALLBACK(src, PROC_REF(cme_level_callback), SEC_LEVEL_GAMMA, TRUE, TRUE), (round((start_when * SSevents.wait) * 0.1, 0.1)) SECONDS)
-				priority_announce("Neutron Mass Ejection Detected! Expected intensity: [uppertext(cme_intensity)]. Impact in: [round((start_when * SSevents.wait) * 0.1, 0.1)] seconds. \
-				All personnel should proceed to their nearest warpgate for evacuation, the Terran Government has issued this mandatory alert.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+				priority_announce("ВНИМАНИЕ: ближайшая к вам звезда-сверхгигант израсходовала своё топливо и её ядро коллапсирует! \
+				Выброс нейтронной массы не контролируется. Сфера Дайсона на данной звезде отсутствует. Ожидаемая интенсивность: [uppertext(cme_intensity)]. Ожидайте столкновение в течении [round((start_when * SSevents.wait) * 0.1, 0.1)] секунд. \
+				Весь персонал должен эвакуироваться. Держитесь, Солнечная Федерация уверена в вашем уровне профессионализма. Вы обязательно выживете.", "ВНИМАНИЕ: Солнечная Вспышка", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 
 /datum/round_event/cme/tick(seconds_between_ticks)
 	if(ISMULTIPLE(activeFor, rand(cme_frequency_lower, cme_frequency_upper)))
@@ -164,7 +165,7 @@
 			INVOKE_ASYNC(SSsecurity_level, TYPE_PROC_REF(/datum/controller/subsystem/security_level/, minimum_security_level), SEC_LEVEL_ORANGE, TRUE, FALSE)
 
 	var/area/loc_area_name = get_area(spawnpoint)
-	minor_announce("WARNING! [uppertext(intensity)] PULSE EXPECTED IN: [loc_area_name.name]", "Solar Flare Log:")
+	minor_announce("ВНИМАНИЕ! БУБЛИК ОБНАРУЖЕН В: [loc_area_name.name]. ИНТЕНСИВНОСТЬ: [uppertext(intensity)].", "ВНИМАНИЕ: Солнечная Вспышка:")
 	switch(intensity)
 		if(CME_MINIMAL)
 			var/obj/effect/cme/spawnedcme = new(spawnpoint)

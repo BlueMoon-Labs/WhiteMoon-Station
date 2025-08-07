@@ -10,6 +10,7 @@
 	name = "All assistants expeditioners now"
 	report_message = "Мы решили записать абсолютно всех ассистентов с вашей станции в Экспедиционный Корпус. Теперь у них есть доступ к ЕВА, к Гейту и пять тысяч кредитов сверху."
 	trait_type = STATION_TRAIT_POSITIVE
+	trait_to_give = "station_trait_assistants_as_expeditioners"
 	weight = 5
 	cost = STATION_TRAIT_COST_LOW
 	show_in_report = TRUE
@@ -44,8 +45,6 @@
 	for(var/obj/item/card/id/advanced/id_card in world)
 		if(istype(id_card.trim, /datum/id_trim/job/assistant))
 			SSid_access.apply_trim_to_card(id_card, /datum/id_trim/job/assistant)
-			if(id_card.registered_account && id_card.registered_account.account_balance < 5000)
-				id_card.registered_account.adjust_money(5000 - id_card.registered_account.account_balance, "Expedition Corps Bonus")
 
 	addtimer(CALLBACK(src, PROC_REF(send_expedition_announcement)), 5 MINUTES)
 

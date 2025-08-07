@@ -85,10 +85,10 @@
 /obj/effect/grand_rune/proc/announce_rune()
 	var/area/created_area = get_area(src)
 	if (potency >= GRAND_RITUAL_IMMINENT_FINALE_POTENCY)
-		priority_announce("Major anomalous fluctuations to local spacetime detected in: [created_area.name].", "Anomaly Alert")
+		priority_announce("В локальном пространстве-времени обнаружены крупные аномальные флуктуации: [created_area.name].", "ВНИМАНИЕ: АНОМАЛИЯ")
 		return
 	if (potency >= GRAND_RITUAL_RUNES_WARNING_POTENCY)
-		priority_announce("Unusual anomalous energy fluctuations detected in: [created_area.name].", "Anomaly Alert")
+		priority_announce("Необычные аномальные колебания энергии обнаружены в: [created_area.name].", "ВНИМАНИЕ: АНОМАЛИЯ")
 		return
 
 /obj/effect/grand_rune/examine(mob/user)
@@ -295,13 +295,13 @@
 	var/announce = null
 	switch (dire_warnings_given)
 		if (0)
-			announce = "Large anomalous energy spike detected in: [created_area.name]."
+			announce = "Обнаружен большой аномальный всплеск энергии. Место обнаружения: [created_area.name]."
 		if (1)
-			announce = "Automatic causality stabilisation failed, recommend urgent intervention in: [created_area.name]."
+			announce = "Автоматическая стабилизация причинно-следственной связи не удалась, рекомендуем срочное вмешательство. Место обнаружения: [created_area.name]."
 		if (2)
-			announce = "Imminent local reality failure in: [created_area.name]. All crew please prepare to evacuate."
+			announce = "Неизбежный сбой в локальной реальности. Место обнаружения: [created_area.name]. Всем членам экипажа, пожалуйста, приготовиться к эвакуации."
 	if (announce)
-		priority_announce(announce, "Anomaly Alert")
+		priority_announce(announce, "ВНИМАНИЕ: АНОМАЛИЯ")
 	dire_warnings_given++
 	return ..()
 

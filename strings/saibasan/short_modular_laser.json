@@ -1,143 +1,140 @@
 {
 	"pickup": [
-		"Zǎo shàng hǎo.",
-		"Wǎn shàng hǎo.",
-		"What's the operation today, ah?",
-		"Let's get things started, heh-heh.",
-		"I'm feeling good about our chances today.",
-		"Hey, clean my damn lens later.",
-		"Little tighter around the handguard, @pick(operator)"
+		"Zǎo shàng hǎo!",
+		"Wǎn shàng hǎo!",
+		"Какая у нас сегодня миссия, а?",
+		"Давай начинать, хе-хе.",
+		"Сегодня у нас хорошие шансы.",
+		"Эй, потом почисти мои чёртовы линзы.",
+		"Держи меня крепче, @pick(operator)."
 	],
 
 	"putdown": [
-		"...you'll hold me again soon, right? Right?",
-		"Don't you DARE leave me here!",
-		"Tch! Whatever... You'll come crawling back to point me around later.",
-		"Dàjiā ān.",
-		"Good night.",
-		"Entering sleep mode now.",
-		"Entering recharge cycle.",
-		"Yeah, yeah... entering recharge cycle...",
-		"Qù nǐ mā... nevermind, entering sleep mode."
+		"...ты ведь скоро снова возьмёшь меня, да? Да?!",
+		"Не смей оставлять меня здесь!",
+		"Тьфу! Неважно... потом всё равно приползёшь, чтобы пострелять из меня.",
+		"Dàjiā ān!",
+		"Спокойной ночи.",
+		"Перехожу в спящий режим.",
+		"Начинаю цикл подзарядки.",
+		"Да, да... перехожу в режим подзарядки...",
+		"Qù nǐ mā..."
 	],
 
 	"worn": [
-		"So portable, right @pick(operator)?",
-		"Lightweight, sold with a few backup magslings, what's not to love?",
-		"I can't see anything infront of you, this sucks.",
-		"I can't see shit from this angle...",
-		"We're going somewhere with this, right?",
-		"Don't fall over on top of me, okay?",
-		"Pretty cushy ride back here...",
-		"I could get used to this.",
-		"I can't see sh- ah, wait, maybe it's not so bad back here."
+		"Я ведь удобная, правда, @pick(operator)?",
+		"Лёгкая, с парой запасных магнитных креплений — что ещё надо?",
+		"Я ничего не вижу перед тобой, это отстой.",
+		"С этого угла вообще ничего не видно...",
+		"Мы ведь куда-то идём, да?",
+		"Только не падай на меня, ладно?",
+		"Неплохо тут устроилась...",
+		"Могла бы и привыкнуть.",
+		"Я ничего не ви-... а, погоди, может, тут и не так плохо."
 	],
 
 	"lowcharge": [
 		"Wǒ tài nán le...",
 		"Mā de...",
 		"Tā mā de...",
-		"I'm really drowsy here, pull back, won't you?",
-		"I'm running on fumes here, boss...",
-		"Outta charge, gotta rest...",
-		"Sorry, on your own 'til I recharge.",
-		"Disappointing! Entering recharge cycle...",
-		"Wh- Already?! I was just getting started..."
+		"Я еле соображаю, давай отступим?",
+		"Я на последнем издыхании, босс...",
+		"Разрядилась, надо отдохнуть...",
+		"Извини, теперь сам по себе, пока я не перезаряжусь.",
+		"Какое разочарование! Перехожу в режим зарядки...",
+		"Чт—.. уже?! Я только разошлась..."
 	],
 
 	"fullcharge": [
-		"Whew, that's much better.",
-		"Hundred percent charged, let's get back to it.",
-		"I feel like a million creds!",
-		"Heh-heh, recharge cycle came in handy.",
-		"This. Is. Power!",
-		"As if there was any doubt..."
+		"Фух, вот это другое дело.",
+		"Сотка заряда, давайте продолжим.",
+		"Чувствую себя на миллион кредитов!",
+		"Хе-хе, подзарядка пригодилась.",
+		"Вот. Это. Сила!",
+		"Как будто были сомнения..."
 	],
 
 	"combatmode": [
-		"I've been waaaiiitiiiing!",
-		"I was wondering how long you were planning on depriving me, @pick(operator).",
-		"Come on, come at me!",
-		"It's your lucky day!",
-		"Now the fun begins!",
-		"Countin' on ya!"
+		"Я та-а-а-ак ждала!",
+		"Интересно, как долго ты собирался меня лишать удовольствия, @pick(operator).",
+		"Давайте, подходите!",
+		"Сегодня ваш счастливый день!",
+		"А теперь начинается самое интересное!",
+		"Рассчитываю на тебя!"
 	],
 
 	"emp": [
-		"Tāmāde! Tāmāde!",
+		"Tāmāde!",
 		"Qì sǐ wǒle!",
-		"ELECTROM-",
-		"ELECTROMAGNETIC PULSE DETECTED, DISCHARGING-",
-		"ELECTROMAGNETIC PULSE, IT'S DISCHARGING MY BATTERY!",
-		"THEY HAVE AN EM-",
-		"GO KILL THEM!",
-		"KILL THEM! KILL THEM! PUT THE SIGHTS ON THEM AND KILL THEM!",
-		"KILL THEM, KILL THEM!",
-		"I DON'T NEED CHARGE FOR BLADE MODE, PUT IT IN THEM AND TWIST!",
+		"ЭЛЕКТРОМ-",
+		"ОБНАРУЖЕН ЭЛЕКТРОМАГНИТНЫЙ ИМПУЛЬС, РАЗРЯЖАЮСЬ-..",
+		"ЭМИ, ОН РАЗРЯЖАЕТ МОЙ АККУМУЛЯТОР!",
+		"У НИХ ЭМИ!",
+		"УБЕЙ ИХ!",
+		"УБЕЙ ИХ! УБЕЙ ИХ! ПРИЦЕЛЬСЯ И УБЕЙ ИХ!",
+		"УБЕЙ ИХ, УБЕЙ ИХ!",
+		"МНЕ НЕ НУЖЕН ЗАРЯД ДЛЯ РЕЖИМА КЛИНКА, ВОНЗИ МЕНЯ И ПРОВЕРНИ!",
 		"Qù nǐ mā de ba!"
 	],
 
 	"incinerate": [
-		"Superheating lens, time to cauterize!",
-		"Charging Hellfire capacitators, let's toast em!",
-		"Hellfire capacitators charging. Don't stop 'till I'm empty!",
-		"Hellfire! Bring it on, bastards!",
-		"Heh-heh, can you feel the heat?",
-		"Gunslinger!"
+		"Перегреваю линзы, время прижечь!",
+		"Заряжаю конденсаторы Адского Пламени, давайте поджарим их!",
+		"Конденсаторы Адского Пламени заряжаются. Не останавливайся, пока я не опустею!",
+		"Адское Пламя! Давайте, ублюдки!",
+		"Хе-хе, чувствуете жар?",
+		"Револьверщик!"
 	],
 
 	"blade": [
-		"Extending blade; up close and personal? I like that.",
-		"Extending blade; wipe me off after we're finished.",
-		"Extending blade, stab stab stab!",
-		"Swing the sword, swing the sword!",
-		"CQC mode initiated, stick me in there deep!",
-		"Eviscerate!",
-		"Show me your motivation...",
-		"I'll cut them in two!",
-		"Clean cuts!",
-		"Their nightmare begins here!",
-		"Now I'm motivated!",
-		"Swordmaster!",
-		"The sword is yours, @pick(operator).",
-		"Sword core online."
+		"Выдвигаю клинок; близкий контакт? Мне нравится.",
+		"Выдвигаю клинок; протри меня после боя.",
+		"Выдвигаю клинок, колоти их, колоти!",
+		"Размахивай мечом, размахивай!",
+		"Режим ближнего боя активирован, вонзи меня поглубже!",
+		"Потроши!",
+		"Покажи мне свою мотивацию...",
+		"Я разрежу их пополам!",
+		"Чистые разрезы!",
+		"Их кошмар начинается здесь!",
+		"Теперь я мотивирована!",
+		"Мастер клинка!",
+		"Меч в твоих руках, @pick(operator).",
+		"Ядро клинка активно."
 	],
 
 	"disable": [
-		"Trickster!",
-		"Non-lethal mode initiated. Let's make it stylish.",
-		"Non-lethal mode initiated. It's showtime!",
-		"Non-lethal mode initiated. You like trick shootin'?",
-		"Non-lethal mode initiated. Who's ready for a show?",
-		"This is gonna be cool, but can we up the voltage please?",
-		"I'm ready, but... man...",
-		"We aren't really gonna get any kills like this."
+		"Трикстер!",
+		"Нелетальный режим активирован. Сделаем это стильно.",
+		"Нелетальный режим активирован. Пора начинать шоу!",
+		"Нелетальный режим активирован. Любишь трюковую стрельбу?",
+		"Нелетальный режим активирован. Кто готов к представлению?",
+		"Будет круто, но можно увеличить напряжение?",
+		"Я готова, но... блин...",
+		"Мы ведь не получим ни одного убийства в таком режиме."
 	],
 
 	"flare": [
-		"Ignite the flames! Now!",
-		"Incendiary, incendiary!",
-		"Fabricating 'Balrog' energy flares; this'll be sick.",
-		"Fabricating 'Balrog' energy flares; can you feel the fire?",
-		"Firestarter, twisted firestarter!",
-		"Apocalyptic meltdown!",
-		"Incendiary weapons are banned in numerous sectors; makes it kind of risqué..",
-		"Dragon breath!"
+		"Зажигай пламя! Сейчас же!",
+		"Зажигательные, зажигательные!",
+		"Формирую энергетические 'Балроговские' вспышки; будет жарко.",
+		"Формирую 'Балроговские' вспышки; чувствуешь огонь?",
+		"Поджигатель, гребаный поджигатель!",
+		"Апокалиптический расплав!",
+		"Зажигательное оружие запрещено во многих секторах... это даже пикантно.",
+		"Дыхание дракона!"
 	],
 
 	"shotgun": [
-		"Focusing lens, one shot, one kill!",
-		"Focusing lens, let's go all the way through.",
-		"Focusing lens, aim for the head!",
-		"Let me show you what a real diffusion lens looks like...",
-		"Would it distract you if I told you about a shotgun's 'choke?'",
-		"I'll be your boomstick.",
-		"You should keep me handy for close encounters.",
-		"Is there something more iconic and awesome than a double-barrel? Yeah, me."
+		"Фокусирую линзы, один выстрел - одно убийство!",
+		"Фокусирую линзы, пройдём насквозь.",
+		"Фокусирую линзы, целься в голову!",
+		"Позволь показать, как выглядит настоящая диффузионная линза...",
+		"Отвлеку, если расскажу про 'чок' дробовика?",
+		"Буду твоим ружжём.",
+		"Держи меня под рукой для близких встреч.",
+		"Есть что-то более культовое, чем двустволка? Да - я."
 	],
 
-	"operator": [
-		"Operator",
-		"Handler"
-	]
+	"operator": ["Оператор", "Наводчик"]
 }

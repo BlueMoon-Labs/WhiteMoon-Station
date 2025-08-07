@@ -129,6 +129,8 @@
 	var/list/mob/dead/observer/candidates = SSpolling.poll_ghost_candidates("Do you wish to be considered for [span_notice(ertemplate.polldesc)]?", check_jobban = "deathsquad", alert_pic = /obj/item/card/id/advanced/centcom/ert, role_name_text = "emergency response team")
 
 	if(!length(candidates))
+		if(ertemplate.notify_players)
+			priority_announce("[station_name()], мы не можем выслать ОБР в связи с занятостью всех действующих оперативников.", "ОБР Недоступно", ANNOUNCER_ERTNO)
 		message_admins("[key_name_admin(owner)] tried to create a CentCom response team but [owner.p_they()] didn't find any candidates.")
 		return FALSE
 
@@ -265,7 +267,7 @@
 	message_admins("[capitalize(ertemplate.polldesc)] has spawned with the mission: [ertemplate.mission]")
 	// BUBBER EDIT ADDITION BEGIN
 	if(ertemplate.notify_players)
-		priority_announce("Central command has responded to your request for a CODE [uppertext(ertemplate.code)] Emergency Response Team and have confirmed one to be enroute.", "ERT Request", ANNOUNCER_ERTYES)
+		priority_announce("Центральное Командование отправляет Отряд Быстрого Реагирования. КОД: [uppertext(ertemplate.code)].", "Инициализирован протокол ОБР", ANNOUNCER_ERTYES)
 		// shitcode begin!
 		if(istype(ertemplate, /datum/ert/deathsquad))
 			SSsecurity_level.set_level(SEC_LEVEL_EPSILON)

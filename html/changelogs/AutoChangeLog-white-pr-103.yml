@@ -1,0 +1,4 @@
+author: "SmiLeYre"
+delete-after: True
+changes:
+  - bugfix: "Починил Чейнджлоги.JSX."

@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(lowpop)
 		return
 
 /datum/controller/subsystem/lowpop/proc/send_announcement(message)
-	priority_announce(message, "Staffing Bureau")
+	priority_announce(message, "Кадровое Бюро")
 
 /datum/controller/subsystem/lowpop/fire(resumed)
 	lowpop_check()
@@ -84,7 +84,7 @@ SUBSYSTEM_DEF(lowpop)
 
 	// recharge all those smes if we're out of power!
 	for(var/obj/machinery/power/smes/smes as anything in valid_smes)
-		smes.charge = smes.capacity
+		smes.adjust_charge(INFINITY)
 		if(smes.input_level == initial(smes.input_level))
 			smes.input_level = smes.input_level_max
 		if(smes.output_level == initial(smes.output_level))

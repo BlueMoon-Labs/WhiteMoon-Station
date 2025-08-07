@@ -45,3 +45,9 @@
 	worn_icon = 'modular_zzz/icons/mob/clothing/neck.dmi'
 	worn_icon_digi = 'modular_zzz/icons/mob/clothing/neck.dmi'
 	icon_state = "eidolon_cape"
+
+/obj/item/clothing/neck/cloak/colonial
+	slot_flags = ITEM_SLOT_NECK
+
+/obj/item/clothing/suit/hooded/cloak/zuliecloak
+	slot_flags = ITEM_SLOT_NECK

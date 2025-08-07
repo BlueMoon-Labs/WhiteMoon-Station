@@ -12,4 +12,4 @@
 /datum/round_event/carp_migration/wizard
 	carp_type = /mob/living/basic/carp/magic
 	boss_type = /mob/living/basic/carp/magic/chaos
-	fluff_signal = "Unknown magical entities"
+	fluff_signal = "Неизвестные магические организмы"

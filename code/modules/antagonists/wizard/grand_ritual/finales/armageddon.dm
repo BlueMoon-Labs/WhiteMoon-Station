@@ -15,19 +15,21 @@
 	glow_colour = "#be000048"
 	/// Things to yell before you die
 	var/static/list/possible_last_words = list(
-		"Flames and ruin!",
-		"Dooooooooom!!",
-		"HAHAHAHAHAHA!! AHAHAHAHAHAHAHAHAA!!",
-		"Hee hee hee!! Hoo hoo hoo!! Ha ha haaa!!",
-		"Ohohohohohoho!!",
-		"Cower in fear, puny mortals!",
-		"Tremble before my glory!",
-		"Pick a god and pray!",
-		"It's no use!",
-		"If the gods wanted you to live, they would not have created me!",
-		"God stays in heaven out of fear of what I have created!",
-		"Ruination is come!",
-		"All of creation, bend to my will!",
+		"Пламя и руины!",
+		"Смеееееееееееееееерть!!",
+		"Погиииииииииииииибель!!",
+		"Дууууууууууууууууууум!!",
+		"АХАХАХАХА!! УХАХАХАХА!!",
+		"Хи-хи-хи!! Ууууууууу!! Ха-ха-хааа!!",
+		"Хохохохохохо!!",
+		"Содрогнитесь от страха, жалкие смертные!",
+		"Трепещите перед моей славой!",
+		"Я твой новый Бог! Молись!!!",
+		"Это бесполезно!",
+		"Если бы боги хотели, чтобы ты жил, они бы не создали меня!",
+		"Бог остается на небесах из-за страха перед тем, что я создал!",
+		"Разрушение пришло!",
+		"Всё сотворённое, подчинись моей воле!",
 	)
 
 /datum/grand_finale/armageddon/trigger(mob/living/carbon/human/invoker)
@@ -52,7 +54,7 @@
 			GLOB.meteor_mode ||= new()
 			GLOB.meteor_mode.meteordelay = 0
 			GLOB.meteor_mode.start_meteor()
-			priority_announce("Meteors have been detected on collision course with the station.", "Meteor Alert", ANNOUNCER_METEORS)
+			priority_announce("На траектории столкновения со станцией были обнаружены метеоры.", "ВНИМАНИЕ: МЕТЕОРЫ", ANNOUNCER_METEORS)
 
 #undef DOOM_SINGULARITY
 #undef DOOM_TESLA

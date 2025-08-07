@@ -47,7 +47,14 @@
 	cost = PAYCHECK_COMMAND * 5
 
 /datum/supply_pack/security/armory/smartrifle // Довольно мощная винтовка, направленная на доставление стамин-урона.
-	cost = CARGO_CRATE_VALUE * 150
+	cost = CARGO_CRATE_VALUE * 100
+
+/datum/supply_pack/security/armory/short_mod_laser // АЕГ за 5000 кредитов.
+	name = "Hoshi Modular Laser Carbines Crate"
+	desc = "В ящике находится три модулярных лазерных винтовок с интегрированной автозарядкой."
+	cost = PAYCHECK_COMMAND * 150
+	contains = list(/obj/item/gun/energy/modular_laser_rifle/carbine = 3)
+	crate_name = "Hoshi Modular Laser Carbines Crate"
 
 /datum/supply_pack/security/armory/ballistic // Три Комбат-Дробовика. Каждый за 1500 в связи с отсутствием необходимости дёргать затвор.
 	cost = PAYCHECK_COMMAND * 45

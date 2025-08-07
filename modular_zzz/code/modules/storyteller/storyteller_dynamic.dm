@@ -1,6 +1,6 @@
 /datum/storyteller/dynamic
 	name = "Dynamic (Player Dependent Dynamic)"
-	desc = "Тип Динамика будет выбран в зависимости от количества игроков (ПРОЖАВШИХ READY) и их предпочитаемого уровня Хаоса. Предпочитаемый уровень хаоса можно выбрать в настройках (GAME OPTIONS > Your Chaos Level)."
+	desc = "Тип Динамика будет выбран в зависимости от количества игроков и их предпочитаемого уровня Хаоса. <b>Предпочитаемый уровень хаоса можно выбрать в настройках (GAME OPTIONS > Your Chaos Level)</b>."
 	votable = TRUE
 
 /proc/pick_dynamic_storyteller_type_by_chaos(list/players)

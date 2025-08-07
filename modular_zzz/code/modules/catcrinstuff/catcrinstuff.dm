@@ -238,3 +238,28 @@
 	name = "AC Casual Skirt"
 	desc= "Casual skirt for special operations for Mercenaries in Adamas Cattus."
 	icon_state = "ac_uni_skirt"
+
+/obj/item/clothing/under/catcrin_underarmor
+	name = "Catcrin underarmor unifrom"
+	desc= "A uniform originally created for the Catcrin combat synthetics, but later adopted by the masses due to its strange popularity. Give you no tactical advantage whatsoever."
+	icon = 'modular_zzz/icons/obj/clothing/under.dmi'
+	worn_icon = 'modular_zzz/icons/mob/clothing/under.dmi'
+	worn_icon_digi = 'modular_zzz/icons/mob/clothing/under.dmi'
+	icon_state = "catcrin_underarmor"
+	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Black" = list(
+			RESKIN_ICON_STATE = "catcrin_underarmor",
+			RESKIN_WORN_ICON_STATE = "catcrin_underarmor"
+		),
+		"White" = list(
+			RESKIN_ICON_STATE = "catcrin_underarmor_white",
+			RESKIN_WORN_ICON_STATE = "catcrin_underarmor_white"
+		),
+		"Beige" = list(
+			RESKIN_ICON_STATE = "catcrin_underarmor_beige",
+			RESKIN_WORN_ICON_STATE = "catcrin_underarmor_beige"
+		)
+	)

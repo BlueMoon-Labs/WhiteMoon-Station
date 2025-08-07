@@ -7,3 +7,12 @@ node_modules
 !/public/*.html
 !/public/ntos-error.min.css
 !/public/helpers.min.js
+
+## Yarn stuff
+/.pnp.*
+/.yarn/*
+!/.yarn/releases
+!/.yarn/plugins
+!/.yarn/sdks
+!/.yarn/versions
+!/.yarn/lock.yml

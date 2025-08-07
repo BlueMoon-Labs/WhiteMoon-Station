@@ -9,8 +9,8 @@
 		TAG_DESTRUCTIVE = 0.3,
 		TAG_CHAOTIC = 0.1,
 		TAG_LOW = 1,
-		TAG_MEDIUM = 0.5,
-		TAG_HIGH = 0.5
+		TAG_MEDIUM = 0.1,
+		TAG_HIGH = 0.05
 	)
 	antag_divisor = 32
 	votable = FALSE

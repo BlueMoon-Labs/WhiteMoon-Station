@@ -4,7 +4,7 @@
 	max_occurrences = 1
 	weight = 20
 	category = EVENT_CATEGORY_FRIENDLY
-	description = "A cow appears to tell you wise words."
+	description = "Появляется корова, чтобы сказать вам мудрые слова."
 	admin_setup = list(
 		/datum/event_admin_setup/set_location/wisdom_cow,
 		/datum/event_admin_setup/listed_options/wisdom_cow_wisdom,
@@ -23,7 +23,7 @@
 	var/datum/reagent/forced_reagent_type
 
 /datum/round_event/wisdomcow/announce(fake)
-	priority_announce("A wise cow has been spotted in the area. Be sure to ask for her advice.", "Nanotrasen Cow Ranching Agency", ANNOUNCER_WISDOM_COW) // SPLURT EDIT - ORIGINAL: priority_announce("A wise cow has been spotted in the area. Be sure to ask for her advice.", "Nanotrasen Cow Ranching Agency")
+	priority_announce("В этом районе была замечена мудрая корова. Обязательно спросите у нее совета.", "Агентство Nanotrasen по Разведению Коров", ANNOUNCER_WISDOM_COW) // SPLURT EDIT - ORIGINAL: priority_announce("A wise cow has been spotted in the area. Be sure to ask for her advice.", "Nanotrasen Cow Ranching Agency")
 
 /datum/round_event/wisdomcow/start()
 	var/turf/targetloc
