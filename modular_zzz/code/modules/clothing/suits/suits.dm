@@ -58,7 +58,7 @@
 	icon = 'modular_zzz/icons/obj/clothing/suits.dmi'
 	worn_icon = 'modular_zzz/icons/mob/clothing/suits.dmi'
 	worn_icon_digi = 'modular_zzz/icons/mob/clothing/suits.dmi'
-	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_NECK
+	slot_flags = ITEM_SLOT_NECK
 	icon_state = "rev_mori"
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
