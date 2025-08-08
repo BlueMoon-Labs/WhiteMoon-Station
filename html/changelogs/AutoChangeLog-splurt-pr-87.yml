@@ -1,5 +1,0 @@
-author: "Skilets"
-delete-after: True
-changes:
-  - rscadd: "New sprites Ui"
-  - bugfix: "fixed UI \"blue - 98\""

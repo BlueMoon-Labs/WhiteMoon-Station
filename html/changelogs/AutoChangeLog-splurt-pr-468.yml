@@ -1,5 +1,0 @@
-author: "Silver-Paws"
-delete-after: True
-changes:
-  - bugfix: "Penis Taur Mode is now working properly for \"chemlight\" and \"noodle dragon\" taur bodies."
-  - bugfix: "Chemnaga taur body should work properly with MODs and is now considered as serpentine organ."

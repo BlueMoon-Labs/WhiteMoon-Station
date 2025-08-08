@@ -1,4 +1,0 @@
-author: "VladOS-0"
-delete-after: True
-changes:
-  - refactor: "added .yarn staff to gitignore"
