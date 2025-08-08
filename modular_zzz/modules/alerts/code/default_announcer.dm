@@ -7,17 +7,12 @@
 		ANNOUNCER_ALIENS = 'modular_zzz/sound/announcer/default/lifesigns.ogg', // Нужно улучшение.
 		ANNOUNCER_ANIMES = 'modular_zzz/sound/announcer/default/animes.ogg', // Нужен перевод.
 		ANNOUNCER_INTERCEPT = 'modular_skyrat/modules/alerts/sound/alerts/alert2.ogg',
-		ANNOUNCER_IONSTORM = list('modular_zzz/sound/announcer/default/ionstorm1.ogg', \
-		'modular_zzz/sound/announcer/default/ionstorm2.ogg', 'modular_zzz/sound/announcer/default/ionstorm3.ogg'),
+		ANNOUNCER_IONSTORM = 'modular_zzz/sound/announcer/default/ionstorm1.ogg',
 		ANNOUNCER_METEORS = 'modular_zzz/sound/announcer/default/meteors.ogg',
 		ANNOUNCER_OUTBREAK5 = 'modular_zzz/sound/announcer/default/outbreak5.ogg',
 		ANNOUNCER_OUTBREAK6 = 'modular_skyrat/modules/alerts/sound/alerts/alert3.ogg',
 		ANNOUNCER_OUTBREAK7 = 'modular_zzz/sound/announcer/default/outbreak7.ogg',
-		ANNOUNCER_POWEROFF = list('modular_zzz/sound/announcer/default/poweroff.ogg', 'modular_zzz/sound/announcer/default/poweroff2.ogg', \
-		'modular_zzz/sound/announcer/default/poweroff2.ogg', 'modular_zzz/sound/announcer/default/poweroff2.ogg', \
-		'modular_zzz/sound/announcer/default/poweroff2.ogg', 'modular_zzz/sound/announcer/default/poweroff2.ogg', \
-		'modular_zzz/sound/announcer/default/poweroff2.ogg', 'modular_zzz/sound/announcer/poweroff_boomer.ogg'),
-		ANNOUNCER_POWERON = list('modular_zzz/sound/announcer/default/poweron1.ogg', 'modular_zzz/sound/announcer/default/poweron2.ogg'),
+		ANNOUNCER_POWEROFF = 'modular_zzz/sound/announcer/default/poweroff.ogg',
 		ANNOUNCER_RADIATION = 'modular_zzz/sound/announcer/default/radiation.ogg',
 		ANNOUNCER_RADIATIONPASSED = 'modular_skyrat/modules/alerts/sound/alerts/radpassed.ogg', // Нужен перевод.
 		ANNOUNCER_SHUTTLECALLED = 'modular_zzz/sound/announcer/default/shuttlecalled.ogg',
