@@ -19,7 +19,7 @@
 /datum/hallucination/station_message/shuttle_dock/start()
 	priority_announce(
 					text = "[SSshuttle.emergency] пристыковался к станции. Вам отведено [DisplayTimeText(SSshuttle.emergency_dock_time)] для того, чтобы занять своё место на борту шаттла отбытия.",
-					title = "Диспетчерская Служба ЦК",
+					title = "Диспетчерская Служба",
 					sound = ANNOUNCER_SHUTTLEDOCK,
 					sender_override = "Экстренное Оповещение",
 					players = list(hallucinator),

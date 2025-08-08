@@ -235,7 +235,7 @@ GLOBAL_VAR_INIT(emergency_access, FALSE)
 
 /proc/toggle_bluespace_artillery()
 	GLOB.bsa_unlock = !GLOB.bsa_unlock
-	minor_announce("Протоколы Выстрелов из Блюспейс-Артиллерии были [GLOB.bsa_unlock? "разблокированы" : "заблокированы"]", "ВНИМАНИЕ: Блюспейс-Артиллерия:")
+	minor_announce("Протоколы Выстрелов из Блюспейс-Артиллерии были [GLOB.bsa_unlock? "разблокированы" : "заблокированы"]", "ВНИМАНИЕ: Блюспейс-Артиллерия")
 	SSblackbox.record_feedback("nested tally", "keycard_auths", 1, list("bluespace artillery", GLOB.bsa_unlock? "unlocked" : "locked"))
 
 #undef ACCESS_GRANTING_COOLDOWN

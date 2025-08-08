@@ -50,7 +50,7 @@
 
 	priority_announce(
 		text = "Шаттл отбытия был вызван. [red_alert ? "Подтверждён Красный Код, отправлен приоритетный шаттл. " : "" ]Он прибудет через [(timeLeft(60 SECONDS))] минут.[reason][SSshuttle.emergency_last_call_loc ? "\n\nСигнал вызова был отслежен. Результаты можно отследить на любой консоли коммуникаций." : "" ][SSshuttle.admin_emergency_no_recall ? "\n\nВНИМАНИЕ: Подпрограммы отзыва шаттла отключены; Отзыв невозможен." : ""]",
-		title = "Диспетчерская Служба ЦК",
+		title = "Диспетчерская Служба",
 		sound = ANNOUNCER_SHUTTLECALLED,
 		sender_override = "Экстренное Оповещение",
 		color_override = "orange",
@@ -71,7 +71,7 @@
 		SSshuttle.emergency_last_call_loc = null
 	priority_announce(
 		text = "Шаттл отбытия был отозван.[SSshuttle.emergency_last_call_loc ? " Сигнал вызова был отслежен. Результаты можно отследить на любой консоли коммуникаций." : "" ]",
-		title = "Диспетчерская Служба ЦК",
+		title = "Диспетчерская Служба",
 		sound = ANNOUNCER_SHUTTLERECALLED,
 		sender_override = "Экстренное Оповещение",
 		color_override = "orange",
@@ -166,7 +166,7 @@
 				send2adminchat("Server", "The Emergency Shuttle has docked with the station.")
 				priority_announce(
 					text = "[SSshuttle.emergency] пристыковался к станции. Вам отведено [DisplayTimeText(SSshuttle.emergency_dock_time)] для того, чтобы занять своё место на борту шаттла отбытия.",
-					title = "Диспетчерская Служба ЦК",
+					title = "Диспетчерская Служба",
 					sound = ANNOUNCER_SHUTTLEDOCK,
 					sender_override = "Экстренное Оповещение",
 					color_override = "orange",
@@ -229,7 +229,7 @@
 				setTimer(SSshuttle.emergency_escape_time * engine_coeff)
 				priority_announce(
 					text = "Шаттл отбытия покинул станцию. Остаётся [timeLeft(60 SECONDS)] минут до прибытия на [command_name()].",
-					title = "Диспетчерская Служба ЦК",
+					title = "Диспетчерская Служба",
 					sender_override = "Экстренное Оповещение",
 					color_override = "orange",
 				)
@@ -298,7 +298,7 @@
 	setTimer(SSshuttle.emergency_escape_time)
 	priority_announce(
 		text = "Эвакуационный Шаттл пристыковался к станции. Вам отведено [timeLeft(60 SECONDS)] секунд для того, чтобы занять своё место на борту шаттла отбытия.",
-		title = "Диспетчерская Служба ЦК",
+		title = "Диспетчерская Служба",
 		sender_override = "Экстренное Оповещение",
 		color_override = "orange",
 	)

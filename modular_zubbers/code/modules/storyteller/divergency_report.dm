@@ -23,7 +23,7 @@
 	<p style=\"color: grey; text-align: justify;\">This label certifies an Intern has reviewed the above before sending. This document is the property of Nanotrasen Corporation.</p>"
 
 	print_command_report(., "Central Command Status Summary", announce = FALSE)
-	priority_announce("Поздравляем с началом смены, экипаж [station_name()]. Наш стажёр закончил оценку дивергенции и целей под вашу систему, отчёт с данными был отправлен на вашу коммуникационную консоль. Удачной смены!", "Диспетчерская Служба ЦК", SSstation.announcer.get_rand_report_sound())
+	priority_announce("Поздравляем с началом смены, экипаж [station_name()]. Наш стажёр закончил оценку дивергенции и целей под вашу систему, отчёт с данными был отправлен на вашу коммуникационную консоль. Удачной смены!", "Диспетчерская Служба", SSstation.announcer.get_rand_report_sound())
 
 
 

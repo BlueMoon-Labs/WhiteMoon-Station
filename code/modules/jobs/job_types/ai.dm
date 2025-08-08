@@ -102,7 +102,7 @@
 /datum/job/ai/announce_job(mob/living/joining_mob)
 	. = ..()
 	if(SSticker.HasRoundStarted())
-		minor_announce("[joining_mob] has been downloaded to an empty bluespace-networked AI core at [AREACOORD(joining_mob)].")
+		minor_announce("Новый ИИ выбран: [joining_mob]. ИИ будет загружен пустое ядро ИИ. Местоположение ядра: [AREACOORD(joining_mob)].")
 
 
 /datum/job/ai/config_check()

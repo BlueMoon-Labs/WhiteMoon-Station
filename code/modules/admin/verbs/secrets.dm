@@ -378,7 +378,7 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 			if (make_announcement != "No")
 				priority_announce(
 					text = announcement_text,
-					title = "Диспетчерская Служба ЦК",
+					title = "Диспетчерская Служба",
 					sound =  'sound/announcer/announcement/announce_dig.ogg',
 					sender_override = "Экстренное Оповещение",
 					color_override = "grey",
@@ -732,7 +732,7 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 	if (make_announcement != "No")
 		priority_announce(
 			text = "[SSshuttle.emergency] вернулся на станцию.",
-			title = "Диспетчерская Служба ЦК",
+			title = "Диспетчерская Служба",
 			sound = ANNOUNCER_SHUTTLEDOCK,
 			sender_override = "Экстренное Оповещение",
 			color_override = "grey",

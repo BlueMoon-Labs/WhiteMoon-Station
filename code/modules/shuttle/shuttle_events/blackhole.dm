@@ -38,7 +38,7 @@
 		title = "The Orion Trail",
 		sound = 'sound/announcer/notice/notice1.ogg',
 		has_important_message = TRUE,
-		sender_override = "Диспетчерская Служба ЦК",
+		sender_override = "Диспетчерская Служба",
 		color_override = "red",
 	)
 

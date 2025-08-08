@@ -182,7 +182,7 @@
 
 
 /datum/round_event/cme/end()
-	minor_announce("The station has cleared the solar flare, please proceed to repair electronic failures.", "CME cleared:")
+	minor_announce("Солнечная вспышка кончилась. Пожалуйста, приступайте к устранению неполадок.", "ВНИМАНИЕ: Солнечная Вспышка:")
 
 
 /*

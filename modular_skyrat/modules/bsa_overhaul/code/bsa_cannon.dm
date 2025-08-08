@@ -264,7 +264,7 @@
 /obj/machinery/bsa/full/proc/fire(mob/user, turf/bullseye)
 	// Check if the system is already firing or if the machine is broken
 	if(system_state != BSA_SYSTEM_PREFIRE || machine_stat)
-		minor_announce("BLUESPACE ARTILLERY FIRE FAILURE!", "BLUESPACE ARTILLERY", TRUE)
+		minor_announce("ВЫСТРЕЛ ИЗ БЛЮСПЕЙС-АРТИЛЛЕРИЯ НЕУДАЧЕН!", "ВНИМАНИЕ: Блюспейс-Артиллерия", TRUE)
 		system_state = BSA_SYSTEM_READY
 		return
 	system_state = BSA_SYSTEM_FIRING
@@ -296,14 +296,14 @@
 	if(!blocker)
 		message_admins("[ADMIN_LOOKUPFLW(user)] has launched an artillery strike targeting [ADMIN_VERBOSEJMP(bullseye)].")
 		log_game("[key_name(user)] has launched an artillery strike targeting [AREACOORD(bullseye)].")
-		minor_announce("BLUESPACE ARTILLERY FIRE SUCCESSFUL! DIRECT HIT!", "BLUESPACE ARTILLERY", TRUE)
+		minor_announce("ВЫСТРЕЛ ИЗ БЛЮСПЕЙС-АРТИЛЛЕРИИ УСПЕШЕН! ПРЯМОЕ ПОПАДАНИЕ!", "ВНИМАНИЕ: Блюспейс-Артиллерия", TRUE)
 		create_calculated_explosion(bullseye)
 		alert_sound_to_playing('modular_skyrat/modules/bsa_overhaul/sound/superlaser_firing.ogg', override_volume = TRUE)
 		capacitor_power = 0
 	else
 		message_admins("[ADMIN_LOOKUPFLW(user)] has launched an artillery strike targeting [ADMIN_VERBOSEJMP(bullseye)] but it was blocked by [blocker] at [ADMIN_VERBOSEJMP(target)].")
 		log_game("[key_name(user)] has launched an artillery strike targeting [AREACOORD(bullseye)] but it was blocked by [blocker] at [AREACOORD(target)].")
-		minor_announce("BLUESPACE ARTILLERY MALFUNCTION!", "BLUESPACE ARTILLERY", TRUE)
+		minor_announce("БЛЮСПЕЙС-АРТИЛЛЕРИЯ НЕИСПРАВНА!", "ВНИМАНИЕ: Блюспейс-Артиллерия", TRUE)
 
 /// Reloads the BSA.
 /obj/machinery/bsa/full/proc/reload()

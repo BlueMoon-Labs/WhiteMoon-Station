@@ -83,7 +83,7 @@
 
 /obj/item/station_charter/proc/rename_station(designation, uname, ureal_name, ukey)
 	set_station_name(designation)
-	minor_announce("[ureal_name] has designated your station as [html_decode(station_name())]", "Captain's Charter") //decode station_name to avoid minor_announce double encode
+	minor_announce("[ureal_name] обозначает станцию как [html_decode(station_name())]", "Капитанский Указ") //decode station_name to avoid minor_announce double encode
 	log_game("[ukey] has renamed the station as [station_name()].")
 
 	name = "station charter for [station_name()]"
@@ -101,7 +101,7 @@
 /obj/item/station_charter/banner
 	name = "\improper Nanotrasen banner"
 	icon = 'icons/obj/banner.dmi'
-	name_type = "planet"
+	name_type = "планеты"
 	icon_state = "banner"
 	inhand_icon_state = "banner"
 	lefthand_file = 'icons/mob/inhands/equipment/banners_lefthand.dmi'
@@ -112,7 +112,7 @@
 
 /obj/item/station_charter/banner/rename_station(designation, uname, ureal_name, ukey)
 	set_station_name(designation)
-	minor_announce("[ureal_name] has designated the [name_type] as [html_decode(station_name())]", "Captain's Banner") //decode station_name to avoid minor_announce double encode
+	minor_announce("[ureal_name] обозначает станцию [name_type] как [html_decode(station_name())]", "Капитанский Указ") //decode station_name to avoid minor_announce double encode
 	log_game("[ukey] has renamed the [name_type] as [station_name()].")
 	name = "banner of [station_name()]"
 	desc = "The banner bears the official coat of arms of Nanotrasen, signifying that [station_name()] has been claimed by Captain [uname] in the name of the company."

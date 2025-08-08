@@ -76,7 +76,7 @@ ADMIN_VERB(disable_shuttle, R_ADMIN, "Disable Shuttle", "Those fuckers aren't ge
 	SSshuttle.emergency.mode = SHUTTLE_DISABLED
 	priority_announce(
 		text = "Сбой в работе аварийного шаттла; шаттл отключен до дальнейшего уведомления.",
-		title = "Диспетчерская Служба ЦК",
+		title = "Диспетчерская Служба",
 		sound = 'sound/announcer/announcement/announce_dig.ogg',
 		sender_override = "Экстренное Оповещение",
 		color_override = "grey",
@@ -102,7 +102,7 @@ ADMIN_VERB(enable_shuttle, R_ADMIN, "Enable Shuttle", "Those fuckers ARE getting
 	SSshuttle.emergency.setTimer(SSshuttle.last_call_time)
 	priority_announce(
 		text= "Аварийная связь с шаттлом восстановлена.",
-		title = "Диспетчерская Служба ЦК",
+		title = "Диспетчерская Служба",
 		sound = 'sound/announcer/announcement/announce_dig.ogg',
 		sender_override = "Экстренное Оповещение",
 		color_override = "green",

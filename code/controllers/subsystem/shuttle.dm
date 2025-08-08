@@ -277,7 +277,7 @@ SUBSYSTEM_DEF(shuttle)
 		emergency_no_recall = TRUE
 		priority_announce(
 			text = "Обнаружены катастрофические потери среди экипажа: активированы протоколы аварийного шаттла - глушение сигналов отзыва на всех частотах.",
-			title = "Диспетчерская Служба ЦК",
+			title = "Диспетчерская Служба",
 			sound = ANNOUNCER_SHUTTLECALLED,
 			sender_override = "Экстренное Оповещение",
 			color_override = "orange",
@@ -291,7 +291,7 @@ SUBSYSTEM_DEF(shuttle)
 	if(admin_emergency_no_recall)
 		priority_announce(
 			text = "Обнаружены помехи для восходящей линии связи аварийного шаттла, вызов шаттла отключен на время реинициализации системы. Предполагаемое восстановление через [DisplayTimeText(lockout_timer, round_seconds_to = 60)].",
-			title = "Диспетчерская Служба ЦК",
+			title = "Диспетчерская Служба",
 			sound = ANNOUNCER_SHUTTLE, // SKYRAT EDIT CHANGE - Announcer Sounds - ORIGINAL: sound = 'sound/announcer/announcement/announce_dig.ogg',
 			sender_override = "Экстренное Оповещение",
 			color_override = "grey",
@@ -305,7 +305,7 @@ SUBSYSTEM_DEF(shuttle)
 	if(admin_emergency_no_recall)
 		priority_announce(
 			text= "Аварийная связь с шаттлом восстановлена.",
-			title = "Диспетчерская Служба ЦК",
+			title = "Диспетчерская Служба",
 			sound = ANNOUNCER_SHUTTLE, // SKYRAT EDIT CHANGE - Announcer Sounds - ORIGINAL: sound = 'sound/announcer/announcement/announce_dig.ogg',
 			sender_override = "Экстренное Оповещение",
 			color_override = "green",
@@ -558,7 +558,7 @@ SUBSYSTEM_DEF(shuttle)
 		emergency.sound_played = FALSE
 		priority_announce(
 			text = "Шаттл был отложен на неопределенный срок до разрешения конфликта.",
-			title = "Диспетчерская Служба ЦК",
+			title = "Диспетчерская Служба",
 			sound = 'sound/announcer/notice/notice1.ogg',
 			sender_override = "Экстренное Оповещение",
 			color_override = "grey",
@@ -568,7 +568,7 @@ SUBSYSTEM_DEF(shuttle)
 		emergency.setTimer(emergency_dock_time)
 		priority_announce(
 			text = "У вас есть [DisplayTimeText(emergency_dock_time)], чтобы подняться на борт шаттла.",
-			title = "Диспетчерская Служба ЦК",
+			title = "Диспетчерская Служба",
 			sound = 'sound/announcer/announcement/announce_dig.ogg',
 			sender_override = "Экстренное Оповещение",
 			color_override = "green",

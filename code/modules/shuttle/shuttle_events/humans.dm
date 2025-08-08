@@ -47,8 +47,8 @@
 /datum/shuttle_event/simple_spawner/player_controlled/human/greytide/interns/activate()
 	..()
 
-	minor_announce("We're sending you our bravest interns, please let them in when they arrive.",
-		title = "Emergency Shuttle", alert = TRUE)
+	minor_announce("Мы отправляем к вам наших самых смелых стажёров. Пожалуйста, не бойтесь их, они вам помогут...",
+		title = "Диспетчерская Служба", alert = TRUE)
 
 /datum/shuttle_event/simple_spawner/player_controlled/human/greytide/interns/armed
 	name = "Intern Wave (Armed, 10 interns)"
@@ -60,7 +60,7 @@
 
 /datum/shuttle_event/simple_spawner/player_controlled/human/hitchhiker
 	name = "Hitchhiker! (Harmless, single ghost spawn)"
-	spawning_list = list(/mob/living/carbon/human = 1)
+	spawning_list = list(/mob/living/carbon/human = 6)
 	spawning_flags = SHUTTLE_EVENT_HIT_SHUTTLE
 	outfit = /datum/outfit/job/assistant/hitchhiker
 
@@ -86,7 +86,7 @@
 
 /datum/shuttle_event/simple_spawner/player_controlled/human/nukie
 	name = "Nuclear Operative (Dangerous as heck)!"
-	spawning_list = list(/mob/living/carbon/human = 1)
+	spawning_list = list(/mob/living/carbon/human = 3)
 	spawning_flags = SHUTTLE_EVENT_HIT_SHUTTLE
 	outfit = /datum/outfit/deathmatch_loadout/nukie
 

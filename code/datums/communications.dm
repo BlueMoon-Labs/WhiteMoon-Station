@@ -114,7 +114,7 @@ GLOBAL_DATUM_INIT(communications_controller, /datum/communciations_controller, n
 			"Благодаря неустанным усилиям наших служб безопасности и разведки Nanotrasen, \
 				в настоящее время нет никаких реальных угроз для [station_name()]. \
 				Все Цели Смены были одобрены. Обеспечьте себе безопасную смену!",
-			"Диспетчерская Служба ЦК",
+			"Диспетчерская Служба",
 			SSstation.announcer.get_rand_report_sound(),
 			color_override = "green",
 		)
@@ -131,7 +131,7 @@ GLOBAL_DATUM_INIT(communications_controller, /datum/communciations_controller, n
 	else
 		priority_announce(
 			"Сводка ситуации на станции была скопирована и распечатана на всех пультах связи.",
-			"Диспетчерская Служба ЦК",
+			"Диспетчерская Служба",
 			SSstation.announcer.get_rand_report_sound(),
 		)
 

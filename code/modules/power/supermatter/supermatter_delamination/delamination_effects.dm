@@ -142,16 +142,16 @@
 	if(SSshuttle.emergency.mode != SHUTTLE_ESCAPE)
 		priority_announce(
 			text = "Произошла критическая ошибка в аварийном восходящем канале связи шаттла во время движения. Не удалось восстановить соединение.",
-			title = "Диспетчерская Служба ЦК",
+			title = "Диспетчерская Служба",
 			sound = ANNOUNCER_SHUTTLE, // SKYRAT EDIT CHANGE - Announcer Sounds - ORIGINAL: sound = 'sound/announcer/announcement/announce_dig.ogg',
 			sender_override = "Экстренное Оповещение",
 			color_override = "grey",
 		)
 	else
 	// except if you are on it already, then you are safe c:
-		minor_announce("ERROR: Corruption detected in navigation protocols. Connection with Transponder #XCC-P5831-ES13 lost. \
-				Backup exit route protocol decrypted. Calibrating route...",
-			"Emergency Shuttle", TRUE) // wait out until the rift on the station gets destroyed and the final message plays
+		minor_announce("ОШИБКА: Обнаружено повреждение в навигационных протоколах. Связь с транспондером № XCC-P5831-ES13 потеряна. \
+				Протокол резервного маршрута выхода расшифрован. Калибровка маршрута...",
+			"Диспетчерская Служба", TRUE) // wait out until the rift on the station gets destroyed and the final message plays
 		var/list/mobs = mobs_in_area_type(list(/area/shuttle/escape))
 		for(var/mob/living/mob as anything in mobs) // emulate mob/living/lateShuttleMove() behaviour
 			if(mob.buckled)
