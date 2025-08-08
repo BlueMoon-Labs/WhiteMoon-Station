@@ -664,9 +664,9 @@
 			var/obj/machinery/nebula_shielding/emergency/rad_shield = /obj/machinery/nebula_shielding/emergency/radiation
 
 			priority_announce(
-				{"Is everything okay there? We're getting high radiation readings from inside the station. \
-				We're sending an emergency shielding unit for now, it will last [initial(rad_shield.detonate_in) / (1 MINUTES)] minutes. \n\n\
-				Set up the nebula shielding. You can order construction kits at cargo if yours have been lost.
+				{"У вас там всё в порядке? Внутри станции крайне высокие показатели радиации. \
+				Мы сейчас отправляем аварийный защитный блок, он продержится [initial(rad_shield.detonate_in) / (1 MINUTES)] минут. \n\n\
+				Установите защиту от радиоактивной туманности. Если ваши щиты были утеряны, вы сможете заказать их в грузовом отделении.
 				"}
 			)
 
@@ -686,23 +686,26 @@
 	var/obj/machinery/nebula_shielding/shielder = /obj/machinery/nebula_shielding/radiation
 	var/obj/machinery/gravity_generator/main/innate_shielding = /obj/machinery/gravity_generator/main
 	//How long do we have until the first shielding unit needs to be up?
-	var/deadline = "[(initial(innate_shielding.radioactive_nebula_shielding) * intensity_increment_time) / (1 MINUTES)] minute\s"
+	var/deadline = "[(initial(innate_shielding.radioactive_nebula_shielding) * intensity_increment_time) / (1 MINUTES)] минуту"
 	//For how long each shielding unit will protect for
-	var/shielder_time = "[(initial(shielder.shielding_strength) * intensity_increment_time) / (1 MINUTES)] minute\s"
+	var/shielder_time = "[(initial(shielder.shielding_strength) * intensity_increment_time) / (1 MINUTES)] минут"
 	//Max shielders, excluding the grav-gen to avoid confusion when that goes down
 	var/max_shielders = ((maximum_nebula_intensity / intensity_increment_time)) / initial(shielder.shielding_strength)
 
-	var/announcement = {"Your station has been constructed inside a radioactive nebula. \
-		Standard spacesuits will not protect against the nebula and using them is strongly discouraged. \n\n\
+	var/announcement = {"Ваша станция была активирована внутри радиоактивной туманности. \
+		Стандартные скафандры не защитят вас от радиации, их использование настоятельно не рекомендуется. \n\n\
 
-		EXTREME IMPORTANCE: The station is falling deeper into the nebula, and the gravity generator's innate radiation shielding \
-		will not hold very long. Your engineering department has been supplied with all the necessary supplies to set up \
-		shields to protect against the nebula. Additional supply crates can be ordered at cargo. \n\n\
-		You have [deadline] before the nebula enters the station. \
-		Every shielding unit will provide an additional [shielder_time] of protection, fully protecting the station with [max_shielders] shielding units.
+		ВНИМАНИЕ: Станция погружается все глубже в радиоактивную туманность, встроенная защита от радиации генератора гравитации \
+		не продержится долго. Ваш инженерный отдел обеспечен всем необходимым для установки \
+		щитов для защиты от радиоактивной туманности. Дополнительные ящики с припасами можно заказать в грузовом отсеке. \n\n\
+		У вас есть [deadline] до того, как радиоактивная туманность проникнет в станцию. \
+		Каждый щит обеспечит дополнительную [shielder_time] защиты. Полностью защитить станцию вы сможете с помощью [max_shielders] щитов.
 	"}
 
-	priority_announce(announcement, sound = 'sound/announcer/notice/notice1.ogg')
+	prob(25)
+		priority_announce(announcement, title = "ВНИМАНИЕ: САМОСБОР" sound = 'modular_zzz/sound/misc/samosbor.ogg')
+	else
+		priority_announce(announcement, title = "ВНИМАНИЕ: Радиоактивная Опасность" sound = 'sound/announcer/notice/notice1.ogg')
 
 	//Set the display screens to the radiation alert
 	var/datum/radio_frequency/frequency = SSradio.return_frequency(FREQ_STATUS_DISPLAYS)
