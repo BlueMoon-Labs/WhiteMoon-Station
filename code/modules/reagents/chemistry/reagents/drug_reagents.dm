@@ -90,11 +90,13 @@
 
 	return UPDATE_MOB_HEALTH
 
-/datum/reagent/drug/nicotine/overdose_process(mob/living/affected_mob, seconds_per_tick, times_fired)
+/datum/reagent/drug/nicotine/overdose_process(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)
 	. = ..()
 	var/need_mob_update
 	need_mob_update = affected_mob.adjustToxLoss(0.1 * REM * seconds_per_tick, updating_health = FALSE, required_biotype = affected_biotype)
 	need_mob_update += affected_mob.adjustOxyLoss(1.1 * REM * seconds_per_tick, updating_health = FALSE, required_biotype = affected_biotype, required_respiration_type = affected_respiration_type)
+	if(SPT_PROB(10, seconds_per_tick))
+		affected_mob.vomit(VOMIT_CATEGORY_KNOCKDOWN)
 	if(need_mob_update)
 		return UPDATE_MOB_HEALTH
 
