@@ -39,3 +39,16 @@
 	key_third_person = "Calls the person pretty good"
 	message = "calls the person pretty good."
 	sound = 'modular_zzz/sound/voice/prettygood.ogg'
+
+/datum/emote/jump/get_sound(mob/user)
+	if(HAS_MIND_TRAIT(user, TRAIT_MIMING))
+		return 'sound/items/weapons/thudswoosh.ogg'
+
+	var/mob/living/carbon/human/human_user = user
+	if(human_user.physique == FEMALE)
+		return pick(
+			'modular_zzz/sound/jump/jump_female.ogg',
+			)
+	return pick(
+		'modular_zzz/sound/jump/jump_male.ogg',
+		)

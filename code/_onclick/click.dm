@@ -91,9 +91,7 @@
 	if(LAZYACCESS(modifiers, MIDDLE_CLICK))
 		if(LAZYACCESS(modifiers, CTRL_CLICK))
 			CtrlMiddleClickOn(A)
-		else if(LAZYACCESS(modifiers, ALT_CLICK))// MOON STATION EDIT
-			AltMiddleClickOn(A) 		 		 // MOON STATION EDIT
-		else									 // MOON STATION EDIT
+		else
 			MiddleClickOn(A, params)
 		return
 	if(LAZYACCESS(modifiers, ALT_CLICK)) // alt and alt-gr (rightalt)

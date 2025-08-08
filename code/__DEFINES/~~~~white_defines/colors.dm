@@ -1,0 +1,1 @@
+#define COLOR_EFFECT_HEAL_RED "#EC1C24"

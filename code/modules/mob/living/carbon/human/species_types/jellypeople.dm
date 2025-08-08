@@ -41,26 +41,18 @@
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/jelly,
 	)
 	var/datum/action/innate/regenerate_limbs/regenerate_limbs
-	var/datum/action/innate/alter_form/alter_form //SKYRAT EDIT ADDITION - CUSTOMIZATION
 
 /datum/species/jelly/on_species_gain(mob/living/carbon/new_jellyperson, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
 	if(ishuman(new_jellyperson))
 		regenerate_limbs = new
 		regenerate_limbs.Grant(new_jellyperson)
-		alter_form = new //SKYRAT EDIT CUSTOMIZATION
-		alter_form.Grant(new_jellyperson) //SKYRAT EDIT CUSTOMIZATION
-
 	new_jellyperson.AddElement(/datum/element/soft_landing)
 	RegisterSignal(new_jellyperson, COMSIG_HUMAN_ON_HANDLE_BLOOD, PROC_REF(slime_blood))
 
 /datum/species/jelly/on_species_loss(mob/living/carbon/former_jellyperson, datum/species/new_species, pref_load)
 	if(regenerate_limbs)
 		regenerate_limbs.Remove(former_jellyperson)
-
-	if(alter_form) //SKYRAT EDIT CUSTOMIZATION
-		alter_form.Remove(former_jellyperson) //SKYRAT EDIT CUSTOMIZATION
-
 	former_jellyperson.RemoveElement(/datum/element/soft_landing)
 	UnregisterSignal(former_jellyperson, COMSIG_HUMAN_ON_HANDLE_BLOOD)
 	return ..()
@@ -104,7 +96,7 @@
 	consumed_limb.drop_limb()
 	to_chat(H, span_userdanger("Your [consumed_limb] is drawn back into your body, unable to maintain its shape!"))
 	qdel(consumed_limb)
-	H.blood_volume += 20 * H.physiology.blood_regen_mod
+	H.blood_volume += 65 * H.physiology.blood_regen_mod //NOVA EDIT CHANGE - This is because losing a limb now costs them 60 blood, so this refunds it with a pinch extra so it doesn't. Y'know. Kill you. - ORIGINAL: H.blood_volume += 20 * H.physiology.blood_regen_mod
 
 /datum/species/jelly/get_species_description()
 	return "Jellypeople are a strange and alien species with three eyes, made entirely out of gel."

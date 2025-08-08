@@ -13,6 +13,8 @@
 	mob_trait = TRAIT_OVERSIZED
 	icon = FA_ICON_EXPAND_ARROWS_ALT
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_CHANGES_APPEARANCE
+	/// Saves refs to the original (normal size) organs, which are on ice in nullspace in case this quirk gets removed somehow.
+	var/list/obj/item/organ/old_organs // MOON EDIT
 
 /datum/quirk/oversized/add(client/client_source)
 	var/mob/living/carbon/human/human_holder = quirk_holder
@@ -75,6 +77,20 @@
 	human_holder.blood_volume_normal = BLOOD_VOLUME_NORMAL
 	human_holder.physiology.hunger_mod /= OVERSIZED_HUNGER_MOD
 	human_holder.remove_movespeed_modifier(/datum/movespeed_modifier/oversized)
+
+	for(var/obj/item/organ/organ_to_restore in old_organs) // MOON EDIT START
+		old_organs -= organ_to_restore
+
+		if(QDELETED(organ_to_restore)) // not sure why this would ever happen but just in case
+			continue
+
+		// if it's a brain, make sure the mob doesn't get stuck outside their body
+		var/obj/item/organ/brain/possibly_a_brain = organ_to_restore
+		if(istype(possibly_a_brain))
+			var/obj/item/organ/brain/current_brain = human_holder.get_organ_slot(ORGAN_SLOT_BRAIN)
+			possibly_a_brain.brainmob = current_brain.brainmob
+
+		organ_to_restore.replace_into(quirk_holder) // MOON EDIT END
 
 /datum/quirk/oversized/proc/on_gain_limb(datum/source, obj/item/bodypart/gained, special)
 	SIGNAL_HANDLER
