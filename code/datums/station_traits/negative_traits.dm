@@ -702,10 +702,10 @@
 		Каждый щит обеспечит дополнительную [shielder_time] защиты. Полностью защитить станцию вы сможете с помощью [max_shielders] щитов.
 	"}
 
-	prob(25)
-		priority_announce(announcement, title = "ВНИМАНИЕ: САМОСБОР" sound = 'modular_zzz/sound/misc/samosbor.ogg')
+	if(prob(25))
+		priority_announce(announcement, title = "ВНИМАНИЕ: САМОСБОР", sound = 'modular_zzz/sound/misc/samosbor.ogg')
 	else
-		priority_announce(announcement, title = "ВНИМАНИЕ: Радиоактивная Опасность" sound = 'sound/announcer/notice/notice1.ogg')
+		priority_announce(announcement, title = "ВНИМАНИЕ: Радиоактивная Опасность", sound = 'sound/announcer/notice/notice1.ogg')
 
 	//Set the display screens to the radiation alert
 	var/datum/radio_frequency/frequency = SSradio.return_frequency(FREQ_STATUS_DISPLAYS)

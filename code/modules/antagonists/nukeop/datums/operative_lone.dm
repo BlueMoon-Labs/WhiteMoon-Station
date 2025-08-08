@@ -1,4 +1,4 @@
-/datum/team/nuclear/loneop
+/datum/team/nuclear/loneop/inteq
 	core_objective = /datum/objective/nuclear/revert
 
 /datum/objective/nuclear/revert
