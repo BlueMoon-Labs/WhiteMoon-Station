@@ -1,3 +1,15 @@
+/datum/team/nuclear/loneop
+	core_objective = /datum/objective/nuclear/revert
+
+/datum/objective/nuclear/revert
+	name = "revert_nuclear"
+	explanation_text = "Защити Космическую Станцию и Ядерный Диск любой ценой."
+
+/datum/objective/nuclear/check_completion()
+	if(GLOB.station_was_nuked)
+		return FALSE
+	return TRUE
+
 /datum/antagonist/nukeop/lone
 	name = "Lone Operative"
 	send_to_spawnpoint = FALSE //Handled by event
@@ -10,4 +22,4 @@
 	if(new_team)
 		return ..()
 	// Lone ops always get a solo team solely because a lot of nukie code is on the team
-	nuke_team = new /datum/team/nuclear/loneop()
+	nuke_team = new /datum/team/nuclear/loneop/inteq()
