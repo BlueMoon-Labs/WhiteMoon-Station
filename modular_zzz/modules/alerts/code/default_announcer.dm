@@ -13,6 +13,7 @@
 		ANNOUNCER_OUTBREAK6 = 'modular_skyrat/modules/alerts/sound/alerts/alert3.ogg',
 		ANNOUNCER_OUTBREAK7 = 'modular_zzz/sound/announcer/default/outbreak7.ogg',
 		ANNOUNCER_POWEROFF = 'modular_zzz/sound/announcer/default/poweroff.ogg',
+		ANNOUNCER_POWERON = 'modular_zzz/sound/announcer/default/poweron1.ogg',
 		ANNOUNCER_RADIATION = 'modular_zzz/sound/announcer/default/radiation.ogg',
 		ANNOUNCER_RADIATIONPASSED = 'modular_skyrat/modules/alerts/sound/alerts/radpassed.ogg', // Нужен перевод.
 		ANNOUNCER_SHUTTLECALLED = 'modular_zzz/sound/announcer/default/shuttlecalled.ogg',

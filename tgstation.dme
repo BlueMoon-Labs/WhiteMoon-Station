@@ -10511,6 +10511,7 @@
 #include "modular_zzz\code\modules\projectiles\guns\ballistic\zealstar.dm"
 #include "modular_zzz\code\modules\projectiles\guns\pistol\nt.dm"
 #include "modular_zzz\code\modules\reagents\reagent_dispenser.dm"
+#include "modular_zzz\code\modules\reagents\reagent_containers\cups\glassbottle.dm"
 #include "modular_zzz\code\modules\research\xenobiology\xenobiology.dm"
 #include "modular_zzz\code\modules\ruins\hilbertshotel_ghost.dm"
 #include "modular_zzz\code\modules\security\lockers.dm"
