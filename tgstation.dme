@@ -579,7 +579,6 @@
 #include "code\__DEFINES\~~~~white_defines\robot_defines.dm"
 #include "code\__DEFINES\~~~~white_defines\sight.dm"
 #include "code\__DEFINES\~~~~white_defines\sound.dm"
-#include "code\__DEFINES\~~~~white_defines\subsystems.dm"
 #include "code\__DEFINES\~~~~white_defines\traits_declaration.dm"
 #include "code\__HELPERS\_auxtools_api.dm"
 #include "code\__HELPERS\_dreamluau.dm"
