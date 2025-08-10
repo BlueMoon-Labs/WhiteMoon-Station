@@ -163,7 +163,7 @@
 	righthand_file = 'modular_zzz/icons/mob/clothing/righthand.dmi'
 	unique_reskin = null
 
-/obj/item/clothing/suit/armor/brigdoc/mark45_armor_medic_l
+/obj/item/clothing/suit/armor/brigdoc/mark45_armor_medic/l
 	name = "Mk. 45 medic's combat coat"
 	desc = "A special coat for a Catcrin Army medic with light plates in the chest, shoulder protection and armored fabric to minimize movement interference. The personal code of the person who wears this armor is written on the outside. This one looks worn out, most likely the armor was removed from the corpse."
 	icon = 'modular_zzz/icons/obj/clothing/suits.dmi'
@@ -172,7 +172,7 @@
 	icon_state = "mark45_armor_medic_l"
 	unique_reskin = null
 
-/obj/item/clothing/suit/armor/brigdoc/mark45_armor_medic_h
+/obj/item/clothing/suit/armor/brigdoc/mark45_armor_medic/h
 	name = "Mk. 45 heavy combat medic Аrmor"
 	desc = "heavier by medical standards, modified Catcrin armor. This one has a distinctive mark on a noticeably larger shoulder pad and is much more often used in combat encounters. The personal code of the person who wears this armor is written on the outside. This one looks worn out, most likely the armor was removed from the corpse."
 	icon = 'modular_zzz/icons/obj/clothing/suits.dmi'

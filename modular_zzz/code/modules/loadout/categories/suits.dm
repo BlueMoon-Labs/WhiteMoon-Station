@@ -47,14 +47,14 @@
 		JOB_WARDEN,
 	)
 
-/datum/loadout_item/suit/armor/brigdoc/mark45_armor_medic_l
+/datum/loadout_item/suit/armor/brigdoc/mark45_armor_medic/l
 	name = "Mk. 45 medic's combat coat"
-	item_path = /obj/item/clothing/suit/armor/brigdoc/mark45_armor_medic_l
+	item_path = /obj/item/clothing/suit/armor/brigdoc/mark45_armor_medic/l
 	restricted_roles = list(JOB_SECURITY_MEDIC)
 
-/datum/loadout_item/suit/armor/brigdoc/mark45_armor_medic_h
+/datum/loadout_item/suit/armor/brigdoc/mark45_armor_medic/h
 	name = "Mk. 45 heavy combat medic Аrmor"
-	item_path = /obj/item/clothing/suit/armor/brigdoc/mark45_armor_medic_h
+	item_path = /obj/item/clothing/suit/armor/brigdoc/mark45_armor_medic/h
 	restricted_roles = list(JOB_SECURITY_MEDIC)
 
 /datum/loadout_item/suit/toggle/armor/hos/hos_formal/ac

@@ -10457,6 +10457,7 @@
 #include "modular_zzz\code\modules\cargo\packs\company_imports\micron_control_systems.dm"
 #include "modular_zzz\code\modules\cargo\packs\company_imports\nri_military_surplus.dm"
 #include "modular_zzz\code\modules\cargo\packs\company_imports\sol_defense.dm"
+#include "modular_zzz\code\modules\catcrinstuff\catcrin_healthscan_suit.dm"
 #include "modular_zzz\code\modules\catcrinstuff\catcrinstuff.dm"
 #include "modular_zzz\code\modules\client\preferences\preferred_chaos_level.dm"
 #include "modular_zzz\code\modules\clothing\back\backpack.dm"
