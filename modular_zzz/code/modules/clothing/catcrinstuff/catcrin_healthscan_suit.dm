@@ -55,7 +55,6 @@
 	user.update_icon(UPDATE_OVERLAYS)
 
 //////////////////// КОД ДЛЯ БРОНИ ХОСА \\\\\\\\\\\\\\\\\\\\\\
-
 /obj/item/clothing/suit/armor/hos/mark45_armor_officer
 	var/hudhealth_overlay_icon_state = "hudhealth"
 	var/hudhealth_overlay_icon = "hudhealth_hardcrit"
@@ -106,7 +105,6 @@
 	user.update_icon(UPDATE_OVERLAYS)
 
 //////////////////// КОД ДЛЯ БРОНИ БРИГМЕДА \\\\\\\\\\\\\\\\\\\\\\
-
 /obj/item/clothing/suit/armor/brigdoc/mark45_armor_medic
 	var/hudhealth_overlay_icon_state = "hudhealth"
 	var/hudhealth_overlay_icon = "hudhealth_hardcrit"
@@ -155,4 +153,3 @@
 	hudhealth_overlay_old_icon_state = hudhealth_overlay_icon
 	user.add_overlay(hudhealth_overlay)
 	user.update_icon(UPDATE_OVERLAYS)
-
