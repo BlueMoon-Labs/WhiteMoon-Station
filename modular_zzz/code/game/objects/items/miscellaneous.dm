@@ -90,3 +90,4 @@
 	new /obj/item/clothing/accessory/ac_patch(src)
 	new /obj/item/sign/flag/catcrin(src)
 	new /obj/item/banner/catcrin(src)
+	new /obj/item/modkit/catcrin_mod(src)

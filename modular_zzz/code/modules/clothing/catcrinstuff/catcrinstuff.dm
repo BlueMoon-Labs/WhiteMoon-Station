@@ -263,3 +263,76 @@
 			RESKIN_WORN_ICON_STATE = "catcrin_underarmor_beige"
 		)
 	)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////Модсъют.
+
+/obj/item/mod/control/pre_equipped/security/catcrin
+	theme = /datum/mod_theme/catcrin
+
+/datum/mod_theme/catcrin
+	name = "Mk. 45 Space legionnaire"
+	desc = "An Cet-Synthetic catcrin suit, offering quicker speed at the cost of carrying capacity."
+	extended_desc = "A modsuit made by the Cet-Synthetic Corporation, based on the MK-45. Ideal for combat in space, and also capable of providing support to the operator with its modules."
+	default_skin = "mark45mod"
+	armor_type = /datum/armor/mod_theme_security
+	complexity_max = DEFAULT_MAX_COMPLEXITY - 2
+	slowdown_deployed = 0.5
+	inbuilt_modules = list(/obj/item/mod/module/hearing_protection)
+	allowed_suit_storage = list(
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/restraints/handcuffs,
+		/obj/item/assembly/flash,
+		/obj/item/melee/baton,
+	)
+	variants = list(
+		"mark45mod" = list(
+
+			MOD_ICON_OVERRIDE = 'modular_zzz/icons/obj/clothing/suits/mod.dmi',
+			MOD_WORN_ICON_OVERRIDE = 'modular_zzz/icons/mob/clothing/suits/mod.dmi',
+
+			/obj/item/clothing/head/mod = list(
+				UNSEALED_CLOTHING = SNUG_FIT|THICKMATERIAL,
+				SEALED_CLOTHING = STOPSPRESSUREDAMAGE|HEADINTERNALS,
+				UNSEALED_INVISIBILITY = HIDEFACIALHAIR|HIDEEARS|HIDEHAIR|HIDESNOUT,
+				SEALED_INVISIBILITY = HIDEMASK|HIDEEYES|HIDEFACE,
+				UNSEALED_COVER = HEADCOVERSMOUTH,
+				SEALED_COVER = HEADCOVERSEYES|PEPPERPROOF,
+				UNSEALED_MESSAGE = HELMET_UNSEAL_MESSAGE,
+				SEALED_MESSAGE = HELMET_SEAL_MESSAGE,
+			),
+			/obj/item/clothing/suit/mod = list(
+				UNSEALED_CLOTHING = THICKMATERIAL,
+				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
+				SEALED_INVISIBILITY = HIDEJUMPSUIT,
+				UNSEALED_MESSAGE = CHESTPLATE_UNSEAL_MESSAGE,
+				SEALED_MESSAGE = CHESTPLATE_SEAL_MESSAGE,
+			),
+			/obj/item/clothing/gloves/mod = list(
+				UNSEALED_CLOTHING = THICKMATERIAL,
+				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
+				CAN_OVERSLOT = TRUE,
+				UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
+				SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
+			),
+			/obj/item/clothing/shoes/mod = list(
+				UNSEALED_CLOTHING = THICKMATERIAL,
+				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
+				CAN_OVERSLOT = TRUE,
+				UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
+				SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
+			),
+		),
+	)
+
+/obj/item/modkit/catcrin_mod
+	name = "Mk. 45 Space legionnaire modkit"
+	desc = "A modkit for making a security modsuit into a Catcrin modsuit."
+
+/obj/item/modkit/catcrin_mod/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	. = ..()
+
+	if(interacting_with.type == /obj/item/mod/control/pre_equipped/security)
+		new /obj/item/mod/control/pre_equipped/security/catcrin(usr.loc)
+		user.visible_message("<span class='warning'>[user] modifies [interacting_with]!","<span class='warning'>You modify the [interacting_with]!")
+		qdel(interacting_with)
+		qdel(src)
