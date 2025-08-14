@@ -267,23 +267,13 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////Модсъют.
 
 /obj/item/mod/control/pre_equipped/security/catcrin
-	theme = /datum/mod_theme/catcrin
+	theme = /datum/mod_theme/security/catcrin
 
-/datum/mod_theme/catcrin
+/datum/mod_theme/security/catcrin
 	name = "Mk. 45 Space legionnaire"
 	desc = "An Cet-Synthetic catcrin suit, offering quicker speed at the cost of carrying capacity."
 	extended_desc = "A modsuit made by the Cet-Synthetic Corporation, based on the MK-45. Ideal for combat in space, and also capable of providing support to the operator with its modules."
 	default_skin = "mark45mod"
-	armor_type = /datum/armor/mod_theme_security
-	complexity_max = DEFAULT_MAX_COMPLEXITY - 2
-	slowdown_deployed = 0.5
-	inbuilt_modules = list(/obj/item/mod/module/hearing_protection)
-	allowed_suit_storage = list(
-		/obj/item/reagent_containers/spray/pepper,
-		/obj/item/restraints/handcuffs,
-		/obj/item/assembly/flash,
-		/obj/item/melee/baton,
-	)
 	variants = list(
 		"mark45mod" = list(
 
