@@ -181,24 +181,24 @@
 	contains = list(/obj/item/mod/control/pre_equipped/security)
 	crate_name = "security MODsuit crate"
 
-/datum/supply_pack/security/armor_skyrat
-	name = "Armor Crate"
-	desc = "Three vests of well-rounded, decently-protective armor."
-	cost = CARGO_CRATE_VALUE * 2.5
-	access_view = ACCESS_SECURITY
-	contains = list(
-		/obj/item/clothing/suit/armor/vest/alt,
-		/obj/item/clothing/suit/armor/vest/alt,
-		/obj/item/clothing/suit/armor/vest/alt,
-	)
-	crate_name = "armor crate"
+// /datum/supply_pack/security/armor_skyrat
+// 	name = "Armor Crate"
+// 	desc = "Three vests of well-rounded, decently-protective armor."
+// 	cost = CARGO_CRATE_VALUE * 2.5
+// 	access_view = ACCESS_SECURITY
+// 	contains = list(
+// 		/obj/item/clothing/suit/armor/vest/alt,
+// 		/obj/item/clothing/suit/armor/vest/alt,
+// 		/obj/item/clothing/suit/armor/vest/alt,
+// 	)
+// 	crate_name = "armor crate"
 
-/datum/supply_pack/security/helmets_skyrat
-	name = "Helmets Crate"
-	desc = "Contains three standard-issue brain buckets."
-	cost = CARGO_CRATE_VALUE * 2.5
-	contains = list(/obj/item/clothing/head/helmet/sec = 3)
-	crate_name = "helmet crate"
+// /datum/supply_pack/security/helmets_skyrat
+// 	name = "Helmets Crate"
+// 	desc = "Contains three standard-issue brain buckets."
+// 	cost = CARGO_CRATE_VALUE * 2.5
+// 	contains = list(/obj/item/clothing/head/helmet/sec = 3)
+// 	crate_name = "helmet crate"
 
 /datum/supply_pack/security/deployablebarricades
 	name = "C.U.C.K.S Deployable Barricades"

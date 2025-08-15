@@ -55,24 +55,24 @@
 
 //TERRAGOV GUNS
 
-/datum/supply_pack/security/wespe
-	name = "Wespe Three-Pack Crates"
-	desc = "Contains three case of the .35 sol handgun, magazines included."
-	cost = CARGO_CRATE_VALUE * 12
-	contains = list(/obj/item/gun/ballistic/automatic/pistol/sol = 3,
-		/obj/item/ammo_box/magazine/c35sol_pistol = 3,
-		/obj/item/ammo_box/c35sol/incapacitator = 3,
-		)
-	crate_name = "wespe pistols crate"
+// /datum/supply_pack/security/wespe
+// 	name = "Wespe Three-Pack Crates"
+// 	desc = "Contains three case of the .35 sol handgun, magazines included."
+// 	cost = CARGO_CRATE_VALUE * 12
+// 	contains = list(/obj/item/gun/ballistic/automatic/pistol/sol = 3,
+// 		/obj/item/ammo_box/magazine/c35sol_pistol = 3,
+// 		/obj/item/ammo_box/c35sol/incapacitator = 3,
+// 		)
+// 	crate_name = "wespe pistols crate"
 
-/datum/supply_pack/security/eland
-	name = "Eland Three-Pack Crates"
-	desc = "Contains three case of the .35 sol revolver, munition boxes included."
-	cost = CARGO_CRATE_VALUE * 12
-	contains = list(/obj/item/gun/ballistic/revolver/sol = 3,
-		/obj/item/ammo_box/c35sol/incapacitator = 3,
-		)
-	crate_name = "eland pistols crate"
+// /datum/supply_pack/security/eland
+// 	name = "Eland Three-Pack Crates"
+// 	desc = "Contains three case of the .35 sol revolver, munition boxes included."
+// 	cost = CARGO_CRATE_VALUE * 12
+// 	contains = list(/obj/item/gun/ballistic/revolver/sol = 3,
+// 		/obj/item/ammo_box/c35sol/incapacitator = 3,
+// 		)
+// 	crate_name = "eland pistols crate"
 
 /datum/supply_pack/security/armory/renoster
 	name = "Carwo 'Renoster' Shotgun Crate"

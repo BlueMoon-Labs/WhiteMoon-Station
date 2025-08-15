@@ -24,3 +24,7 @@
 
 /obj/projectile/beam/laser/plasma_glob
 	speed = 1.2 // 0.6 изначально.
+
+/obj/projectile/beam/laser/plasma_glob
+	damage = 20 // Было 10, урон увеличен из-за слишком огромной слабости данных снарядов.
+	speed = 1.2
