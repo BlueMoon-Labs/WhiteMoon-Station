@@ -6,8 +6,8 @@
 #define TGUI_PANEL_MAX_EMOTE_LENGTH 128
 #define TGUI_PANEL_MAX_EMOTE_NAME_LENGTH 32
 #define SHORT_EMOTE_MAX_LENGTH 40
-#define CUSTOM_SHORT_EMOTE_COOLDOWN 0.4 SECONDS
-#define CUSTOM_EMOTE_COOLDOWN 1 SECONDS
+#define CUSTOM_SHORT_EMOTE_COOLDOWN 0.8 SECONDS
+#define CUSTOM_EMOTE_COOLDOWN 1.7 SECONDS
 
 /*
 	Панель эмоутов была переделана, и теперь вместо простого ассоциативного списка `emotes["sigh"] = "вздох"`
@@ -28,14 +28,13 @@
 
 /datum/tgui_panel
 	/// Static list of all available emotes
-	var/static/list/all_emotes
+	var/static/list/all_emotes = list()
 
 /**
  * Initialize list of all available emotes with their keys
  * Called on New()
  */
 /datum/tgui_panel/proc/populate_all_emotes_list()
-	all_emotes = list()
 	for(var/path in subtypesof(/datum/emote))
 		var/datum/emote/E = new path()
 		if(E.key)
@@ -219,7 +218,7 @@
 			switch (emote_type)
 				if (TGUI_PANEL_EMOTE_TYPE_DEFAULT)
 					var/emote_key = client.prefs.custom_emote_panel[emote_name]["key"]
-					L.emote(emote_key)
+					L.emote(emote_key, intentional = TRUE)
 
 				// Чтобы люди не спамили пастами из 128 символов со скоростью света
 				if (TGUI_PANEL_EMOTE_TYPE_CUSTOM)
@@ -228,8 +227,8 @@
 						return TRUE
 					var/emote_key = client.prefs.custom_emote_panel[emote_name]["key"]
 					var/message_override = client.prefs.custom_emote_panel[emote_name]["message_override"]
-					L.emote(emote_key, message_override = message_override)
-					if (length_char(message_override) > SHORT_EMOTE_MAX_LENGTH)
+					L.emote(emote_key, message_override = message_override, intentional = TRUE)
+					if (length_char(message_override) < SHORT_EMOTE_MAX_LENGTH)
 						TIMER_COOLDOWN_START(L, "general_emote_audio_cooldown", CUSTOM_SHORT_EMOTE_COOLDOWN)
 					else
 						TIMER_COOLDOWN_START(L, "general_emote_audio_cooldown", CUSTOM_EMOTE_COOLDOWN)
@@ -239,8 +238,8 @@
 						to_chat(L, span_warning("Не так быстро!"))
 						return TRUE
 					var/message = client.prefs.custom_emote_panel[emote_name]["message"]
-					L.emote("me", message = message)
-					if (length_char(message) > SHORT_EMOTE_MAX_LENGTH)
+					L.emote("me", message = message, intentional = TRUE)
+					if (length_char(message) < SHORT_EMOTE_MAX_LENGTH)
 						TIMER_COOLDOWN_START(L, "general_emote_audio_cooldown", CUSTOM_SHORT_EMOTE_COOLDOWN)
 					else
 						TIMER_COOLDOWN_START(L, "general_emote_audio_cooldown", CUSTOM_EMOTE_COOLDOWN)

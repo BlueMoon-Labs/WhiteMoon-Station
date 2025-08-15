@@ -102,7 +102,7 @@
 	if(!msg)
 		return
 
-	user.log_message(msg, LOG_EMOTE)
+	user.log_message(message_override ? "[select_message_type(user, message, intentional)] | [msg]" : msg, LOG_EMOTE)
 
 	var/tmp_sound = get_sound(user)
 	if(tmp_sound && should_play_sound(user, intentional) && TIMER_COOLDOWN_FINISHED(user, "general_emote_audio_cooldown") && TIMER_COOLDOWN_FINISHED(user, type))
