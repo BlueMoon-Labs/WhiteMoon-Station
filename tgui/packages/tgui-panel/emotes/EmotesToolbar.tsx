@@ -10,18 +10,20 @@ export const EmotesToolbar = () => {
   const emotes = useEmotes();
   const [cooldowns, setCooldowns] = useState<Record<string, boolean>>({});
 
-  const BrokenEmote: Emote = {
-    name: 'BROKEN',
-    type: EmoteType.TGUI_PANEL_EMOTE_TYPE_ME,
-    data: {
-      message: "С этим эмоутом произошла какая-то ошибка. Увы!"
+  const makeBrokenEmote = (name: string): Emote => {
+    return {
+      name,
+      type: EmoteType.BROKEN,
+      data: {
+        message: "С этим эмоутом произошла какая-то ошибка. Увы!"
+      }
     }
   }
 
   const emoteList = Object.entries<{type: EmoteType} & EmoteDataMe & EmoteDataCustom & EmoteDataDefault>(emotes.list || {}).map(
     ([name, {type, key, message_override, message}]): Emote => {
       if (!name) {
-        return structuredClone(BrokenEmote)
+        return makeBrokenEmote("????")
       }
       switch (type) {
         case EmoteType.TGUI_PANEL_EMOTE_TYPE_DEFAULT: {
@@ -34,7 +36,7 @@ export const EmotesToolbar = () => {
               }
             }
           }
-          return structuredClone(BrokenEmote)
+          return makeBrokenEmote(name)
         }
         case EmoteType.TGUI_PANEL_EMOTE_TYPE_CUSTOM: {
           if (message_override && key) {
@@ -47,7 +49,7 @@ export const EmotesToolbar = () => {
               }
             }
           }
-          return structuredClone(BrokenEmote)
+          return makeBrokenEmote(name)
         }
         case EmoteType.TGUI_PANEL_EMOTE_TYPE_ME: {
           if (message) {
@@ -59,10 +61,10 @@ export const EmotesToolbar = () => {
               }
             }
           }
-          return structuredClone(BrokenEmote)
+          return makeBrokenEmote(name)
         }
         default:
-          return structuredClone(BrokenEmote)
+          return makeBrokenEmote(name)
       }
     },
   );
@@ -104,7 +106,7 @@ export const EmotesToolbar = () => {
                   break;
                 }
                 color = "red"
-                tooltip = "С этим эмоутом произошла какая-то ошибка. Увы!"
+                tooltip = "С этим эмоутом произошла какая-то ошибка. (Это обычный эмоут без поля \"key\") Увы!"
               case EmoteType.TGUI_PANEL_EMOTE_TYPE_CUSTOM:
                 if ("key" in emote.data && "message_override" in emote.data) {
                   color = "purple";
@@ -112,7 +114,7 @@ export const EmotesToolbar = () => {
                   break;
                 }
                 color = "red"
-                tooltip = "С этим эмоутом произошла какая-то ошибка. Увы!"
+                tooltip = `С этим эмоутом произошла какая-то ошибка. (Это кастомный эмоут без полей \"key\" и/или \"message_override\"). Увы!`
               case EmoteType.TGUI_PANEL_EMOTE_TYPE_ME:
                 if ("message" in emote.data) {
                   color = "orange";
@@ -120,7 +122,11 @@ export const EmotesToolbar = () => {
                   break;
                 }
                 color = "red"
-                tooltip = "С этим эмоутом произошла какая-то ошибка. Увы!"
+                tooltip = "С этим эмоутом произошла какая-то ошибка (Это /me эмоут без поля \"message\"). Увы!"
+                break;
+              case EmoteType.BROKEN:
+                color = "red"
+                tooltip = "С этим эмоутом произошла какая-то ошибка при его загрузке. Увы!"
                 break;
               default:
                 color = "red"
