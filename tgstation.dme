@@ -10561,6 +10561,7 @@
 #include "modular_zzz\code\modules\uplink\uplink_items\explosive.dm"
 #include "modular_zzz\code\modules\uplink\uplink_items\job.dm"
 #include "modular_zzz\code\modules\vending\multisec.dm"
+#include "modular_zzz\code\modules\vending\security.dm"
 #include "modular_zzz\code\modules\vending\vending.dm"
 #include "modular_zzz\modules\alerts\code\default_announcer.dm"
 #include "modular_zzz\modules\antagonists\pirate\inteq.dm"
