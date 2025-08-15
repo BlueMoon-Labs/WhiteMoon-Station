@@ -5,7 +5,7 @@
 	key_third_person = "ruffles"
 	message = "ruffles their wings for a moment."
 
-/datum/emote/living/ruffle/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/ruffle/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	message = "ruffles [user.p_their()] wings for a moment."
 	. = ..()
 
@@ -25,7 +25,7 @@
 	cooldown = 3 SECONDS
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/fart/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/fart/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	var/list/fart_emotes = list( //cope goonies
 		"lets out a girly little 'toot' from [user.p_their()] butt.",
 		"farts loudly!",
@@ -82,7 +82,7 @@
 	sound = 'modular_zzplurt/sound/voice/speen.ogg'
 	hands_use_check = TRUE
 
-/datum/emote/living/speen/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/speen/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	user.spin(20, 1)
 
@@ -661,7 +661,7 @@
 	specific_emote_audio_cooldown = 2.1 SECONDS
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/snore/snore2/run_emote(mob/user, params)
+/datum/emote/living/snore/snore2/run_emote(mob/user, params, message_override = null)
 	var/obj/item/organ/tongue/tongue = user.get_organ_slot(ORGAN_SLOT_TONGUE)
 	var/say_mod = (tongue ? tongue.say_mod : "says")
 	var/list/aaauughh = list(
@@ -682,7 +682,7 @@
 	key_third_person = "pants"
 	message = "pants!"
 
-/datum/emote/living/pant/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/pant/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	var/list/pants = list(
 				"pants!",
 		"pants like a dog.",
@@ -729,7 +729,7 @@
 	sound = 'modular_zzplurt/sound/voice/missouri.ogg'
 	cooldown = 3.4 SECONDS
 
-/datum/emote/living/missouri/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/missouri/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	// Set message pronouns
 	message = "appears to believe [user.p_theyre()] in Missouri."
 
@@ -746,7 +746,7 @@
 	var/metacarpus_type = "palm"
 	cooldown = 0.25 SECONDS
 
-/datum/emote/living/facemetacarpus/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/facemetacarpus/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	message = pick(list(
 		"places [usr.p_their()] [metacarpus_type] across [usr.p_their()] face.",
 			"lowers [usr.p_their()] face into [usr.p_their()] [metacarpus_type].",
@@ -781,7 +781,7 @@
 	message_mime = "acts out an excited motion!"
 	sound = 'modular_zzplurt/sound/voice/barks/poyo.ogg'
 
-/datum/emote/living/poyo/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/poyo/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	var/obj/item/organ/tongue/tongue = user.get_organ_slot(ORGAN_SLOT_TONGUE)
 	var/say_mod = (tongue ? tongue.say_mod : "says")
 	message = replacetextEx(message, "%SAYS", say_mod)
@@ -1021,7 +1021,7 @@
 	sound = 'modular_zzplurt/sound/voice/eekum-bokum.ogg'
 	cooldown = 0.9
 
-/datum/emote/living/eekum/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/eekum/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	switch(user.gender)
 		if(MALE)
 			sound = 'modular_zzplurt/sound/voice/eekum-bokum.ogg'
@@ -1039,7 +1039,7 @@
 	sound = 'modular_zzplurt/sound/voice/bazinga.ogg'
 	cooldown = 0.65 SECONDS
 
-/datum/emote/living/bazinga/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/bazinga/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	if(prob(1))
 		sound = 'modular_zzplurt/sound/voice/bazinga_ebil.ogg'
 		vary = FALSE
@@ -1090,7 +1090,7 @@
 	sound = 'modular_zzplurt/sound/voice/ace/ace_objection_m1.ogg'
 	vary = FALSE
 
-/datum/emote/living/ace/objection/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/ace/objection/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	switch(user.gender)
 		if(MALE)
 			sound = pick('modular_zzplurt/sound/voice/ace/ace_objection_m1.ogg', 'modular_zzplurt/sound/voice/ace/ace_objection_m2.ogg', 'modular_zzplurt/sound/voice/ace/ace_objection_m3.ogg')
@@ -1106,7 +1106,7 @@
 	message = "<b><i>\<\< TAKE THAT!! \>\></i></b>"
 	sound = 'modular_zzplurt/sound/voice/ace/ace_takethat_m1.ogg'
 
-/datum/emote/living/ace/takethat/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/ace/takethat/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	switch(user.gender)
 		if(MALE)
 			sound = pick('modular_zzplurt/sound/voice/ace/ace_takethat_m1.ogg', 'modular_zzplurt/sound/voice/ace/ace_takethat_m2.ogg', 'modular_zzplurt/sound/voice/ace/ace_takethat_m3.ogg')
@@ -1123,7 +1123,7 @@
 	sound = 'modular_zzplurt/sound/voice/ace/ace_holdit_m1.ogg'
 	vary = FALSE
 
-/datum/emote/living/ace/hold_it/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/ace/hold_it/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	switch(user.gender)
 		if(MALE)
 			sound = pick('modular_zzplurt/sound/voice/ace/ace_holdit_m1.ogg', 'modular_zzplurt/sound/voice/ace/ace_holdit_m2.ogg', 'modular_zzplurt/sound/voice/ace/ace_holdit_m3.ogg')

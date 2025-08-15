@@ -24,7 +24,7 @@
 		return ..()
 	return FALSE
 
-/datum/emote/living/carbon/human/glasses/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/carbon/human/glasses/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	var/image/emote_animation = image('icons/mob/human/emote_visuals.dmi', user, "glasses")
 	flick_overlay_global(emote_animation, GLOB.clients, 1.6 SECONDS)
@@ -117,7 +117,7 @@
 	key_third_person = "wags"
 	message = "their tail."
 
-/datum/emote/living/carbon/human/wag/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/carbon/human/wag/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	var/obj/item/organ/tail/oranges_accessory = user.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
 	//I am so sorry my son
@@ -146,7 +146,7 @@
 	key_third_person = "wings"
 	message = "their wings."
 
-/datum/emote/living/carbon/human/wing/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/carbon/human/wing/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	var/obj/item/organ/wings/functional/wings = user.get_organ_slot(ORGAN_SLOT_EXTERNAL_WINGS)
 	if(isnull(wings))
@@ -184,7 +184,7 @@
 		return FALSE
 	return ..()
 
-/datum/emote/living/carbon/human/blink/run_emote(mob/living/carbon/human/user, params, type_override, intentional)
+/datum/emote/living/carbon/human/blink/run_emote(mob/living/carbon/human/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	var/obj/item/organ/eyes/eyes = user.get_organ_slot(ORGAN_SLOT_EYES)
 	eyes.blink()
@@ -202,7 +202,7 @@
 		return FALSE
 	return ..()
 
-/datum/emote/living/carbon/human/blink_r/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/carbon/human/blink_r/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	var/obj/item/organ/eyes/eyes = user.get_organ_slot(ORGAN_SLOT_EYES)
 	for (var/i in 1 to 3)
@@ -264,7 +264,7 @@
 		return FALSE
 	return ..()
 
-/datum/emote/living/carbon/human/glow/run_emote(mob/living/carbon/human/user, params, type_override, intentional)
+/datum/emote/living/carbon/human/glow/run_emote(mob/living/carbon/human/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	var/datum/species/ethereal/goober = user.dna.species
 	goober.handle_glow_emote(user, 1.75, 1.2)
@@ -281,7 +281,7 @@
 		return FALSE
 	return ..()
 
-/datum/emote/living/carbon/human/flare/run_emote(mob/living/carbon/human/user, params, type_override, intentional)
+/datum/emote/living/carbon/human/flare/run_emote(mob/living/carbon/human/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	var/datum/species/ethereal/goober = user.dna.species
 	goober.handle_glow_emote(user, 12, 6, flare = TRUE, duration = 2 SECONDS, flare_time = 10 SECONDS)
@@ -298,7 +298,7 @@
 		return FALSE
 	return ..()
 
-/datum/emote/living/carbon/human/flicker/run_emote(mob/living/carbon/human/user, params, type_override, intentional)
+/datum/emote/living/carbon/human/flicker/run_emote(mob/living/carbon/human/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	var/datum/species/ethereal/goober = user.dna.species
 	goober.start_flicker(user)

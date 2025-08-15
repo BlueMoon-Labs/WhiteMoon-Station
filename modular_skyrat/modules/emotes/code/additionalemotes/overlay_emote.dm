@@ -12,7 +12,7 @@
 	key = "sweatdrop"
 	key_third_person = "sweatdrops"
 
-/datum/emote/living/sweatdrop/run_emote(mob/living/user, params, type_override, intentional)
+/datum/emote/living/sweatdrop/run_emote(mob/living/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	if(isliving(user) && get_toggle(user))
 		var/mutable_appearance/overlay = mutable_appearance(overlay_emote, "sweatdrop", ABOVE_MOB_LAYER)
@@ -25,7 +25,7 @@
 	key = "exclaim"
 	key_third_person = "exclaims"
 
-/datum/emote/living/exclaim/run_emote(mob/living/user, params, type_override, intentional)
+/datum/emote/living/exclaim/run_emote(mob/living/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	if(isliving(user) && get_toggle(user))
 		var/mutable_appearance/overlay = mutable_appearance(overlay_emote, "exclamation", ABOVE_MOB_LAYER)
@@ -38,7 +38,7 @@
 	key = "question"
 	key_third_person = "questions"
 
-/datum/emote/living/question/run_emote(mob/living/user, params, type_override, intentional)
+/datum/emote/living/question/run_emote(mob/living/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	if(isliving(user) && get_toggle(user))
 		var/mutable_appearance/overlay = mutable_appearance(overlay_emote, "question", ABOVE_MOB_LAYER)
@@ -52,7 +52,7 @@
 	key = "realize"
 	key_third_person = "realizes"
 
-/datum/emote/living/realize/run_emote(mob/living/user, params, type_override, intentional)
+/datum/emote/living/realize/run_emote(mob/living/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	if(isliving(user) && get_toggle(user))
 		var/mutable_appearance/overlay = mutable_appearance(overlay_emote, "realize", ABOVE_MOB_LAYER)
@@ -67,7 +67,7 @@
 	key = "annoyed"
 	key_third_person = "is annoyed"
 
-/datum/emote/living/annoyed/run_emote(mob/living/user, params, type_override, intentional)
+/datum/emote/living/annoyed/run_emote(mob/living/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	if(isliving(user) && get_toggle(user))
 		var/mutable_appearance/overlay = mutable_appearance(overlay_emote, "annoyed", ABOVE_MOB_LAYER)

@@ -158,7 +158,7 @@
 	key_third_person = "bonks"
 	hands_use_check = TRUE
 
-/datum/emote/living/carbon/bonk/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/carbon/bonk/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	if(!length(user.get_empty_held_indexes()))
 		to_chat(user, span_warning("You don't have any free hands to bonk someone with."))

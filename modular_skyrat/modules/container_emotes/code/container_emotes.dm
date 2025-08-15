@@ -14,7 +14,7 @@
 	key = "exme"
 	message = null
 
-/datum/emote/container_emote/run_emote(mob/living/user, params, type_override = null, intentional = TRUE)
+/datum/emote/container_emote/run_emote(mob/living/user, params, type_override = null, intentional = TRUE, message_override = null)
 	/// The message that will be sent from the container emote.
 	var/container_message
 	/// What was inputted by the user.

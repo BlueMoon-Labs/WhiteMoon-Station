@@ -168,7 +168,7 @@
 	key_third_person = "treply"
 	cooldown = 4 SECONDS
 
-/datum/emote/living/telepathy_reply/run_emote(mob/living/user, params, type_override, intentional)
+/datum/emote/living/telepathy_reply/run_emote(mob/living/user, params, type_override, intentional, message_override = null)
 	if (ishuman(user) && intentional)
 		var/mob/living/carbon/human/human_user = user
 		var/datum/mutation/telepathy/mutation = human_user.dna.get_mutation(/datum/mutation/telepathy)

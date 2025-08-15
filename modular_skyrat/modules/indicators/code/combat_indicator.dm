@@ -191,7 +191,7 @@ GLOBAL_VAR_INIT(combat_indicator_overlay, GenerateCombatOverlay())
 	message = "drops to the floor and raises their hands defensively! They surrender%s!"
 	stat_allowed = SOFT_CRIT
 
-/datum/emote/living/surrender/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/surrender/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	if(. && isliving(user))
 		var/mob/living/living_user = user

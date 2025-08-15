@@ -72,7 +72,7 @@
 	key_third_person = "mothdash"
 	cooldown = 6 SECONDS
 
-/datum/emote/living/mothic_dash/run_emote(mob/living/user, params, type_override, intentional)
+/datum/emote/living/mothic_dash/run_emote(mob/living/user, params, type_override, intentional, message_override = null)
 	if (ishuman(user) && intentional)
 		var/datum/action/cooldown/spell/moth_and_dash/dash_action = locate() in user.actions
 		if(dash_action)

@@ -8,7 +8,7 @@
 	/// The current turf ID that the user selected in the radial menu.
 	var/current_turf
 
-/datum/emote/living/mark_turf/run_emote(mob/living/user, params, type_override, intentional)
+/datum/emote/living/mark_turf/run_emote(mob/living/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	var/mob/living/carbon/human/human_user = user
 

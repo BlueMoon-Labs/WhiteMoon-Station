@@ -51,7 +51,7 @@
 	vary = TRUE
 	stat_allowed = SOFT_CRIT
 
-/datum/emote/living/carbon/cry/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/carbon/cry/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	if(!ishuman(user))
 		return
@@ -68,7 +68,7 @@
 	key_third_person = "circles"
 	hands_use_check = TRUE
 
-/datum/emote/living/carbon/circle/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/carbon/circle/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	if(!length(user.get_empty_held_indexes()))
 		to_chat(user, span_warning("You don't have any free hands to make a circle with."))
@@ -118,7 +118,7 @@
 	key_third_person = "noogies"
 	hands_use_check = TRUE
 
-/datum/emote/living/carbon/noogie/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/carbon/noogie/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	var/obj/item/hand_item/noogie/noogie = new(user)
 	if(user.put_in_hands(noogie))
@@ -166,7 +166,7 @@
 	hands_use_check = TRUE
 	cooldown = 3 SECONDS // to prevent endless table slamming
 
-/datum/emote/living/carbon/slap/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/carbon/slap/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	var/obj/item/hand_item/slapper/N = new(user)
 	if(user.put_in_hands(N))
@@ -182,7 +182,7 @@
 	hands_use_check = TRUE
 
 
-/datum/emote/living/carbon/hand/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/carbon/hand/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	var/obj/item/hand_item/hand/hand = new(user)
 	if(user.put_in_hands(hand))
@@ -216,7 +216,7 @@ Bubber removal end */
 	hands_use_check = TRUE
 	cooldown = 3 SECONDS
 
-/datum/emote/living/carbon/shoesteal/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/carbon/shoesteal/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	var/obj/item/hand_item/stealer/stealing_hand = new(user)
 	if (user.put_in_hands(stealing_hand))

@@ -7,7 +7,7 @@
 	key = "blank"
 	var/emotion = AI_EMOTION_BLANK
 
-/datum/emote/ai/emotion_display/run_emote(mob/living/silicon/ai/user, params, type_override, intentional)
+/datum/emote/ai/emotion_display/run_emote(mob/living/silicon/ai/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	user.apply_emote_display(emotion)
 
@@ -64,7 +64,7 @@
 	key = "friendcomputer"
 	emotion = AI_EMOTION_FRIEND_COMPUTER
 
-/datum/emote/ai/emotion_display/friend_computer/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/ai/emotion_display/friend_computer/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	var/datum/radio_frequency/frequency = SSradio.return_frequency(FREQ_STATUS_DISPLAYS)
 

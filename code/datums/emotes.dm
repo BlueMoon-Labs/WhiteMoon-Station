@@ -90,10 +90,11 @@
  * * params - Parameters added after the emote.
  * * type_override - Override to the current emote_type.
  * * intentional - Bool that says whether the emote was forced (FALSE) or not (TRUE).
- *
+ * * message_override - Override the emote message with the provided string. If `params` is used,
+ * this string can contain `%t`, which will be replaced with `params`.
  */
-/datum/emote/proc/run_emote(mob/user, params, type_override, intentional = FALSE)
-	var/msg = select_message_type(user, message, intentional)
+/datum/emote/proc/run_emote(mob/user, params, type_override, intentional = FALSE, message_override = null)
+	var/msg = message_override ? message_override : select_message_type(user, message, intentional)
 	if(params && message_param)
 		msg = select_param(user, params)
 

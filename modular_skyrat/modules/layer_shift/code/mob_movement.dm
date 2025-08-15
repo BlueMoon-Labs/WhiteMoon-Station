@@ -49,7 +49,7 @@
 	mob_type_blacklist_typecache = list(/mob/living/brain)
 	cooldown = 0.25 SECONDS
 
-/datum/emote/living/shift_layer_up/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/shift_layer_up/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	if(!can_run_emote(user))
 		to_chat(user, span_warning("You can't change layer at this time."))
 		return FALSE
@@ -65,7 +65,7 @@
 	mob_type_blacklist_typecache = list(/mob/living/brain)
 	cooldown = 0.25 SECONDS
 
-/datum/emote/living/shift_layer_down/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/shift_layer_down/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	if(!can_run_emote(user))
 		to_chat(user, span_warning("You can't change layer at this time."))
 		return FALSE

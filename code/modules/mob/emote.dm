@@ -12,7 +12,7 @@
 #define BEYBLADE_CONFUSION_LIMIT (40 SECONDS)
 
 //The code execution of the emote datum is located at code/datums/emotes.dm
-/mob/proc/emote(act, m_type = null, message = null, intentional = FALSE, force_silence = FALSE, forced = FALSE)
+/mob/proc/emote(act, m_type = null, message = null, intentional = FALSE, force_silence = FALSE, forced = FALSE, message_override = null)
 	var/param = message
 	var/custom_param = findchar(act, " ")
 	if(custom_param)
@@ -36,7 +36,7 @@
 		if(SEND_SIGNAL(src, COMSIG_MOB_PRE_EMOTED, emote.key, param, m_type, intentional, emote) & COMPONENT_CANT_EMOTE)
 			silenced = TRUE
 			continue
-		emote.run_emote(src, param, m_type, intentional)
+		emote.run_emote(src, param, m_type, intentional, message_override = message_override)
 		SEND_SIGNAL(src, COMSIG_MOB_EMOTE, emote, act, m_type, message, intentional)
 		SEND_SIGNAL(src, COMSIG_MOB_EMOTED(emote.key))
 		return TRUE
@@ -48,7 +48,7 @@
 	key = "help"
 	mob_type_ignore_stat_typecache = list(/mob/dead/observer, /mob/living/silicon/ai, /mob/eye/imaginary_friend)
 
-/datum/emote/help/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/help/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	var/list/keys = list()
 	var/list/message = list("Available emotes, you can use them with say [span_bold("\"*emote\"")]: \n")
@@ -82,7 +82,7 @@
 	mob_type_ignore_stat_typecache = list(/mob/dead/observer, /mob/living/silicon/ai, /mob/eye/imaginary_friend)
 
 // BUBBER EDIT CHANGE BEGIN - Flip Cooldown
-/datum/emote/flip/run_emote(mob/user, params , type_override, intentional)
+/datum/emote/flip/run_emote(mob/user, params , type_override, intentional, message_override = null)
 	. = ..()
 	if(iscarbon(user))
 		var/mob/living/carbon/flippy_mcgee = user
@@ -147,7 +147,7 @@
 	mob_type_allowed_typecache = list(/mob/living, /mob/dead/observer, /mob/eye/imaginary_friend)
 	mob_type_ignore_stat_typecache = list(/mob/dead/observer, /mob/eye/imaginary_friend)
 
-/datum/emote/spin/run_emote(mob/user, params,  type_override, intentional)
+/datum/emote/spin/run_emote(mob/user, params,  type_override, intentional, message_override = null)
 	. = ..()
 	user.spin(20, 1)
 
@@ -189,7 +189,7 @@
 	mob_type_ignore_stat_typecache = list(/mob/dead/observer)
 	affected_by_pitch = FALSE
 
-/datum/emote/jump/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/jump/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 
 	jump_animation(user)

@@ -14,7 +14,7 @@
 	message = null
 	mob_type_blacklist_typecache = list(/mob/living/brain)
 
-/datum/emote/living/subtle/run_emote(mob/user, params, type_override = null)
+/datum/emote/living/subtle/run_emote(mob/user, params, type_override = null, message_override = null)
 	if(!can_run_emote(user))
 		to_chat(user, span_warning("You can't emote at this time."))
 		return FALSE
@@ -79,7 +79,7 @@
 	message = null
 	mob_type_blacklist_typecache = list(/mob/living/brain)
 
-/datum/emote/living/subtler/run_emote(mob/user, params, type_override = null)
+/datum/emote/living/subtler/run_emote(mob/user, params, type_override = null, message_override = null)
 	if(!can_run_emote(user))
 		to_chat(user, span_warning("You can't emote at this time."))
 		return FALSE

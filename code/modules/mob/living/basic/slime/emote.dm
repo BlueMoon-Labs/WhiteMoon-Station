@@ -27,7 +27,7 @@
 	///Mood key, will set the slime's emote to this.
 	var/mood_key
 
-/datum/emote/slime/mood/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/slime/mood/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	. = ..()
 	var/mob/living/basic/slime/slime_user = user
 	slime_user.current_mood = mood_key
