@@ -16,8 +16,24 @@
 /datum/supply_pack/security/armory/renoster // 1200 за один реностер. 2400 за два.
 	cost = PAYCHECK_COMMAND * 24
 
-/datum/supply_pack/security/armory/sindano // ВТшка со Скуратов, но в два раза лучше. Каждая за 3000. Патроны по 500. Выше среднего.
-	cost = PAYCHECK_COMMAND * 105
+/datum/supply_pack/security/armory/sindano // ВТшка со Скуратов, но в два раза лучше. Каждая за 800. Патроны по 100. Выше среднего.
+	cost = PAYCHECK_COMMAND * 30
+
+/datum/supply_pack/security/armory/sindano_ammo
+	name = "Carwo 'Sindano' Submachinegun Ammo Crate"
+	desc = "Contains 5 extended magazines with lethal regular rounds for the Carwo 'Sindano' Submachinegun."
+	cost = PAYCHECK_COMMAND * 5
+	contains = list(/obj/item/ammo_box/magazine/c35sol_pistol/stendo = 5)
+	crate_name = "Carwo 'Sindano' Submachinegun magazine crate"
+
+/datum/supply_pack/security/armory/sindano_ammo_rubber // Патроны на автоматическую винтовку стоят 500.
+	cost = PAYCHECK_COMMAND * 5
+
+/datum/supply_pack/security/armory/sindano_ammo_regular // Патроны на автоматическую винтовку стоят 500.
+	cost = PAYCHECK_COMMAND * 5
+
+/datum/supply_pack/security/armory/sindano_ammo_flat // Патроны на автоматическую винтовку стоят 500.
+	cost = PAYCHECK_COMMAND * 5
 
 /datum/supply_pack/security/armory/dragnet // Стандартная цена.
 	cost = PAYCHECK_COMMAND * 36
@@ -59,17 +75,17 @@
 /datum/supply_pack/security/armory/cmg // Средний класс автоматических винтовок. Хуже Синдано. Две штуки. Каждая за 4000.
 	cost = PAYCHECK_COMMAND * 80
 
-/datum/supply_pack/security/armory/wt551 // Две рядовые автоматические винтовки. Каждая за 2000.
-	cost = PAYCHECK_COMMAND * 40
+/datum/supply_pack/security/armory/wt551 // Две рядовые автоматические винтовки. Каждая за 1500.
+	cost = PAYCHECK_COMMAND * 30
 
-/datum/supply_pack/security/armory/wt550_ammo_rubber // Патроны на автоматическую винтовку стоят 1000.
-	cost = PAYCHECK_COMMAND * 10
+/datum/supply_pack/security/armory/wt550_ammo_rubber // Патроны на автоматическую винтовку стоят 500.
+	cost = PAYCHECK_COMMAND * 5
 
-/datum/supply_pack/security/armory/wt550_ammo_regular // Патроны на автоматическую винтовку стоят 1000.
-	cost = PAYCHECK_COMMAND * 10
+/datum/supply_pack/security/armory/wt550_ammo_regular // Патроны на автоматическую винтовку стоят 500.
+	cost = PAYCHECK_COMMAND * 5
 
-/datum/supply_pack/security/armory/wt550_ammo_flat // Патроны на автоматическую винтовку стоят 1000.
-	cost = PAYCHECK_COMMAND * 10
+/datum/supply_pack/security/armory/wt550_ammo_flat // Патроны на автоматическую винтовку стоят 500.
+	cost = PAYCHECK_COMMAND * 5
 
 /datum/supply_pack/security/armory/wespe // 1200 кредитов за каждый набор оружия, их тут три.
 	name = "Wespe Three-Pack Crates"
