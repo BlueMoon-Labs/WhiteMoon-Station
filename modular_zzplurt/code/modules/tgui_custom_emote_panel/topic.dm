@@ -206,6 +206,9 @@
 			if (isnull(client.prefs.custom_emote_panel[emote_name]))
 				to_chat(client, span_warning("Эмоции [emote_name] нет в вашей панели!"))
 				return FALSE
+			if (!islist(client.prefs.custom_emote_panel[emote_name]))
+				to_chat(client, span_warning("Эмоция повреждена!"))
+				return FALSE
 			if (isnull(client.prefs.custom_emote_panel[emote_name]["type"]))
 				to_chat(client, span_warning("Эмоция [emote_name] не имеет типа!"))
 				return FALSE
@@ -333,9 +336,11 @@
 			if (isnull(client.prefs.custom_emote_panel[emote_name]))
 				to_chat(client, span_warning("Эмоции [emote_name] нет в вашей панели!"))
 				return FALSE
-			var/emote_type = client.prefs.custom_emote_panel[emote_name]["type"] ? client.prefs.custom_emote_panel[emote_name]["type"] : TGUI_PANEL_EMOTE_TYPE_BROKEN
-			if (payload["is_broken"])
+			var/emote_type
+			if (payload["is_broken"] || !islist(client.prefs.custom_emote_panel[emote_name]	))
 				emote_type = TGUI_PANEL_EMOTE_TYPE_BROKEN
+			else
+				emote_type = client.prefs.custom_emote_panel[emote_name]["type"] ? client.prefs.custom_emote_panel[emote_name]["type"] : TGUI_PANEL_EMOTE_TYPE_BROKEN
 
 			var/list/actions = list()
 			switch (emote_type)
