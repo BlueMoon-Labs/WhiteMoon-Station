@@ -333,7 +333,9 @@
 			if (isnull(client.prefs.custom_emote_panel[emote_name]))
 				to_chat(client, span_warning("Эмоции [emote_name] нет в вашей панели!"))
 				return FALSE
-			var/emote_type = client.prefs.custom_emote_panel[emote_name]["type"] ? client.prefs.custom_emote_panel[emote_name]["type"] : TGUI_PANEL_EMOTE_TYPE_UNKNOWN
+			var/emote_type = client.prefs.custom_emote_panel[emote_name]["type"] ? client.prefs.custom_emote_panel[emote_name]["type"] : TGUI_PANEL_EMOTE_TYPE_BROKEN
+			if (payload["is_broken"])
+				emote_type = TGUI_PANEL_EMOTE_TYPE_BROKEN
 
 			var/list/actions = list()
 			switch (emote_type)
@@ -345,8 +347,9 @@
 
 				if (TGUI_PANEL_EMOTE_TYPE_ME)
 					actions.Add(list("Переименовать", "Изменить текст", "Удалить"))
-				if (TGUI_PANEL_EMOTE_TYPE_UNKNOWN)
-					to_chat(client, span_warning("Эмоция не имеет типа, поэтому её можно только удалить."))
+
+				if (TGUI_PANEL_EMOTE_TYPE_BROKEN)
+					to_chat(client, span_warning("Запись повреждена, поэтому её можно только удалить."))
 					actions.Add(list("Удалить"))
 
 			var/action = tgui_alert(client.mob, "Что вы хотите сделать с эмоцией \"[emote_name]\"?", "Выбор действия", actions)

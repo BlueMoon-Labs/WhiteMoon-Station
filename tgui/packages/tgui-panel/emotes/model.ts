@@ -6,7 +6,7 @@ export enum EmoteType {
   TGUI_PANEL_EMOTE_TYPE_DEFAULT = 1,
   TGUI_PANEL_EMOTE_TYPE_CUSTOM = 2,
   TGUI_PANEL_EMOTE_TYPE_ME = 3,
-  BROKEN = -999
+  TGUI_PANEL_EMOTE_TYPE_BROKEN = -999
 }
 
 export interface Emote {

@@ -13,7 +13,7 @@ export const EmotesToolbar = () => {
   const makeBrokenEmote = (name: string): Emote => {
     return {
       name,
-      type: EmoteType.BROKEN,
+      type: EmoteType.TGUI_PANEL_EMOTE_TYPE_BROKEN,
       data: {
         message: "С этим эмоутом произошла какая-то ошибка. Увы!"
       }
@@ -86,9 +86,12 @@ export const EmotesToolbar = () => {
     }, COOLDOWN_DURATION);
   };
 
-  const emoteContextAction = (name: string) =>
+  const emoteContextAction = (name: string, is_broken = false) =>
     Byond.sendMessage('emotes/contextAction', {
-      name: name,
+      name,
+      // Overrides emote type check in DM code
+      // It _could_ be "emote_type", but that one would theoretically lead to JS injection vulnerability
+      is_broken
     });
 
   return (
@@ -124,7 +127,7 @@ export const EmotesToolbar = () => {
                 color = "red"
                 tooltip = "С этим эмоутом произошла какая-то ошибка (Это /me эмоут без поля \"message\"). Увы!"
                 break;
-              case EmoteType.BROKEN:
+              case EmoteType.TGUI_PANEL_EMOTE_TYPE_BROKEN:
                 color = "red"
                 tooltip = "С этим эмоутом произошла какая-то ошибка при его загрузке. Увы!"
                 break;
@@ -140,7 +143,7 @@ export const EmotesToolbar = () => {
                   onClick={() => emoteExecute(emote.name)}
                   onContextMenu={(e) => {
                     e.preventDefault();
-                    emoteContextAction(emote.name);
+                    emoteContextAction(emote.name, emote.type === EmoteType.TGUI_PANEL_EMOTE_TYPE_BROKEN);
                   }}
                   tooltip={tooltip}
                   color = {color}
