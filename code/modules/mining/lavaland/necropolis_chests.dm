@@ -128,14 +128,14 @@
 
 /obj/structure/closet/crate/necropolis/bubblegum/PopulateContents()
 	new /obj/item/clothing/suit/hooded/hostile_environment(src)
-	/*Bubberstation edit begin (removes bloodcrawl from lootpool)
-	var/loot = rand(1,2)
+	var/loot = rand(1,3)
 	switch(loot)
 		if(1)
-			new /obj/item/bloodcrawl_bottle(src) //SKYRAT EDIT ORIGINAL : new /obj/item/mayhem(src)
+			new /obj/item/bloodcrawl_bottle(src) // WHITEMOON ADD: Вернул Maynem и Bloodcrawl_Bottle.
 		if(2)
-	Bubberstation edit end*/
-	new /obj/item/soulscythe(src)
+			new /obj/item/soulscythe(src) // WHITEMOON ADD: Вернул Maynem и Bloodcrawl_Bottle.
+		if(3)
+			new /obj/item/mayhem(src) // WHITEMOON ADD: Вернул Maynem и Bloodcrawl_Bottle.
 
 /obj/structure/closet/crate/necropolis/bubblegum/crusher
 	name = "bloody bubblegum chest"

@@ -3191,7 +3191,7 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/structure/safe/floor,
 /obj/item/stack/spacecash/c10000,
-/obj/item/gun/ballistic/automatic/pistol/m1911/gold,
+/obj/item/gun/ballistic/automatic/pistol/m1911,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/derelictoutpost/control)
 "IE" = (

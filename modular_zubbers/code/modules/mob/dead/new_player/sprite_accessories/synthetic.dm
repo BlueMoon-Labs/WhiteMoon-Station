@@ -231,3 +231,4 @@
 	name = "Synthetic Big Legs, Stanced Pegs"
 	icon_state = "biglegs_peg_stanced"
 	icon = 'modular_zubbers/icons/customization/taur.dmi'
+

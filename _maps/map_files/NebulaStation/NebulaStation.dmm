@@ -3313,13 +3313,6 @@
 "azF" = (
 /turf/open/floor/iron/stairs/medium,
 /area/station/command/gateway)
-"azH" = (
-/obj/docking_port/stationary/random{
-	name = "lavaland";
-	shuttle_id = "pod_2_lavaland"
-	},
-/turf/open/space/basic,
-/area/space)
 "azK" = (
 /obj/structure/railing,
 /obj/structure/sign/poster/official/random/directional/north,
@@ -48057,13 +48050,6 @@
 	},
 /turf/open/floor/iron/dark/small,
 /area/station/engineering/atmos/project)
-"heV" = (
-/obj/machinery/atmospherics/pipe/smart/simple/yellow/visible{
-	dir = 1
-	},
-/obj/structure/lattice/catwalk,
-/turf/open/space/basic,
-/area/space/nearstation)
 "heW" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -53196,11 +53182,6 @@
 	dir = 4
 	},
 /area/station/commons/dorms)
-"hRD" = (
-/obj/machinery/atmospherics/pipe/smart/simple/cyan/visible,
-/obj/structure/lattice/catwalk,
-/turf/open/space/basic,
-/area/space/nearstation)
 "hRI" = (
 /obj/effect/turf_decal/siding{
 	dir = 10
@@ -66225,6 +66206,13 @@
 	dir = 1
 	},
 /area/station/security/brig)
+"jOS" = (
+/obj/docking_port/stationary/random{
+	name = "lavaland";
+	shuttle_id = "pod_2_lavaland"
+	},
+/turf/open/space/basic,
+/area/space)
 "jPa" = (
 /obj/structure/chair/office,
 /obj/effect/turf_decal/trimline/red/filled/line,
@@ -98847,6 +98835,13 @@
 	},
 /turf/open/floor/iron/textured,
 /area/station/hallway/primary/central)
+"oJs" = (
+/obj/machinery/atmospherics/pipe/smart/simple/yellow/visible{
+	dir = 1
+	},
+/obj/structure/lattice/catwalk,
+/turf/open/space/basic,
+/area/space/nearstation)
 "oJw" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
@@ -102379,6 +102374,11 @@
 /obj/effect/turf_decal/trimline/dark/corner,
 /turf/open/floor/iron/dark,
 /area/station/security/courtroom/holding)
+"pgI" = (
+/obj/machinery/atmospherics/pipe/smart/simple/cyan/visible,
+/obj/structure/lattice/catwalk,
+/turf/open/space/basic,
+/area/space/nearstation)
 "pgL" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -181244,7 +181244,7 @@ gym
 gym
 gym
 gym
-azH
+jOS
 gym
 gym
 gym
@@ -182272,7 +182272,7 @@ gym
 gym
 gym
 gym
-azH
+jOS
 gym
 gym
 gym
@@ -183300,7 +183300,7 @@ gym
 gym
 gym
 gym
-azH
+jOS
 gym
 gym
 gym
@@ -198816,7 +198816,7 @@ uia
 kLK
 uGn
 gWV
-heV
+oJs
 hsB
 mHk
 qOc
@@ -199844,7 +199844,7 @@ wWM
 uCs
 rgl
 gWV
-heV
+oJs
 hsB
 eNX
 bLG
@@ -200358,7 +200358,7 @@ dxX
 stp
 xzd
 cvt
-hRD
+pgI
 sdW
 gGE
 uCR
@@ -200872,7 +200872,7 @@ dAh
 maN
 lQm
 cvt
-hRD
+pgI
 gim
 ocT
 gKt

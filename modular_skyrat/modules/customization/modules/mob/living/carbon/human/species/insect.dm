@@ -21,7 +21,8 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/mutant/insect,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/mutant/insect,
 	)
-	eyes_icon = 'modular_skyrat/modules/organs/icons/insect_eyes.dmi'
+	//eyes_icon = 'modular_skyrat/modules/organs/icons/insect_eyes.dmi' //SPLURT EDIT - https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/453
+	sort_bottom = TRUE //BUBBER EDIT ADDITION: We want to sort this to the bottom because it's a custom species template.
 
 /datum/species/insect/get_default_mutant_bodyparts()
 	return list(

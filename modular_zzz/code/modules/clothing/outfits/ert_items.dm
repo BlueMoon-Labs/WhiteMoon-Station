@@ -104,7 +104,6 @@
 		/obj/item/storage/belt/holster/energy,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/compact,
 		/obj/item/pen/red/security,
-		/obj/item/gun/microfusion,
 	)
 
 /obj/item/mod/control/pre_equipped/responsory

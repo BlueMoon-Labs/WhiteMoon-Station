@@ -810,11 +810,11 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/bot,
-/obj/item/gun/microfusion/mcr01/syndie{
+/obj/item/gun/energy/modular_laser_rifle/carbine{
 	pixel_y = -7
 	},
-/obj/item/gun/microfusion/mcr01/syndie,
-/obj/item/gun/microfusion/mcr01/syndie{
+/obj/item/gun/energy/modular_laser_rifle/carbine,
+/obj/item/gun/energy/modular_laser_rifle/carbine{
 	pixel_y = 7
 	},
 /turf/open/floor/pod/dark,

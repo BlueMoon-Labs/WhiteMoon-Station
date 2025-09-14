@@ -56,7 +56,7 @@
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_SCIENCE
 
-/*/datum/design/board/aiupload // ! WHITEMOON. Убрал возможность печатать платы смены законов, чтобы антагонисты не просто распечатали и пошли законы менять, а крали плату из хранилища.
+/datum/design/board/aiupload
 	name = "AI Upload Board"
 	desc = "Allows for the construction of circuit boards used to build an AI Upload Console."
 	id = "aiupload"
@@ -76,7 +76,7 @@
 	category = list(
 		RND_CATEGORY_COMPUTER + RND_SUBCATEGORY_COMPUTER_ROBOTICS
 	)
-	departmental_flags = DEPARTMENT_BITFLAG_SCIENCE*/
+	departmental_flags = DEPARTMENT_BITFLAG_SCIENCE
 
 /datum/design/board/med_data
 	name = "Medical Records Board"

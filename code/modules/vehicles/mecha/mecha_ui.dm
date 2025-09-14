@@ -204,10 +204,12 @@
 		if("dna_lock")
 			var/mob/living/carbon/user = usr
 			if(!istype(user) || !user.dna)
-				to_chat(user, "[icon2html(src, occupants)][span_notice("You can't create a DNA lock with no DNA!.")]")
+				to_chat(user, "[icon2html(src, occupants)][span_notice("Вы не можете воспользоваться ДНК-замком, не имея ДНК!")]") // WHITEMOON ADD
 				return
 			dna_lock = user.dna.unique_enzymes
-			to_chat(user, "[icon2html(src, occupants)][span_notice("You feel a prick as the needle takes your DNA sample.")]")
+			var/dna_lock_examine = "<br><br>Этот мех заблокирован ДНК - [user.name]." // WHITEMOON ADD
+			desc += dna_lock_examine // WHITEMOON ADD
+			to_chat(user, "[icon2html(src, occupants)][span_notice("Вы чувствуете колкое ощущение, когда игла внутри меха берет ваш образец ДНК...")]") // WHITEMOON ADD
 		if("reset_dna")
 			dna_lock = null
 		if("toggle_cabin_seal")

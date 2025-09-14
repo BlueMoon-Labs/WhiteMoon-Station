@@ -42,7 +42,7 @@ SUBSYSTEM_DEF(achievements)
 	 * Thanks to Jordie for the query.
 	 */
 	var/datum/db_query/query = SSdbcore.NewQuery(
-		"SELECT a.achievement_key, COUNT(a.achievement_key) AS count FROM achievements a \
+		"SELECT a.achievement_key, COUNT(a.achievement_key) AS count FROM [format_table_name("achievements")] a \
 		JOIN achievement_metadata m ON a.achievement_key = m.achievement_key AND m.achievement_type = 'achievement' \
 		GROUP BY a.achievement_key ORDER BY count DESC"
 	)

@@ -1,0 +1,4 @@
+author: "SmiLeYre"
+delete-after: True
+changes:
+  - rscadd: "Теперь в описании меха показывается, кто закрыл меха под ДНК-замок."

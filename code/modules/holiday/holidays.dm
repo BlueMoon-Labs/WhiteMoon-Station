@@ -532,6 +532,15 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 	begin_month = JULY
 	holiday_mail = list(/obj/item/pen/fountain)
 
+/datum/holiday/russia // WHITEMOON ADD
+	name = "Day of Russia"
+	begin_month = AUGUST
+	begin_day = 9
+	holiday_colors = list(COLOR_WHITE, COLOR_BLUE, COLOR_OLD_GLORY_RED)
+
+/datum/holiday/russia/getStationPrefix()
+	return pick("Russia", "Omsk", "Black League", "Great Slavic Autarky") // WHITEMOON ADD END
+
 /datum/holiday/france
 	name = "Bastille Day"
 	timezones = list(TIMEZONE_CEST)

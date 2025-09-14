@@ -29,7 +29,7 @@ GLOBAL_PROTECT(vetted_list)
 		return
 	if(!SSdbcore.Connect())
 		return
-	var/datum/db_query/query_load_player_rank = SSdbcore.NewQuery("SELECT ckey FROM vetted_list WHERE ckey = :ckey", list("ckey" = ckey))
+	var/datum/db_query/query_load_player_rank = SSdbcore.NewQuery("SELECT ckey FROM [format_table_name("vetted_list")] WHERE ckey = :ckey", list("ckey" = ckey))
 	if(!query_load_player_rank.warn_execute())
 		qdel(query_load_player_rank)
 		return
@@ -51,7 +51,7 @@ GLOBAL_PROTECT(vetted_list)
 		ckey_admin = admin_who_added_client?.client?.ckey
 
 	var/datum/db_query/query_add_player_rank = SSdbcore.NewQuery(
-		"INSERT INTO vetted_list (ckey, admin_who_added) VALUES(:ckey, :admin_who_added)",
+		"INSERT INTO [format_table_name("vetted_list")] (ckey, admin_who_added) VALUES(:ckey, :admin_who_added)",
 		list("ckey" = ckey, "admin_who_added" = ckey_admin),
 	)
 
@@ -72,7 +72,7 @@ GLOBAL_PROTECT(vetted_list)
 
 /datum/player_rank_controller/vetted/proc/remove_player_from_sql(ckey)
 	var/datum/db_query/query_remove_player_vetted = SSdbcore.NewQuery(
-		"DELETE FROM vetted_list WHERE ckey = :ckey",
+		"DELETE FROM [format_table_name("vetted_list")] WHERE ckey = :ckey",
 		list("ckey" = ckey),
 	)
 	. = query_remove_player_vetted.warn_execute()
