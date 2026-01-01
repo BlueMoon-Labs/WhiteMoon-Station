@@ -798,6 +798,9 @@
 							'modular_zzz/sound/plush/milp3.ogg' = 1,
 							'modular_zzz/sound/plush/milp5.ogg' = 1)
 
+///////////////////////////////////////////////
+#define LOVE_INTERACTION_COOLDOWN 10 SECONDS
+
 /obj/item/toy/plush/imports/lissara
 	name = "Lissara plush"
 	desc = "Charming soft toy in the form of a miniature lamia. Its smooth body stretches pleasantly under your fingers, and its tail is flexible, as if calling to wrap around your wrist. When you press lightly on its tummy, the toy hisses softly and its thin tongue sticks out slightly."
@@ -819,9 +822,9 @@
 	. = ..()
 
 	// Ограничение по процессу и времени на срабатывания
-	if(!love_target && istype(src.loc, /turf/open) && world.time - last_love_interaction >= 10 SECONDS)
+	if(!love_target && istype(src.loc, /turf/open) && world.time - last_love_interaction >= LOVE_INTERACTION_COOLDOWN)
 		var/obj/item/toy/plush/imports/araminta/P = locate() in range(1, src)
-		if(P && istype(P.loc, /turf/open) && !P.love_target && world.time - P.last_love_interaction >= 10 SECONDS)
+		if(P && istype(P.loc, /turf/open) && !P.love_target && world.time - P.last_love_interaction >= LOVE_INTERACTION_COOLDOWN)
 			spawn(1) // Что-то меняет пиксельную позицую после и так решаем приколы с бросками
 				if(istype(src.loc, /turf/open) && istype(P.loc, /turf/open)) // Изъятие из контейнера изначально считается как на открытом турфе, поэтому перепроверяем еще раз
 					loving_interaction(P)
@@ -980,12 +983,15 @@
 	. = ..()
 
 	// Ограничение по процессу и времени на срабатывания
-	if(!love_target && istype(src.loc, /turf/open) && world.time - last_love_interaction >= 10 SECONDS)
+	if(!love_target && istype(src.loc, /turf/open) && world.time - last_love_interaction >= LOVE_INTERACTION_COOLDOWN)
 		var/obj/item/toy/plush/imports/lissara/P = locate() in range(1, src)
-		if(P && istype(P.loc, /turf/open) && !P.love_target && world.time - P.last_love_interaction >= 10 SECONDS)
+		if(P && istype(P.loc, /turf/open) && !P.love_target && world.time - P.last_love_interaction >= LOVE_INTERACTION_COOLDOWN)
 			spawn(1) // Что-то меняет пиксельную позицую после и так решаем приколы с бросками
 				if(istype(src.loc, /turf/open) && istype(P.loc, /turf/open)) // Изъятие из контейнера изначально считается как на открытом турфе, поэтому перепроверяем еще раз
 					P.loving_interaction(src)
+
+#undef LOVE_INTERACTION_COOLDOWN
+///////////////////////////////////////////////
 
 /obj/item/toy/plush/imports/stasik/artemq
 	name = "Artems toy plush"
