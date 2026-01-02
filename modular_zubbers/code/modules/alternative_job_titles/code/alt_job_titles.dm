@@ -12,6 +12,8 @@
 		"Brig Physician",
 		"Combat Medic",
 		"Special Operations Medic",
+		"Trauma Team Responder",
+		"Trauma Team",
 	)
 
 /datum/job/orderly/New()

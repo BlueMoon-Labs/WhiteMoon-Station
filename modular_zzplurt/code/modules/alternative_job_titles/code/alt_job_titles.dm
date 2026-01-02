@@ -334,7 +334,6 @@
 
 /datum/job/paramedic/New()
 	var/list/extra_titles = list(
-		"Trauma Team",
 		"Para-Slut",
 		"Emergency Horny Technical",
 		"Emergency Cum Receiver",
