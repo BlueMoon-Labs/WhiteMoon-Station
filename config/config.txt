@@ -19,6 +19,7 @@ $include splurt/discord.txt
 $include splurt/fetish_content.txt
 $include splurt/game_options.txt
 $include splurt/age_gate.txt
+$include splurt/plug13.txt
 
 # WHITE configs
 $include white/game_options.txt

@@ -23,11 +23,11 @@
 		if(!COOLDOWN_FINISHED(controller, announcement_spam_protection))
 			return
 	switch(rand(1, 10))
-		if(1 to 8)
+		if(1 to 5)
 			priority_announce("Обнаружена аномальная активность в энергосети [station_name()]. В качестве меры предосторожности электропитание станции будет отключено на неопределенный срок.", "Критический Сбой Питания", 'modular_zzz/sound/announcer/default/poweroff2.ogg')
-		if(9)
-			priority_announce("В электропитание [station_name()] обнаружено физиологическое вмешательство. В качестве меры предосторожности электропитание станции будет отключено на неопределенный срок.", "Критический Сбой Питания", 'modular_zzz/sound/announcer/default/poweroff.ogg')
-		if(10)
+		if(6 to 7)
+			priority_announce("Обнаружено физиологическое вмешательство в энергосеть [station_name()]. В качестве меры предосторожности электропитание станции будет отключено на неопределенный срок.", "Критический Сбой Питания", 'modular_zzz/sound/announcer/default/poweroff.ogg')
+		if(8 to 10)
 			priority_announce("Сегодня на Аванпосту Центрального Командования отмечается праздник «Приведи Своего Отца». В электропитание [station_name()] обнаружено вмешательство. Приносим свои извинения за доставленные неудобства.", "Критический Сбой Питания", 'modular_zzz/sound/announcer/default/poweroff_boomer.ogg')
 	if(!fake) // Only start the CD if we're real
 		COOLDOWN_START(controller, announcement_spam_protection, 30 SECONDS)

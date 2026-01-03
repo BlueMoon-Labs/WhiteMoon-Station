@@ -387,7 +387,6 @@
 		"Paramedic",
 		"Emergency Medical Technician",
 		"Search and Rescue Technician",
-		"Trauma Team Responder",
 	)
 
 /datum/job/prisoner
