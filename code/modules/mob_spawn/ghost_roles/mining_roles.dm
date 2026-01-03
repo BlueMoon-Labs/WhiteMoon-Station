@@ -236,7 +236,7 @@
 	var/obj/structure/ash_walker_eggshell/eggshell
 	restricted_species = list(/datum/species/lizard/ashwalker) //SKYRAT EDIT ADDITION
 	random_appearance = FALSE // SKYRAT EDIT ADDITION
-	allow_custom_character = GHOSTROLE_TAKE_PREFS_SPECIES // BUBBER EDIT ADDITION
+	allow_custom_character = GHOSTROLE_TAKE_PREFS_SPECIES | GHOSTROLE_TAKE_PREFS_APPEARANCE // BUBBER EDIT + WHITEMOON CHANGE - Load appearance prefs (frills, snout, horns, colors)
 
 /obj/effect/mob_spawn/ghost_role/human/ash_walker/Destroy()
 	eggshell = null
