@@ -6,8 +6,8 @@
 
 	true_spawn = FALSE
 
-	loot.Cut()
-	loot += /obj/structure/closet/crate/secure/bitrunning/encrypted
-
-	crusher_loot.Cut()
-	crusher_loot += /obj/structure/closet/crate/secure/bitrunning/encrypted
+	// WHITEMOON
+	// Создаём новые списки вместо изменения кэшированных ссылок string_list()
+	// что приводило к порче добычи для всей мегафауны этого типа во всем мире
+	loot = list(/obj/structure/closet/crate/secure/bitrunning/encrypted)
+	crusher_loot = list(/obj/structure/closet/crate/secure/bitrunning/encrypted)

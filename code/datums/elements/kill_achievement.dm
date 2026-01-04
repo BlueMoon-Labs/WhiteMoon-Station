@@ -38,6 +38,11 @@
 	if ((source.flags_1 & ADMIN_SPAWNED_1) || !SSachievements.achievements_enabled)
 		return
 
+	// Virtual megafauna (bitrunning) should not grant achievements
+	var/mob/living/simple_animal/hostile/megafauna/mega = source
+	if(istype(mega) && !mega.true_spawn)
+		return
+
 	// Check whether we killed the megafauna with primarily crusher damage or not
 	var/datum/status_effect/crusher_damage/crusher_dmg = source.has_status_effect(/datum/status_effect/crusher_damage)
 	var/crusher_kill = (!isnull(crusher_kill_threshold) && crusher_dmg && (crusher_dmg.total_damage >= floor(source.maxHealth * 0.6)))

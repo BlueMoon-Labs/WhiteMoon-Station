@@ -46,6 +46,11 @@
 /datum/element/crusher_loot/proc/on_death(mob/living/target, gibbed)
 	SIGNAL_HANDLER
 
+	// Virtual megafauna (bitrunning) should not drop crusher trophies
+	var/mob/living/simple_animal/hostile/megafauna/mega = target
+	if(istype(mega) && !mega.true_spawn)
+		return
+
 	var/datum/status_effect/crusher_damage/damage = target.has_status_effect(/datum/status_effect/crusher_damage)
 	if (!damage)
 		return
