@@ -162,8 +162,12 @@
 	if (!should_trigger(user) || !stabilize || !check_on_move.Invoke(FALSE) || isnull(user.drift_handler))
 		return
 
-	var/max_drift_force = MOVE_DELAY_TO_DRIFT(user.cached_multiplicative_slowdown)
-	user.drift_handler.stabilize_drift(user.client.intended_direction ? dir2angle(user.client.intended_direction) : null, user.client.intended_direction ? max_drift_force : 0, stabilization_force * (seconds_per_tick * 1 SECONDS))
+	var/max_drift_force = min(MOVE_DELAY_TO_DRIFT(user.cached_multiplicative_slowdown), INERTIA_FORCE_CAP)
+	var/target_dir = user.client.intended_direction
+	var/target_force = target_dir ? max_drift_force : 0
+	var/stab_force = stabilization_force * (seconds_per_tick * 1 SECONDS)
+
+	user.drift_handler.stabilize_drift(target_dir ? dir2angle(target_dir) : null, target_force, stab_force)
 
 /datum/component/jetpack/proc/on_input_block(mob/source)
 	SIGNAL_HANDLER
@@ -188,13 +192,15 @@
 	if (!check_on_move.Invoke(TRUE))
 		return
 
-	var/max_drift_force = MOVE_DELAY_TO_DRIFT(source.cached_multiplicative_slowdown)
+	var/max_drift_force = min(MOVE_DELAY_TO_DRIFT(source.cached_multiplicative_slowdown), INERTIA_FORCE_CAP)
 	var/applied_force = drift_force
 	var/move_dir = source.client.intended_direction
 	// Try to see if we can simulate pushing off a wall
 	var/atom/movable/backup = source.get_spacemove_backup(move_dir, FALSE, include_floors = TRUE)
+	var/had_backup = FALSE
 	if (backup && !(backup.dir & move_dir))
 		applied_force = max_drift_force
+		had_backup = TRUE
 
 	// We don't want to force the loop to fire before stabilizing if we're going to, otherwise its effects will be delayed until the next tick which is jank
 	var/force_stabilize = FALSE

@@ -79,7 +79,8 @@
 
 	// Apply movement
 	// Based on code from functional_wings.dm
-	var/max_drift_force = (DEFAULT_INERTIA_SPEED / source.cached_multiplicative_slowdown - 1) / INERTIA_SPEED_COEF + 1
+	// Clamp max_drift_force to INERTIA_FORCE_CAP to prevent hypersonic speeds when slowdowns are bypassed in zero-g
+	var/max_drift_force = min((DEFAULT_INERTIA_SPEED / source.cached_multiplicative_slowdown - 1) / INERTIA_SPEED_COEF + 1, INERTIA_FORCE_CAP)
 	source.newtonian_move(dir2angle(source.client.intended_direction), instant = TRUE, drift_force = functional_force, controlled_cap = max_drift_force)
 	source.setDir(source.client.intended_direction)
 

@@ -48,8 +48,15 @@
 		visual_delay = start_delay
 
 	apply_initial_visuals(visual_delay)
-	// Fire the engines!
-	if (drifting_loop.timer <= world.time)
+	// Respect movement rate limiting to prevent rapid input bypass
+	var/loop_delay = get_loop_delay(parent)
+	var/next_allowed_move = parent.last_drift_time + loop_delay
+	if (world.time < next_allowed_move)
+		// Not enough time has passed since last drift move - delay the loop
+		var/pause_time = next_allowed_move - world.time
+		drifting_loop.pause_for(pause_time)
+	else if (drifting_loop.timer <= world.time)
+		// Enough time has passed, fire immediately
 		SSnewtonian_movement.fire_moveloop(drifting_loop)
 
 /datum/drift_handler/Destroy()
@@ -87,19 +94,31 @@
 		return FALSE
 
 	var/applied_force = additional_force
+	var/old_drift_force = drift_force
 
 	var/force_x = sin(drifting_loop.angle) * drift_force + sin(inertia_angle) * applied_force / parent.inertia_force_weight
 	var/force_y = cos(drifting_loop.angle) * drift_force + cos(inertia_angle) * applied_force / parent.inertia_force_weight
 
-	drift_force = clamp(sqrt(force_x * force_x + force_y * force_y), 0, !isnull(controlled_cap) ? controlled_cap : INERTIA_FORCE_CAP)
+	var/uncapped_force = sqrt(force_x * force_x + force_y * force_y)
+	var/effective_cap = !isnull(controlled_cap) ? controlled_cap : INERTIA_FORCE_CAP
+	drift_force = clamp(uncapped_force, 0, effective_cap)
+
 	if(drift_force < 0.1) // Rounding issues
 		qdel(src)
 		return TRUE
 
 	drifting_loop.set_angle(delta_to_angle(force_x, force_y))
-	drifting_loop.set_delay(get_loop_delay(parent))
-	// We have to forcefully fire it here to avoid stuttering in case of server lag
-	if (drifting_loop.timer <= world.time && force_loop)
+	var/loop_delay = get_loop_delay(parent)
+	drifting_loop.set_delay(loop_delay)
+	// Respect movement rate limiting to prevent rapid input bypass
+	var/next_allowed_move = parent.last_drift_time + loop_delay
+	if (world.time < next_allowed_move)
+		// Not enough time has passed - ensure loop is delayed
+		if (drifting_loop.timer < next_allowed_move)
+			var/pause_time = next_allowed_move - world.time
+			drifting_loop.pause_for(pause_time)
+	else if (drifting_loop.timer <= world.time && force_loop)
+		// Enough time has passed, force fire to avoid stuttering
 		SSnewtonian_movement.fire_moveloop(drifting_loop)
 	return TRUE
 
@@ -131,6 +150,8 @@
 		qdel(src)
 		return
 
+	// Record when we actually moved for rate limiting forced fires
+	parent.last_drift_time = world.time
 	parent.setDir(old_dir)
 	parent.inertia_moving = FALSE
 	if(parent.Process_Spacemove(angle2dir(drifting_loop.angle), continuous_move = TRUE))
@@ -239,7 +260,8 @@
 	/// Lack of angle means that we are trying to halt movement
 	if (isnull(target_angle))
 		// Going through newtonian_move ensures that all Process_Spacemove code runs properly, instead of directly adjusting forces
-		parent.newtonian_move(REVERSE_ANGLE(drifting_loop.angle), drift_force = min(drift_force, stabilization_force))
+		var/halt_force = min(drift_force, stabilization_force)
+		parent.newtonian_move(REVERSE_ANGLE(drifting_loop.angle), drift_force = halt_force)
 		return
 
 	// Force required to be applied in order to get to the desired movement vector, with projection of current movement onto desired vector to ensure that we only compensate for excess

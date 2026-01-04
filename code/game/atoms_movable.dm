@@ -41,6 +41,8 @@
 	///The last time we pushed off something
 	///This is a hack to get around dumb him him me scenarios
 	var/last_pushoff
+	///The last time we actually moved due to drift - used to prevent rapid input bypass of movement delay
+	var/last_drift_time = 0
 	/// Things we can pass through while moving. If any of this matches the thing we're trying to pass's [pass_flags_self], then we can pass through.
 	var/pass_flags = NONE
 	/// If false makes [CanPass][/atom/proc/CanPass] call [CanPassThrough][/atom/movable/proc/CanPassThrough] on this type instead of using default behaviour
@@ -1304,7 +1306,9 @@
 		if (drift_handler.newtonian_impulse(inertia_angle, start_delay, drift_force, controlled_cap, force_loop))
 			return TRUE
 
-	new /datum/drift_handler(src, inertia_angle, instant, start_delay, drift_force)
+	// Apply controlled_cap to initial drift force to prevent speed exploits when handler is recreated
+	var/capped_drift_force = !isnull(controlled_cap) ? min(drift_force, controlled_cap) : drift_force
+	new /datum/drift_handler(src, inertia_angle, instant, start_delay, capped_drift_force)
 	// Something went wrong and it failed to create itself, most likely we have a higher priority loop already
 	if (QDELETED(drift_handler))
 		return FALSE
