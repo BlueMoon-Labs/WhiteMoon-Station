@@ -10630,6 +10630,7 @@
 #include "modular_zzz\code\datums\ruins\space.dm"
 #include "modular_zzz\code\datums\station_traits\neutral_trait.dm"
 #include "modular_zzz\code\datums\station_traits\positive_trait.dm"
+#include "modular_zzz\code\datums\storage\subtypes\bags.dm"
 #include "modular_zzz\code\game\hos_color_changer.dm"
 #include "modular_zzz\code\game\turf.dm"
 #include "modular_zzz\code\game\area\centcom.dm"
