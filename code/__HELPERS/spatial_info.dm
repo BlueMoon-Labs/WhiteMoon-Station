@@ -68,7 +68,8 @@
 ///clean this oranges_ear up for future use
 /mob/oranges_ear/proc/unassign()
 	var/turf/turf_loc = loc
-	turf_loc.assigned_oranges_ear = null//trollface. our loc should ALWAYS be a turf, no exceptions. if it isnt then this doubles as an error message ;)
+	if(turf_loc)
+		turf_loc.assigned_oranges_ear = null
 	loc = null
 	references.Cut()
 

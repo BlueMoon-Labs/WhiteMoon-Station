@@ -665,6 +665,7 @@ SUBSYSTEM_DEF(spatial_grid)
 
 		if(turf_loc.assigned_oranges_ear)
 			turf_loc.assigned_oranges_ear.references += assigned_atom
+			. |= turf_loc.assigned_oranges_ear //ensure reused ear is in cleanup list
 			continue //if theres already an oranges_ear mob at assigned_movable's turf we give assigned_movable to it instead and dont allocate ourselves
 
 		current_ear.references += assigned_atom
