@@ -714,6 +714,8 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 	SIGNAL_HANDLER
 
 	for(var/mob/user as anything in is_using)
+		if(!user)
+			continue
 		user.hud_used?.open_containers -= gone
 		if(!user.client)
 			continue
