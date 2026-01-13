@@ -15,6 +15,7 @@ const pixelRatio = window.devicePixelRatio ?? 1;
 let windowKey = Byond.windowId;
 let dragging = false;
 let resizing = false;
+let setupComplete = false;
 let screenOffset: [number, number] = [0, 0];
 let screenOffsetPromise: Promise<[number, number]>;
 let dragPointOffset: [number, number];
@@ -179,14 +180,27 @@ export const recallWindowGeometry = async (
 
 // Setup draggable window
 export const setupDrag = async () => {
+  // Skip if already set up with valid offset
+  if (setupComplete) {
+    return;
+  }
+
   // Calculate screen offset caused by the windows taskbar
   const windowPosition = getWindowPosition();
 
-  screenOffsetPromise = Byond.winget(Byond.windowId, 'pos').then((pos) => [
-    pos.x - windowPosition[0],
-    pos.y - windowPosition[1],
-  ]);
+  screenOffsetPromise = Byond.winget(Byond.windowId, 'pos').then((pos) => {
+    // Validate BYOND position - if it's (0,0) or (1,1), it's likely invalid
+    if ((pos.x <= 1 && pos.y <= 1) || (pos.x === 0 && pos.y === 0)) {
+      return [0, 0] as [number, number];
+    }
+
+    return [pos.x - windowPosition[0], pos.y - windowPosition[1]] as [
+      number,
+      number,
+    ];
+  });
   screenOffset = await screenOffsetPromise;
+  setupComplete = true;
   logger.debug('screen offset', screenOffset);
 };
 
@@ -218,6 +232,12 @@ const constraintPosition = (
 
 // Start dragging the window
 export const dragStartHandler = (event) => {
+  if (!setupComplete) {
+    logger.warn('drag attempted before setup complete');
+    return;
+  }
+
+  event.preventDefault();
   logger.log('drag start');
   dragging = true;
   dragPointOffset = vecSubtract(
@@ -228,6 +248,7 @@ export const dragStartHandler = (event) => {
   (event.target as HTMLElement)?.focus();
   document.addEventListener('mousemove', dragMoveHandler);
   document.addEventListener('mouseup', dragEndHandler);
+  window.addEventListener('blur', dragEndHandler, { once: true });
   dragMoveHandler(event);
 };
 
@@ -237,6 +258,7 @@ const dragEndHandler = (event) => {
   dragMoveHandler(event);
   document.removeEventListener('mousemove', dragMoveHandler);
   document.removeEventListener('mouseup', dragEndHandler);
+  window.removeEventListener('blur', dragEndHandler);
   dragging = false;
   storeWindowGeometry();
 };
@@ -258,6 +280,7 @@ const dragMoveHandler = (event: MouseEvent) => {
 // Start resizing the window
 export const resizeStartHandler =
   (x: number, y: number) => (event: MouseEvent) => {
+    event.preventDefault();
     resizeMatrix = [x, y];
     logger.log('resize start', resizeMatrix);
     resizing = true;
