@@ -2,12 +2,12 @@
 	lawupdate = FALSE
 	scrambledcodes = TRUE // Roleplay borgs aren't real
 	set_model = /obj/item/robot_model/roleplay
-	radio = null
+	radio = null // No radio for roleplay borgs
 
 /mob/living/silicon/robot/model/roleplay/Initialize(mapload)
-	. = ..()
+	laws = new /datum/ai_laws/roleplay() // Must be set before parent Initialize() calls log_current_laws()
 	cell = new /obj/item/stock_parts/power_store/cell/infinite(src, 30000)
-	laws = new /datum/ai_laws/roleplay()
+	. = ..()
 	//This part is because the camera stays in the list, so we'll just do a check
 	if(!QDELETED(builtInCamera))
 		QDEL_NULL(builtInCamera)
@@ -40,7 +40,6 @@
 		/obj/item/extinguisher/mini,
 		/obj/item/weldingtool/largetank/cyborg,
 		/obj/item/borg/cyborg_omnitool/engineering,
-		/obj/item/borg/cyborg_omnitool/engineering,
 		/obj/item/multitool/cyborg,
 		/obj/item/stack/sheet/iron,
 		/obj/item/stack/sheet/glass,
@@ -63,7 +62,7 @@
 		/obj/item/borg/cyborghug,
 		/obj/item/quadborg_nose,
 		/obj/item/quadborg_tongue,
-		/obj/item/reagent_containers/borghypo,
+		/obj/item/reagent_containers/borghypo/medical,
 		/obj/item/borg_shapeshifter/stable)
 	hat_offset = list("north" = list(0, -3), "south" = list(0, -3), "east" = list(0, -3), "west" = list(0, -3))
 

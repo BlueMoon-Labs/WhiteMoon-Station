@@ -252,7 +252,7 @@
 		new_model.dogborg_equip()
 	// SPLURT EDIT END
 	new_model.rebuild_modules()
-	cyborg.radio.recalculateChannels()
+	cyborg.radio?.recalculateChannels()
 	cyborg.set_modularInterface_theme()
 	cyborg.diag_hud_set_health()
 	cyborg.diag_hud_set_status()

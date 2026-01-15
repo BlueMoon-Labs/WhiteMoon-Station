@@ -618,31 +618,31 @@
 		var/obj/item/robot_model/model
 		switch(model_selection)
 			if("Standard")
-				model = new /obj/item/robot_model/standard
+				model = new /obj/item/robot_model/standard(user)
 			if("Medical")
-				model = new /obj/item/robot_model/medical
+				model = new /obj/item/robot_model/medical(user)
 			if("Cargo")
-				model = new /obj/item/robot_model/cargo
+				model = new /obj/item/robot_model/cargo(user)
 			if("Engineer")
-				model = new /obj/item/robot_model/engineering
+				model = new /obj/item/robot_model/engineering(user)
 			if("Security")
-				model = new /obj/item/robot_model/security
+				model = new /obj/item/robot_model/security(user)
 			if("Service")
-				model = new /obj/item/robot_model/service
+				model = new /obj/item/robot_model/service(user)
 			if("Janitor")
-				model = new /obj/item/robot_model/janitor
+				model = new /obj/item/robot_model/janitor(user)
 			if("Miner")
-				model = new /obj/item/robot_model/miner
+				model = new /obj/item/robot_model/miner(user)
 			if("Peacekeeper")
-				model = new /obj/item/robot_model/peacekeeper
+				model = new /obj/item/robot_model/peacekeeper(user)
 			if("Clown")
-				model = new /obj/item/robot_model/clown
+				model = new /obj/item/robot_model/clown(user)
 			if("Syndicate")
-				model = new /obj/item/robot_model/syndicatejack
+				model = new /obj/item/robot_model/syndicatejack(user)
 			if("Spider Clan")
-				model = new /obj/item/robot_model/ninja
+				model = new /obj/item/robot_model/ninja(user)
 			if("Research")
-				model = new /obj/item/robot_model/sci
+				model = new /obj/item/robot_model/sci(user)
 			else
 				return FALSE
 		if (!set_disguise_vars(model, user))
@@ -665,7 +665,7 @@
 			f = user.filters[start+i]
 			animate(f, offset=f:offset, time=0, loop=3, flags=ANIMATION_PARALLEL)
 			animate(offset=f:offset-1, time=rand()*20+10)
-		if (do_after(user, 5 SECONDS, target=user) && user.cell.use(activationCost))
+		if (do_after(user, 5 SECONDS, target=user) && (activationCost == 0 || user.cell.use(activationCost)))
 			playsound(src, 'sound/effects/bamf.ogg', 100, TRUE, -6)
 			to_chat(user, span_notice("You are now disguised."))
 			activate(user)
@@ -697,14 +697,15 @@
 	disguise = details[SKIN_ICON_STATE]
 	disguise_icon_override = details[SKIN_ICON]
 	disguise_special_light_key = details[SKIN_LIGHT_KEY]
-	disguise_hat_offset = 0 || details[SKIN_HAT_OFFSET]
-	disguise_model_features = details[SKIN_FEATURES]
+	disguise_hat_offset = details[SKIN_HAT_OFFSET] || list()
+	disguise_model_features = details[SKIN_FEATURES] || list()
 	return TRUE
 
 /obj/item/borg_shapeshifter/process()
-	if (user && !user.cell?.use(activationUpkeep))
+	if(!user)
+		return PROCESS_KILL
+	if(activationUpkeep > 0 && !user.cell?.use(activationUpkeep))
 		disrupt(user)
-	else
 		return PROCESS_KILL
 
 /obj/item/borg_shapeshifter/proc/activate(mob/living/silicon/robot/user)

@@ -18,7 +18,7 @@
 	you_are_text = "You are a Cafe Robot!"
 	flavour_text = "Who could have thought? This awesome local cafe accepts cyborgs too!"
 	mob_type = /mob/living/silicon/robot/model/roleplay
-	allow_custom_character = ALL
+	// allow_custom_character disabled - robots don't have DNA and prefs system expects human mobs
 
 /obj/effect/mob_spawn/ghost_role/robot/ghostcafe/special(mob/living/silicon/robot/new_spawn)
 	. = ..()

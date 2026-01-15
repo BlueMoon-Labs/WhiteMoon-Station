@@ -2,7 +2,7 @@
 	icon = (model.cyborg_icon_override ? model.cyborg_icon_override : initial(icon))
 	. = ..()
 	/// Let's give custom borgs the ability to have flavor panels for their model
-	if(opened && (TRAIT_R_UNIQUEPANEL in model.model_features))
+	if(opened && !isnull(model.model_features) && (TRAIT_R_UNIQUEPANEL in model.model_features))
 		if(wiresexposed)
 			add_overlay("[model.cyborg_base_icon]_w")
 		else if(cell)
@@ -66,19 +66,19 @@
 			if(hat_overlay)  // Don't forget your hat
 				add_overlay(hat_overlay)
 
-			if(TRAIT_R_HAS_UNIQUE_RESTING_LIGHTS in model.model_features)
+			if(!isnull(model.model_features) && (TRAIT_R_HAS_UNIQUE_RESTING_LIGHTS in model.model_features))
 				add_overlay("[icon_state]_e")
 
 	else
 		icon_state = "[model.cyborg_base_icon]"
 
-	if((TRAIT_R_UNIQUETIP in model.model_features) && (TRAIT_IMMOBILIZED in _status_traits))
+	if(!isnull(model.model_features) && (TRAIT_R_UNIQUETIP in model.model_features) && (TRAIT_IMMOBILIZED in _status_traits))
 		icon_state = "[model.cyborg_base_icon]-tipped"
 		if(particles)
 			dissipate()
 		cut_overlays()
 
-	if(stat == DEAD && (TRAIT_R_UNIQUEWRECK in model.model_features))
+	if(stat == DEAD && !isnull(model.model_features) && (TRAIT_R_UNIQUEWRECK in model.model_features))
 		icon_state = "[model.cyborg_base_icon]-wreck"
 
 
