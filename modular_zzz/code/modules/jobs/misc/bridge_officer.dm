@@ -22,6 +22,7 @@
 	honorific_positions = HONORIFIC_POSITION_FIRST | HONORIFIC_POSITION_LAST | HONORIFIC_POSITION_FIRST_FULL | HONORIFIC_POSITION_NONE
 
 /datum/job/bridge_assistant
+	paycheck = PAYCHECK_COMMAND
 	paycheck_department = ACCOUNT_CIV
 
 	liver_traits = list(TRAIT_PRETENDER_ROYAL_METABOLISM)
