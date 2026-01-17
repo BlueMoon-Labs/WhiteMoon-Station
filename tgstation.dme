@@ -10709,6 +10709,7 @@
 #include "modular_zzz\code\modules\clothing\suits\suits.dm"
 #include "modular_zzz\code\modules\clothing\under\under.dm"
 #include "modular_zzz\code\modules\events\portal_storm.dm"
+#include "modular_zzz\code\modules\jobs\misc\bridge_officer.dm"
 #include "modular_zzz\code\modules\jobs\misc\cargo_guard.dm"
 #include "modular_zzz\code\modules\jobs\misc\engi_guard.dm"
 #include "modular_zzz\code\modules\jobs\misc\orderly.dm"

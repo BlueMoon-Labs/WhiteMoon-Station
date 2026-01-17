@@ -39,6 +39,7 @@
 
 /datum/job/bridge_assistant
 	alt_titles = list(
+		"Bridge Officer", // WhiteMoon ADD
 		"Bridge Assistant",
 		"Bridge Secretary",
 		"Bridge Coffee Maker",

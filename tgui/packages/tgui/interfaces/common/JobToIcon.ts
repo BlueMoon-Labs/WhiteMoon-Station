@@ -12,7 +12,7 @@ const BASEICONS = {
   Bitrunner: 'gamepad',
   Botanist: 'seedling',
   Blacksmith: 'hammer', // BUBBER EDIT
-  'Bridge Assistant': 'building-shield',
+  'Bridge Officer': 'building-shield', // WhiteMoon EDIT, old value 'Bridge Assistant'
   Captain: 'crown',
   'Cargo Gorilla': 'paw',
   'Cargo Technician': 'box',
