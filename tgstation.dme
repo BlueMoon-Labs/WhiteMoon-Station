@@ -10736,6 +10736,7 @@
 #include "modular_zzz\code\controllers\subsystem\vote.dm"
 #include "modular_zzz\code\datums\sprite_accessories.dm"
 #include "modular_zzz\code\datums\world_topic.dm"
+#include "modular_zzz\code\datums\actions\items\toggles.dm"
 #include "modular_zzz\code\datums\components\jukebox.dm"
 #include "modular_zzz\code\datums\quirks\negative_quirks\allergic.dm"
 #include "modular_zzz\code\datums\quirks\negative_quirks\blood_deficiency.dm"
