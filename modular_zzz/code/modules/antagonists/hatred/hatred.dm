@@ -317,8 +317,9 @@
 			var/obj/item/organ/heart/h = locate() in target.get_bodypart(BODY_ZONE_CHEST)
 			if(istype(h) && h.drop_when_organ_spilling)
 				h.Remove(target)
-				h.forceMove(get_turf(target))
-				user.visible_message(span_warning("[user] безжалостно вырывает сердце из груди [target]!"))
+				user.visible_message(span_bold(span_danger("[user] безжалостно вырывает сердце из груди [target]!")))
+				if(!killer.put_in_inactive_hand(h))
+					h.forceMove(get_turf(target))
 		// the target is almost dead and we want to glory kill it with a knife.
 		else if(!(target.stat in list(CONSCIOUS)) && killer.zone_selected == BODY_ZONE_PRECISE_MOUTH && !isdullahan(target) && target.get_bodypart(BODY_ZONE_HEAD))
 			target.visible_message(span_warning("[killer] подносит [knife] к горлу [target], готовый перерезать его..."), \
@@ -773,7 +774,7 @@
 	bio 	= 50
 	fire 	= 80
 	acid 	= 80
-	wound = WOUND_ARMOR_HIGH
+	wound 	= WOUND_ARMOR_HIGH
 
 /obj/item/clothing/head/invisihat/hatred
 	name = "\proper Veil of Hatred"
@@ -826,10 +827,10 @@
 		Ha.chosen_gun = available_sets[1]
 	switch(Ha.chosen_gun)
 		if("AK12")
-			r_hand = /obj/item/gun/ballistic/automatic/ar/ak12/hatred
+			suit_store = /obj/item/gun/ballistic/automatic/ar/ak12/hatred
 			l_pocket = /obj/item/storage/pouch/ammo/hatred
 		if("Combat Shotgun")
-			r_hand = /obj/item/gun/ballistic/shotgun/automatic/combat/hatred
+			suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/hatred
 			// suit_store = /obj/item/storage/belt/holster/hatred_sawn_off
 			l_pocket = /obj/item/storage/pouch/ammo/hatred
 		if("Pistols")
