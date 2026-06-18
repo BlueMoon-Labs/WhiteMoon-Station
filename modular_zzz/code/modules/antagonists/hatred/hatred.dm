@@ -121,9 +121,7 @@
 	make_authentic_body()
 	evaluate_security()
 	forge_objectives()
-	H.Immobilize(INFINITY, TRUE) // we don't want the player to walk around in temorary debug room during equipment selection.
-	// H.Paralyze(INFINITY, TRUE)
-	// H.SetParalyzed(0, TRUE)
+	RegisterSignal(H, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(prevent_spawnloc_movement))
 	RegisterSignal(H, COMSIG_MOB_EQUIPPED_ITEM, PROC_REF(check_equipped_item)) // any knife we pick might be our deadliest weapon
 	H.equipOutfit(/datum/outfit/hatred)
 	. = ..()
@@ -164,9 +162,9 @@
 	// H.add_quirk(/datum/quirk/jumper, announce = FALSE) // ADD_TRAIT(H, TRAIT_JUMPER, "hatred")
 	ADD_TRAIT(H, TRAIT_EVIL, "hatred") // H.add_quirk(/datum/quirk/evil, announce = FALSE) // no unwanted post_add() text
 	tgui_alert(H, "У тебя есть последняя минута, чтобы собраться с мыслями. Ознакомься с инструкциями в чате. Закрой это окошко когда будешь готов...", "Ты готов убивать?", list("Я готов убивать."), timeout = 1 MINUTES, autofocus = FALSE)
-	RegisterSignal(H, COMSIG_LIVING_DEATH, PROC_REF(on_hatred_death))
 	// WE ARE READY.
-	H.SetImmobilized(0, TRUE)
+	UnregisterSignal(H, COMSIG_MOVABLE_PRE_MOVE)
+	RegisterSignal(H, COMSIG_LIVING_DEATH, PROC_REF(on_hatred_death))
 	H.fully_heal() // in case of some accidents in spawn room during preparation
 	H.mob_mood?.set_sanity(initial(H.mob_mood?.sanity), override = TRUE)
 	appear_on_station()
@@ -193,6 +191,11 @@
 		ADD_TRAIT(L, TRAIT_PREVENT_IMPLANT_AUTO_EXPLOSION, "hatred") // no boom on admin remove
 		to_chat(L, span_userdanger("As Hatred leaves your mind, it consumes you completely..."))
 		L.dust(force = TRUE) // from ghosts we come, to ghosts we leave.
+
+/// Железно запрещаем перемещение по стартовой локации ерроров
+/datum/antagonist/hatred/proc/prevent_spawnloc_movement()
+	SIGNAL_HANDLER
+	return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
 
 /datum/antagonist/hatred/proc/on_hatred_death()
 	SIGNAL_HANDLER
@@ -460,6 +463,10 @@
 	name = "\improper Combat Shotgun of Hatred"
 	desc = "The scratches on this shotgun say: \"The Bringer of Doom\"."
 	icon = 'icons/obj/weapons/guns/ballistic.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
 	icon_state = "cshotgun"
 	inhand_icon_state = "shotgun_combat"
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot/com/hatred
@@ -677,7 +684,7 @@
 /obj/item/storage/pouch/ammo/hatred/examine(mob/user)
 	. = ..()
 	. += "Положи пустой магазин/картридж/клипсу в этот проклятый подсумок и он наполнится патронами."
-	. += span_notice("[span_bold("Alt-Click")] - вытащить предмет.")
+	. += span_notice("[span_bold("Alt-Click / ПКМ")] - открыть.")
 
 /obj/item/storage/pouch/ammo/hatred/Entered(atom/movable/AM, atom/oldLoc)
 	. = ..()
@@ -1015,7 +1022,7 @@
 	var/mob/chosen_one = SSpolling.poll_ghost_candidates(check_jobban = ROLE_MASS_SHOOTER, role = ROLE_MASS_SHOOTER, alert_pic = /obj/item/gun/ballistic/automatic/ar/ak12, role_name_text = "Mass Shooter", amount_to_pick = 1)
 	if(isnull(chosen_one))
 		return NOT_ENOUGH_PLAYERS
-	var/mob/living/carbon/human/body = new (entry_spawn_loc)
+	var/mob/living/carbon/human/body = new (get_turf(entry_spawn_loc))
 	// body.move_to_error_room()
 	// body.PossessByPlayer(chosen_one.key)
 	var/datum/mind/Mind = new /datum/mind(chosen_one.key)
